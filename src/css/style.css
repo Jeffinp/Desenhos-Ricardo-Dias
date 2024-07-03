@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+/* Reset global */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+/* Estilo do cabeçalho */
+header {
+    position: fixed; /* Fixa o cabeçalho no topo da página */
+    width: 100%; /* Ocupa toda a largura da janela */
+    height: 70px; /* Altura reduzida do cabeçalho */
+    display: flex;
+    justify-content: space-between; /* Espaçamento entre logo e itens de navegação */
+    align-items: center;
+    background-color: black;
+    z-index: 1000;
+    padding: 0 20px; /* Espaçamento interno do cabeçalho */
+}
+
+nav {
+    width: auto; /* Ajusta a largura do nav conforme necessário */
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none; /* Remove marcadores da lista */
+    padding: 0 140px;
+}
+
+li {
+    color: #f0f8ff;
+    cursor: pointer;
+    font-size: 18px; /* Tamanho da fonte reduzido */
+    transition: 0.5s;
+    margin: 0 10px; /* Espaçamento horizontal entre os itens */
+}
+
+li a {
+    color: inherit;
+    text-decoration: none;
+}
+
+li:hover {
+    color: blue;
+}
+
+.logotipo {
+    display: flex;
+    align-items: center;
+    margin-left: 150px;
+}
+
+#logo {
+    width: 50px; /* Ajuste o tamanho da logo conforme necessário */
+    height: auto;
+    margin-right: 10px; /* Espaçamento à direita da logo */
+}
+
+.logoname {
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* Estilos para o banner */
+#banner {
+    background-color: #000000; /* Cor de fundo preta para escurecer a imagem */
+    text-align: center; /* Alinhar o conteúdo ao centro */
+    background-image: url('../media/naruto.webp');
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+#banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.151); /* Cor preta com 50% de opacidade */
+}
+
+.banner-content {
+    position: absolute;
+    top: 50%; /* Posiciona a partir do topo do elemento pai */
+    left: 50%; /* Posiciona a partir da esquerda do elemento pai */
+    transform: translate(-50%, -50%); /* Translada o elemento para o centro */
+    z-index: 1; /* Coloca o conteúdo do banner acima da sobreposição */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    width: 80%; /* Ajusta a largura do conteúdo */
+}
+
+/* Estilos para a seção principal */
+.aulas {
+    padding: 20px 20px; /* Espaçamento interno da seção */
+    text-align: center; /* Alinhar o conteúdo ao centro */
+}
+
+.aulas h2 {
+    font-size: 2em; /* Tamanho da fonte do título */
+    color: #0b5394; /* Cor do título */
+    margin-bottom: 20px; /* Espaçamento inferior para o título */
+}
+
+.cards-de-desenhos {
+    background-color: #f2f2f2; /* Cor de fundo da seção */
+    padding: 20px;
+}
+
+.cards-contents {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.image-1 {
+    background-image: url()
+}
+
+.card-banner {
+    width: calc(20% - 20px); /* Calcula a largura dos cartões com margens */
+    height: 200px;
+    margin-bottom: 20px;
+    background-color: #ddd; /* Cor de fundo dos cartões */
+}
+
+/* Estilos para Objetivos */
+.objetivos-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.objetivos-container h2 {
+    font-size: 2em;
+    color: #0b5394;
+    margin-bottom: 20px;
+}
+
+/* Estilos para Experiências, Técnicas, Criatividade */
+.image-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.image {
+    width: calc(30% - 20px);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.image h2 {
+    font-size: 1.5em;
+    color: #0b5394;
+    margin-bottom: 10px;
+}
+
+.image p {
+    font-size: 1em;
+    color: #333;
+}
+
+/* Estilos para Texto Jovens */
+.texto-jovens {
+    text-align: center;
+    padding: 20px;
+}
+
+.texto-jovens p {
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Estilos para Antes e Depois */
+.antes-depois {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+.antes-depois-item {
+    width: calc(30% - 20px);
+    height: 300px;
+    background-color: #ddd;
+}
+
+/* Estilos para Informação */
+.informacao-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.informacao-content p {
+    font-size: 1.2em;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Estilos para Depoimentos */
+.depoimentos-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.depoimentos-container h2 {
+    font-size: 2em;
+    color: #0b5394;
+    margin-bottom: 20px;
+}
+
+.depoimentos-texto-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.depoimento {
+    width: 30%;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+}
+
+.depoimento p {
+    font-size: 1em;
+    color: #333;
+    line-height: 1.6;
+}
+
+.depoimento h3 {
+    font-size: 1.2em;
+    color: #0b5394;
+    margin-top: 10px;
+}
+
+/* Estilos para Atendimento */
+.atendimento-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+.atendimento-item {
+    text-align: center;
+    width: 20%;
+}
+
+.atendimento-item h4 {
+    font-size: 1.5em;
+    color: #0b5394;
+    margin-bottom: 10px;
+}
+
+/* Estilos para Localização */
+.local-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.local-content h2 {
+    font-size: 2em;
+    color: #0b5394;
+    margin-bottom: 20px;
+}
+
+.local-content p {
+    font-size: 1em;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Estilos para Fotos do Curso */
+.fotos-curso-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.foto-curso {
+    width: calc(30% - 20px);
+    height: 200px;
+    margin-bottom: 20px;
+    background-color: #ddd;
+}
+
+/* Estilos para Footer */
+.footer-container {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.reserva-lugar-container {
+    margin: 20px 0;
+}
+
+.reserva-lugar-container button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #0b5394;
+    border: none;
+    cursor: pointer;
+}
+
+.redes-sociais-container {
+    margin-top: 20px;
+}
+
+.redes-sociais-container a {
+    color: #fff;
+    font-size: 1.5em;
+    margin: 0 10px;
+}
+
+.redes-sociais-container a:hover {
+    color: #0b5394;
+}
