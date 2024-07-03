@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Play:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Play:wght@400;700&display=swap');
 
 /* Reset global */
 * {
@@ -7,10 +10,12 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
+    
 }
 
 html, body {
     overflow-x: hidden;
+    background-color: #eee8e8;
 }
 
 /* Estilo do cabeçalho */
@@ -36,7 +41,7 @@ ul {
     align-items: center;
     list-style: none; /* Remove marcadores da lista */
     padding: 0 140px;
-    font-family: 'Oswald', sans-serif;
+    font-family: "Lato", sans-serif;
 }
 
 li {
@@ -53,7 +58,7 @@ li a {
 }
 
 li:hover {
-    color: blue;
+    color: rgb(255, 174, 0);
 }
 
 .logotipo {
@@ -63,7 +68,7 @@ li:hover {
 }
 
 #logo {
-    width: 50px; /* Ajuste o tamanho da logo conforme necessário */
+    width: 50px;
     height: auto;
     margin-right: 10px; /* Espaçamento à direita da logo */
 }
@@ -71,6 +76,12 @@ li:hover {
 .logoname {
     color: white;
     font-size: 1.5rem;
+    transition: 0.5s;
+    font-family: "Lato", sans-serif;
+}
+
+.logoname:hover {
+    color: rgb(255, 174, 0);
 }
 
 /* Estilos para o banner */
@@ -78,7 +89,7 @@ li:hover {
     background-color: #000000; /* Cor de fundo preta para escurecer a imagem */
     text-align: center; /* Alinhar o conteúdo ao centro */
     background-image: url('../media/naruto.webp');
-    background-position: center center;
+    background-position: 50% 50%;
     background-size: cover;
     width: 100%;
     height: 600px;
@@ -116,6 +127,7 @@ li:hover {
     font-size: 2em; /* Tamanho da fonte do título */
     color: #0b5394; /* Cor do título */
     margin-bottom: 20px; /* Espaçamento inferior para o título */
+    font-family: "Play", sans-serif;
 }
 .cards-de-desenhos {
     background-color: #f2f2f2;
@@ -130,7 +142,7 @@ li:hover {
 
 .cards-contents {
     display: flex;
-    overflow: hidden;
+    transition: transform 0.5s ease;
 }
 
 .card-banner {
@@ -139,7 +151,12 @@ li:hover {
     margin: 0 10px;
     background-color: #ddd;
     border-radius: 10px;
-    transition: all 0.3s ease;
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+}
+
+.card-banner.active {
+    opacity: 1;
 }
 
 .carousel-button {
@@ -169,10 +186,10 @@ li:hover {
 #card-banner-3 { background-image: url('/src/media/desenhos/borboleta.webp'); }
 #card-banner-4 { background-image: url('/src/media/desenhos/dino2.webp'); }
 #card-banner-5 { background-image: url('/src/media/desenhos/InstagramCapture_88f4e346-2bac-4d34-8554-5073a70fce71.webp'); }
-#card-banner-6 { background-image: url('/src/media/desenhos/20200602_075745.jpg'); }
-#card-banner-7 { background-image: url('/src/media/desenhos/20200602_075915.jpg'); }
-#card-banner-8 { background-image: url('/src/media/desenhos/20200602_075959.jpg'); }
-#card-banner-9 { background-image: url('/src/media/desenhos/IMG_20200416_160332_954.jpg'); }
+#card-banner-6 { background-image: url('/src/media/desenhos/20200602_075745.webp'); background-position: 40% 50%;}
+#card-banner-7 { background-image: url('/src/media/desenhos/20200602_075915.webp'); }
+#card-banner-8 { background-image: url('/src/media/desenhos/20200602_075959.webp');  }
+#card-banner-9 { background-image: url('/src/media/desenhos/IMG_20200416_160332_954.webp') }
 
 .card-banner {
     background-size: cover;
@@ -181,51 +198,91 @@ li:hover {
 
 /* Estilos para Objetivos */
 .objetivos-container {
+    display: flex;
     text-align: center;
     padding: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 .objetivos-container h2 {
     font-size: 2em;
+    font-family: "Lato", sans-serif;
     color: #0b5394;
-    margin-bottom: 20px;
 }
 
 /* Estilos para Experiências, Técnicas, Criatividade */
 .image-container {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     padding: 20px;
 }
 
-.image {
-    width: calc(30% - 20px);
+.image-wrapper {
+    width: calc(30% - 20px); /* Calcula a largura de cada bloco */
     text-align: center;
     margin-bottom: 20px;
+    box-sizing: border-box; /* Inclui padding no cálculo da largura */
+    background-color: #f5f5f5; /* Cor de fundo padrão para espaços reservados */
+    border: 2px solid #ccc; /* Borda para melhor visualização */
 }
 
-.image h2 {
-    font-size: 1.5em;
-    color: #0b5394;
-    margin-bottom: 10px;
+.image {
+    width: 100%;
+    height: 400px; /* Altura ajustada para exemplo */
+    background-size: cover;
+    background-position: 50%;
 }
 
-.image p {
-    font-size: 1em;
-    color: #333;
+.image-1 {
+    background-image: url('../media/image1.webp');
 }
 
-/* Estilos para Texto Jovens */
-.texto-jovens {
-    text-align: center;
+.image-2 {
+    background-image: url('../media/image2.webp');
+}
+
+.image-3 {
+    background-image: url('../media/image3.webp');
+}
+
+.text-container {
     padding: 20px;
 }
 
-.texto-jovens p {
+.text-container h2 {
+    font-size: 3em;
+    color: #0b5394;
+    margin-bottom: 10px;
+    font-family: "Lato", sans-serif;
+}
+
+.text-container p {
     font-size: 1.2em;
-    color: #333;
+    color: #FA6800;
+    font-family: "Play", sans-serif;
+    font-weight: bold; /* Texto em negrito */
+    margin-bottom: 0; /* Remove o espaçamento abaixo do parágrafo */
+}
+
+
+/* Estilos para Texto Jovens */
+.texto-jovens {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 80px;
+    background-color: #1e6d94;;
+    font-family: "Play", sans-serif;
+}
+
+.texto-jovens p {
+    font-size: 1.5em;
+    color: #ffffff;
 }
 
 /* Estilos para Antes e Depois */
@@ -233,15 +290,28 @@ li:hover {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: #1e6d94;;
     padding: 20px;
 }
 
 .antes-depois-item {
-    width: calc(30% - 20px);
-    height: 300px;
-    background-color: #ddd;
+    width: 600px;
+    height: 600px;
+    background-size: cover;
+    border-radius: 10px;
 }
 
+#antes-depois-1 {
+ background-image: url('/src/media/Comparativos/MariaClara.webp');
+}
+
+#antes-depois-2 {
+    background-image: url('/src/media/Comparativos/Sofia.webp');
+}
+
+#antes-depois-3 {
+    background-image: url('/src/media/Comparativos/Valentina.webp');
+}
 /* Estilos para Informação */
 .informacao-container {
     text-align: center;
@@ -251,65 +321,151 @@ li:hover {
 .informacao-content p {
     font-size: 1.2em;
     color: #333;
-    line-height: 1.6;
+    line-height: 3;
+    font-family: "Play", sans-serif;
+}
+
+/* Divider com ícone */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 2px solid #ccc; /* Cor do divisor */
+}
+
+.divider:not(:empty)::before {
+    margin-right: .25em;
+}
+
+.divider:not(:empty)::after {
+    margin-left: .25em;
+}
+
+.divider span {
+    padding: 0 10px;
+    color: #FA6800; /* Cor do texto/ícone */
+    font-size: 1.5em; /* Tamanho do texto/ícone */
 }
 
 /* Estilos para Depoimentos */
 .depoimentos-container {
     text-align: center;
     padding: 20px;
+    background-color: #0b5394;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .depoimentos-container h2 {
     font-size: 2em;
-    color: #0b5394;
-    margin-bottom: 20px;
+    color: #ffffff;
+    font-family: "Play", sans-serif;
 }
 
 .depoimentos-texto-container {
     display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
+}
+
+.depoimentos-texto-content {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .depoimento {
-    width: 30%;
+    width: 100%;
+    max-width: 700px;
     padding: 20px;
     margin-bottom: 20px;
     background-color: #f2f2f2;
+    text-align: center;
 }
 
 .depoimento p {
-    font-size: 1em;
+    font-size: 1.5em;
     color: #333;
     line-height: 1.6;
+    font-family: "Play", sans-serif;
 }
 
 .depoimento h3 {
     font-size: 1.2em;
     color: #0b5394;
     margin-top: 10px;
+    font-family: "Lato", sans-serif;
 }
+
 
 /* Estilos para Atendimento */
 .atendimento-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     padding: 20px;
+    text-align: center;
+}
+
+.atendimento-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 80%;
 }
 
 .atendimento-item {
     text-align: center;
-    width: 20%;
+    padding: 10px;
+    flex: 1;
+}
+
+.icon {
+    width: 350px; /* Ajuste conforme necessário */
+    height: 350px; /* Ajuste conforme necessário */
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto 10px; /* Centraliza o ícone e adiciona espaçamento inferior */
+    border-radius: 10px;
+}
+
+/* Adicione estilos específicos para cada ícone aqui */
+.atendimento-item:nth-child(1) .icon {
+    background-image: url('/src/media/1.webp');
+}
+
+.atendimento-item:nth-child(2) .icon {
+    background-image: url('/src/media/2.webp');
+}
+
+.atendimento-item:nth-child(3) .icon {
+    background-image: url('/src/media/3.webp');
+}
+
+.atendimento-item:nth-child(4) .icon {
+    background-image: url('/src/media/4.webp');
 }
 
 .atendimento-item h4 {
     font-size: 1.5em;
     color: #0b5394;
-    margin-bottom: 10px;
+    margin-top: 10px;
+    font-family: "Play", sans-serif;
 }
+
 
 /* Estilos para Localização */
 .local-container {
@@ -321,13 +477,29 @@ li:hover {
     font-size: 2em;
     color: #0b5394;
     margin-bottom: 20px;
+    font-family: "Play", sans-serif;
 }
 
 .local-content p {
     font-size: 1em;
     color: #333;
     line-height: 1.6;
+    font-family: "Play", sans-serif;
 }
+
+.map-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.map-container iframe {
+    width: 100%;
+    max-width: 600px; /* Ajuste o tamanho conforme necessário */
+    height: 450px; /* Ajuste o tamanho conforme necessário */
+    border: 0;
+}
+
 
 /* Estilos para Fotos do Curso */
 .fotos-curso-container {
@@ -377,16 +549,27 @@ li:hover {
     cursor: pointer;
 }
 
-.redes-sociais-container {
-    margin-top: 20px;
+/* Estilos para Redes Sociais */
+.social-container {
+    text-align: center;
+    padding: 20px;
 }
 
-.redes-sociais-container a {
-    color: #fff;
-    font-size: 1.5em;
+.social-link {
     margin: 0 10px;
+    font-size: 2em; /* Ajuste o tamanho conforme necessário */
+    color: #ff0000;
+    transition: color 0.3s ease;
 }
 
-.redes-sociais-container a:hover {
-    color: #0b5394;
+.social-link:hover {
+    color: #0b5394; /* Cor ao passar o mouse */
+}
+
+.whatsapp i {
+    color: #25D366; /* Cor específica para WhatsApp */
+}
+
+.instagram i {
+    color: #E1306C; /* Cor específica para Instagram */
 }

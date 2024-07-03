@@ -5,28 +5,36 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextBtn = document.querySelector('.next');
     let currentIndex = 0;
 
-    function showCards() {
+    function updateCarousel() {
+        const cardWidth = cards[0].offsetWidth + -106; // Width + margin
+        slider.style.transform = `translateX(${-currentIndex * cardWidth}px)`;
+
+        // Update active class
         for (let i = 0; i < cards.length; i++) {
-            cards[i].style.display = 'none';
+            cards[i].classList.remove('active');
         }
         for (let i = 0; i < 3; i++) {
             let index = (currentIndex + i) % cards.length;
-            cards[index].style.display = 'block';
+            cards[index].classList.add('active');
         }
     }
 
     function nextCard() {
         currentIndex = (currentIndex + 1) % cards.length;
-        showCards();
+        updateCarousel();
     }
 
     function prevCard() {
         currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-        showCards();
+        updateCarousel();
     }
 
     nextBtn.addEventListener('click', nextCard);
     prevBtn.addEventListener('click', prevCard);
 
-    showCards();
+    // Initialize
+    updateCarousel();
+
+    // Optional: Auto-play
+    // setInterval(nextCard, 5000);
 });
