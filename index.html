@@ -6,11 +6,12 @@
     <title>Desenhos Ricardo Dias</title>
     <link rel="stylesheet" href="./src/css/style.css">
     <link rel="stylesheet" href="./src/css/mobile.css">
+    <script src="./src/Javascript/script.js"></script>
 </head>
 <body>
     <header class="header">
         <a href="index.html" class="logotipo">
-            <img id="logo" src="./src/media/LOGOTIPO.webp" alt="Manequim articulado de madeira em volta de um círculo branco">
+            <img src="./src/media/LOGOTIPO.webp" alt="Manequim articulado de madeira em volta de um círculo branco" id="logo">
             <span class="logoname">Ricardo Dias</span>
         </a>
         <nav>
@@ -25,27 +26,38 @@
     <main>
         <!-- Banner -->
         <section id="banner">
+            <!-- Conteúdo do banner aqui, se necessário -->
         </section>
 
         <!-- Aulas Presenciais -->
         <section class="aulas">
             <h2>Aulas Presenciais</h2>
+            <!-- Conteúdo das aulas presenciais -->
         </section>
 
         <!-- Cards de Desenhos -->
         <section class="cards-de-desenhos">
-            <div class="cards-contents">
-                <div class="card-banner" id="card-banner-1"></div>
-                <div class="card-banner" id="card-banner-2"></div>
-                <div class="card-banner" id="card-banner-3"></div>
-                <div class="card-banner" id="card-banner-4"></div>
-                <div class="card-banner" id="card-banner-5"></div>
+            <div class="carousel-container">
+                <button class="carousel-button prev">&lt;</button>
+                <div class="cards-contents" id="card-slider">
+                    <div class="card-banner" id="card-banner-1"></div>
+                    <div class="card-banner" id="card-banner-2"></div>
+                    <div class="card-banner" id="card-banner-3"></div>
+                    <div class="card-banner" id="card-banner-4"></div>
+                    <div class="card-banner" id="card-banner-5"></div>
+                    <div class="card-banner" id="card-banner-6"></div>
+                    <div class="card-banner" id="card-banner-7"></div>
+                    <div class="card-banner" id="card-banner-8"></div>
+                    <div class="card-banner" id="card-banner-9"></div>
+                </div>
+                <button class="carousel-button next">&gt;</button>
             </div>
         </section>
 
         <!-- Objetivos -->
         <section class="objetivos-container">
             <h2>Objetivos</h2>
+            <!-- Conteúdo dos objetivos -->
         </section>
 
         <!-- Experiências, Técnicas, Criatividade -->
@@ -54,11 +66,11 @@
                 <h2>Experiências</h2>
                 <p>Conheça novas ferramentas e aprimore seu talento!</p>
             </div>
-            <div class="image-2" >
+            <div class="image-2">
                 <h2>Técnicas</h2>
                 <p>Conheça novas ferramentas e aprimore seu talento!</p>
             </div>
-            <div class="image" >
+            <div class="image">
                 <h2>Criatividade</h2>
                 <p>Conheça novas ferramentas e aprimore seu talento!</p>
             </div>
