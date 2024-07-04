@@ -181,7 +181,17 @@
     font-family: "Play", sans-serif;
     margin: 0;
 }
+#card-banner-8 {
+    background-position: 10% 50%;
+}
 
+#card-banner-7 {
+    background-position: 10% 50%;
+}
+
+#card-banner-6 {
+    background-position: 10% 50%;
+}
 
 }
 
@@ -222,6 +232,7 @@
     background-size: cover;
     border-radius: 10px;
 }
+
 
 #antes-depois-1 {
     background-image: url('/src/media/Comparativos/MariaClara.webp');
