@@ -19,17 +19,16 @@ html, body {
 }
 
 /* Estilo do cabeçalho */
-header {
-    position: fixed; /* Fixa o cabeçalho no topo da página */
-    width: 100%; /* Ocupa toda a largura da janela */
-    height: 70px; /* Altura reduzida do cabeçalho */
+.header {
+    position: fixed;
+    width: 100%;
+    background-color: #000;
+    padding: 1rem;
     display: flex;
-    justify-content: space-between; /* Espaçamento entre logo e itens de navegação */
+    justify-content: space-between;
     align-items: center;
-    background-color: black;
     z-index: 1000;
-    padding: 0 20px; /* Espaçamento interno do cabeçalho */
-}
+  }
 
 nav {
     width: auto; /* Ajusta a largura do nav conforme necessário */
@@ -467,6 +466,153 @@ li:hover {
 }
 
 
+.local-container {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.local-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.local-content h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.local-content p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.map-container {
+    width: 100%;
+    height: 400px;
+}
+
+.social-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.social-link {
+    margin: 0 10px;
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+}
+
+.social-link.whatsapp {
+    color: #25d366;
+}
+
+.social-link.instagram {
+    color: #e4405f;
+}
+
+.fotos-curso-container {
+    padding: 40px 20px;
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+.fotos-curso-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.foto-curso {
+    width: 30%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+#foto-curso-1 { background-image: url('./src/media/curso1.jpg'); }
+#foto-curso-2 { background-image: url('./src/media/curso2.jpg'); }
+#foto-curso-3 { background-image: url('./src/media/curso3.jpg'); }
+/* Continue para outras fotos */
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    color: #007bff;
+}
+
+/* Estilos para Fotos do Curso */
+.fotos-curso-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+.fotos-curso-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.foto-curso {
+    width: calc(25% - 20px);
+    height: 200px;
+    margin: 10px;
+    background-color: #ddd;
+    background-size: cover;
+    background-position: center;
+}
+
+#foto-curso-1 {
+    background-image: url('/src/media/fotos-do-estudio/estudioweb.png');
+}
+
+#foto-curso-2 {
+    background-image: url('/src/media/fotos-do-estudio/estudioweb2.png');
+}
+
+#foto-curso-3 {
+    background-image: url('/src/media/bio.png');
+}
+
+#foto-curso-4 {
+    background-image: url('/src/media/shopping.jpg');
+}
+
+.reserva-lugar-container {
+    margin: 20px 0;
+}
+
+.reserva-lugar-container button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #0b5394;
+    border: none;
+    cursor: pointer;
+}
+
 /* Estilos para Localização */
 .local-container {
     text-align: center;
@@ -483,7 +629,6 @@ li:hover {
 .local-content p {
     font-size: 1em;
     color: #333;
-    line-height: 1.6;
     font-family: "Play", sans-serif;
 }
 
@@ -493,83 +638,9 @@ li:hover {
     justify-content: center;
 }
 
-.map-container iframe {
-    width: 100%;
-    max-width: 600px; /* Ajuste o tamanho conforme necessário */
-    height: 450px; /* Ajuste o tamanho conforme necessário */
-    border: 0;
-}
-
-
-/* Estilos para Fotos do Curso */
-.fotos-curso-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 20px;
-}
-
-.foto-curso {
-    width: calc(30% - 20px);
-    height: 200px;
-    margin-bottom: 20px;
-    background-color: #ddd;
-}
-
-/* Estilos para Footer */
-.footer-container {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-content p {
-    font-size: 1em;
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
-
-.reserva-lugar-container {
-    margin: 20px 0;
-}
-
-.reserva-lugar-container button {
-    padding: 10px 20px;
-    font-size: 1em;
-    color: #fff;
-    background-color: #0b5394;
-    border: none;
-    cursor: pointer;
-}
-
-/* Estilos para Redes Sociais */
-.social-container {
-    text-align: center;
-    padding: 20px;
-}
-
-.social-link {
-    margin: 0 10px;
-    font-size: 2em; /* Ajuste o tamanho conforme necessário */
-    color: #ff0000;
-    transition: color 0.3s ease;
-}
-
-.social-link:hover {
-    color: #0b5394; /* Cor ao passar o mouse */
-}
-
-.whatsapp i {
-    color: #25D366; /* Cor específica para WhatsApp */
-}
-
-.instagram i {
-    color: #E1306C; /* Cor específica para Instagram */
+.static-map {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
