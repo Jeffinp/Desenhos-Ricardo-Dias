@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #1e6d94;;
+    background: linear-gradient(to bottom, #1e6d94, #0b5394); 
     padding: 20px;
 }
 
@@ -19,6 +19,7 @@
     background-size: cover;
     border-radius: 10px;
 }
+
 
 #antes-depois-1 {
  background-image: url('/src/media/Comparativos/MariaClara.webp');
