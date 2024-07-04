@@ -640,7 +640,56 @@ li:hover {
 
 .static-map {
     max-width: 100%;
-    height: auto;
+    height: 400px;
     border: 1px solid #ddd;
     border-radius: 4px;
+}
+
+/* Estilos para informações de contato */
+.contact-info {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: "Lato", sans-serif;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: #1e6d94;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para o botão de reserva */
+.reserva-lugar-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.reserva-lugar-container button {
+    background-color: #fa6800;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-family: "Lato", sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.reserva-lugar-container button:hover {
+    background-color: #e65c00;
+    transform: scale(1.05);
 }
