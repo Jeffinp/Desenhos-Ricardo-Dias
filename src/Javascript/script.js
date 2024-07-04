@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentIndex = 0;
 
     function updateCarousel() {
-        const cardWidth = cards[0].offsetWidth + -106; // Width + margin
+        const cardWidth = cards[0].offsetWidth + -144; // Width + margin
         slider.style.transform = `translateX(${-currentIndex * cardWidth}px)`;
 
         // Update active class
