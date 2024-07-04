@@ -38,4 +38,3 @@ document.addEventListener('DOMContentLoaded', function() {
     // Optional: Auto-play
     // setInterval(nextCard, 5000);
 });
-

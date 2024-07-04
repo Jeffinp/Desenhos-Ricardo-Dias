@@ -203,8 +203,10 @@
     #antes-depois-3 {
         display: none;
     }
-}
 
+    .card-banner {
+        opacity: 1;
+}
 /* Estilos padrão para desktop */
 .antes-depois {
     display: flex;
