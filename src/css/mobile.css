@@ -144,7 +144,7 @@
 }
 
 .atendimento-item {
-    width: calc(50% - 20px); /* Cada item ocupa metade da largura disponível, com espaço entre eles */
+    width: calc(70% - 20px); /* Cada item ocupa metade da largura disponível, com espaço entre eles */
     background-color: #fff;
     border-radius: 10px;
     display: flex;
@@ -156,7 +156,7 @@
     height: 50px;
     background-size: cover;
     flex-shrink: 0; /* Evita que o ícone seja reduzido em tamanhos menores */
-    margin-right: 15px;
+    
 }
 
 .atendimento-item:nth-child(1) .icon {
