@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desenhos Ricardo Dias</title>
     <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/style2.css">
     <link rel="stylesheet" href="./src/css/mobile.css">
     <script src="./src/Javascript/script.js"></script>
     <link rel="shortcut icon" href="./src/media/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header class="header">
@@ -26,75 +28,71 @@
 
     <main>
         <!-- Banner -->
-        <section id="banner">
-            <!-- Conteúdo do banner aqui, se necessário -->
-        </section>
+        <section id="banner" aria-label="Banner principal do site"></section>
 
         <!-- Aulas Presenciais -->
         <section class="aulas">
             <h2>Aulas Presenciais</h2>
-            <!-- Conteúdo das aulas presenciais -->
         </section>
 
         <!-- Cards de Desenhos -->
         <section class="cards-de-desenhos">
             <div class="carousel-container">
-                <button class="carousel-button prev">&lt;</button>
+                <button class="carousel-button prev" aria-label="Anterior">&lt;</button>
                 <div class="cards-contents" id="card-slider">
-                    <div class="card-banner" id="card-banner-1"></div>
-                    <div class="card-banner" id="card-banner-2"></div>
-                    <div class="card-banner" id="card-banner-3"></div>
-                    <div class="card-banner" id="card-banner-4"></div>
-                    <div class="card-banner" id="card-banner-5"></div>
-                    <div class="card-banner" id="card-banner-6"></div>
-                    <div class="card-banner" id="card-banner-7"></div>
-                    <div class="card-banner" id="card-banner-8"></div>
-                    <div class="card-banner" id="card-banner-9"></div>
+                    <div class="card-banner" id="card-banner-1" role="img" aria-label="Um desenho preto e branco de uma águia"></div>
+                    <div class="card-banner" id="card-banner-2" role="img" aria-label="Uma arte de um papagaio"></div>
+                    <div class="card-banner" id="card-banner-3" role="img" aria-label="Arte de uma borboleta"></div>
+                    <div class="card-banner" id="card-banner-4" role="img" aria-label="Arte de dinossauro e seres antigos"></div>
+                    <div class="card-banner" id="card-banner-5" role="img" aria-label="Arte de personagem de StarWars"></div>
+                    <div class="card-banner" id="card-banner-6" role="img" aria-label="Arte de flores"></div>
+                    <div class="card-banner" id="card-banner-7" role="img" aria-label="Arte de personagens"></div>
+                    <div class="card-banner" id="card-banner-8" role="img" aria-label="Arte do homem aranha"></div>
+                    <div class="card-banner" id="card-banner-9" role="img" aria-label="Uma arte com 3 garotas"></div>
                 </div>
-                <button class="carousel-button next">&gt;</button>
+                <button class="carousel-button next" aria-label="Próximo">&gt;</button>
             </div>
         </section>
 
         <!-- Objetivos -->
         <section class="objetivos-container">
-            <h2>OBJETIVOS DO CURSO</h2>
-            <!-- Conteúdo dos objetivos -->
+            <h2>Objetivos do Curso</h2>
         </section>
 
         <section class="image-container">
             <div class="image-wrapper">
-                <div class="image image-1"></div>
+                <div class="image image-1" role="img" aria-label="Experiência prática"></div>
                 <div class="text-container">
-                    <h2>Experiências</h2>
-                    <p>Conheça novas ferramentas e aprimore seu talento!</p>
+                    <h3>Experiências</h3>
+                    <p>Descubra novas ferramentas e desenvolva suas habilidades!</p>
                 </div>
             </div>
             <div class="image-wrapper">
-                <div class="image image-2"></div>
+                <div class="image image-2" role="img" aria-label="Desenvolvimento de técnicas"></div>
                 <div class="text-container">
-                    <h2>Técnicas</h2>
-                    <p>Conheça novas ferramentas e aprimore seu talento!</p>
+                    <h3>Técnicas</h3>
+                    <p>Aprenda novas técnicas e eleve seu talento a um novo nível!</p>
                 </div>
             </div>
             <div class="image-wrapper">
-                <div class="image image-3"></div>
+                <div class="image image-3" role="img" aria-label="Desenvolvimento da criatividade"></div>
                 <div class="text-container">
-                    <h2>Criatividade</h2>
-                    <p>Conheça novas ferramentas e aprimore seu talento!</p>
+                    <h3>Criatividade</h3>
+                    <p>Inspire-se e libere todo o seu potencial criativo!</p>
                 </div>
             </div>
-        </section>
+        </section>        
 
         <!-- Texto Jovens -->
         <section class="texto-jovens">
-                <p>Veja como jovens artistas transformam páginas em branco em obras-primas, com atenção e orientação personalizadas.</p>
+            <p>Veja como jovens artistas transformam páginas em branco em obras-primas, com atenção e orientação personalizadas.</p>
         </section>
 
         <!-- Antes e Depois -->
         <section class="antes-depois">
-            <div class="antes-depois-item" id="antes-depois-1"></div>
-            <div class="antes-depois-item" id="antes-depois-2"></div>
-            <div class="antes-depois-item" id="antes-depois-3"></div>
+            <div class="antes-depois-item" id="antes-depois-1" role="img" aria-label="Antes e depois 1"></div>
+            <div class="antes-depois-item" id="antes-depois-2" role="img" aria-label="Antes e depois 2"></div>
+            <div class="antes-depois-item" id="antes-depois-3" role="img" aria-label="Antes e depois 3"></div>
         </section>
 
         <!-- Informação -->
@@ -109,10 +107,9 @@
                 <p>6) 🎁 Para quem deseja presentear alguém com seu próprio desenho/arte.</p>
             </div>
         </section>
-        
 
         <div class="divider">
-            <span>✏️</span> <!-- Ou qualquer ícone/texto que você quiser -->
+            <span>✏️</span>
         </div>
 
         <!-- Depoimentos -->
@@ -138,32 +135,32 @@
         </section>
 
         <div class="divider">
-            <span>✏️</span> <!-- Ou qualquer ícone/texto que você quiser -->
+            <span>🎨</span> 
         </div>
 
         <!-- Atendimento -->
         <section class="atendimento-container">
             <div class="atendimento-content">
                 <div class="atendimento-item">
-                    <div class="icon"></div>
+                    <div class="icon" aria-hidden="true"></div>
                     <h4>Atendimento Individualizado</h4>
                 </div>
                 <div class="atendimento-item">
-                    <div class="icon"></div>
+                    <div class="icon" aria-hidden="true"></div>
                     <h4>Flexibilidade de Horário</h4>
                 </div>
                 <div class="atendimento-item">
-                    <div class="icon"></div>
+                    <div class="icon" aria-hidden="true"></div>
                     <h4>Ambiente Inspirador</h4>
                 </div>
                 <div class="atendimento-item">
-                    <div class="icon"></div>
+                    <div class="icon" aria-hidden="true"></div>
                     <h4>Jogos Interativos</h4>
                 </div>
             </div>
         </section>
 
-            <!-- Localização -->
+        <!-- Localização -->
         <section class="local-container">
             <div class="local-content">
                 <div class="local-text">
@@ -180,30 +177,56 @@
             </div>
         </section>
 
+        <!-- Fotos do curso -->
         <section class="fotos-curso-container">
             <div class="fotos-curso-content">
-                <div class="foto-curso" id="foto-curso-1"></div>
-                <div class="foto-curso" id="foto-curso-2"></div>
-                <div class="foto-curso" id="foto-curso-3"></div>
-                <div class="foto-curso" id="foto-curso-4"></div>
+                <div class="foto-curso" id="foto-curso-1" role="img" aria-label="Foto do curso 1"></div>
+                <div class="foto-curso" id="foto-curso-2" role="img" aria-label="Foto do curso 2"></div>
+                <div class="foto-curso" id="foto-curso-3" role="img" aria-label="Foto do curso 3"></div>
+                <div class="foto-curso" id="foto-curso-4" role="img" aria-label="Foto do curso 4"></div>
             </div>
         </section>
     </main>
 
+    <!-- Contatos -->
     <div class="contact-info">
-        <p>Horário de atendimento presencial (visita): Antes de comparecer, é recomendado que você agende um horário especial com o professor (via whatsapp) para que ele possa dar a melhor atenção possível.</p>
-        <p>Horários de atendimento on-line (whatsapp ou direct instagram): segunda à sábado (8h às 18h)</p>
-        <p>Horários de atendimento telefone: segunda à sexta (8h às 12h)</p>
-        <p>Telefone/whatsapp: <a href="tel:+5571988195115">(71) 98819-5115</a></p>
-        <p>Email: <a href="mailto:desenhosricardodias@gmail.com">desenhosricardodias@gmail.com</a></p>
+        <p>
+            <i class="fas fa-clock"></i>
+            Horário de atendimento presencial (visita): Antes de comparecer, é recomendado que você agende um horário especial com o professor (via WhatsApp) para que ele possa dar a melhor atenção possível.
+        </p>
+        <p>
+            <i class="fas fa-clock"></i>
+            Horários de atendimento online (WhatsApp ou direct Instagram): segunda a sábado (8h às 18h).
+        </p>
+        <p>
+            <i class="fas fa-clock"></i>
+            Horários de atendimento por telefone: segunda a sexta (8h às 12h).
+        </p>        
+        <div class="icon-info">
+            <p>
+                <a href="https://api.whatsapp.com/send?1=pt_BR&phone=5571988195115" target="_blank">
+                    <i class="fa-brands fa-whatsapp" id="zap" aria-label="WhatsApp"></i>
+                </a>
+            </p>
+            <p>
+                <a href="mailto:desenhosricardodias@gmail.com">
+                    <i class="fas fa-envelope" id="email" aria-label="Email"></i>
+                </a>
+            </p>
+            <p>
+                <a href="https://www.instagram.com/desenhosricardodias" target="_blank">
+                    <i class="fab fa-instagram" id="insta" aria-label="Instagram"></i>
+                </a>
+            </p>
+        </div>
     </div>
-    
+
+    <!-- Botão de reserva -->
     <div class="reserva-lugar-container">
         <button>Quero Reservar Meu Lugar!</button>
     </div>
-    
 
-    
+    <!-- Rodapé -->
     <footer class="footer">
         <div class="footer-content">
             <nav class="footer-links">
@@ -216,4 +239,3 @@
     </footer>
 </body>
 </html>
-
