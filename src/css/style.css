@@ -32,14 +32,14 @@ html, body {
   }
 
 nav {
-    width: auto; /* Ajusta a largura do nav conforme necessário */
+    width: auto; 
 }
 
 ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    list-style: none; /* Remove marcadores da lista */
+    list-style: none; 
     padding: 0 250px;
     font-family: "Lato", sans-serif;
 }
@@ -47,9 +47,9 @@ ul {
 li {
     color: #f0f8ff;
     cursor: pointer;
-    font-size: 18px; /* Tamanho da fonte reduzido */
+    font-size: 18px; 
     transition: 0.5s;
-    margin: 0 10px; /* Espaçamento horizontal entre os itens */
+    margin: 0 10px; 
 }
 
 li a {
@@ -70,7 +70,7 @@ li:hover {
 #logo {
     width: 50px;
     height: auto;
-    margin-right: 10px; /* Espaçamento à direita da logo */
+    margin-right: 10px; 
 }
 
 .logoname {
@@ -86,8 +86,8 @@ li:hover {
 
 /* Estilos para o banner */
 #banner {
-    background-color: #000000; /* Cor de fundo preta para escurecer a imagem */
-    text-align: center; /* Alinhar o conteúdo ao centro */
+    background-color: #000000;
+    text-align: center;
     background-image: url('../media/naruto.webp');
     background-position: 50% 50%;
     background-size: cover;
@@ -104,31 +104,31 @@ li:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.151); /* Cor preta com 50% de opacidade */
+    background-color: rgba(0, 0, 0, 0.151);
 }
 
 .banner-content {
     position: absolute;
-    top: 50%; /* Posiciona a partir do topo do elemento pai */
-    left: 50%; /* Posiciona a partir da esquerda do elemento pai */
-    transform: translate(-50%, -50%); /* Translada o elemento para o centro */
-    z-index: 1; /* Coloca o conteúdo do banner acima da sobreposição */
-    text-align: center; /* Centraliza o texto horizontalmente */
-    width: 80%; /* Ajusta a largura do conteúdo */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    text-align: center;
+    width: 80%;
 }
 
-/* Estilos para a seção principal */
 .aulas {
-    padding: 20px 20px; /* Espaçamento interno da seção */
-    text-align: center; /* Alinhar o conteúdo ao centro */
+    padding: 20px 20px;
+    text-align: center;
 }
 
 .aulas h2 {
-    font-size: 2em; /* Tamanho da fonte do título */
-    color: #0b5394; /* Cor do título */
-    margin-bottom: 20px; /* Espaçamento inferior para o título */
+    font-size: 2em;
+    color: #0b5394;
+    margin-bottom: 20px;
     font-family: "Play", sans-serif;
 }
+
 .cards-de-desenhos {
     background-color: #f2f2f2;
     padding: 20px;
@@ -221,17 +221,17 @@ li:hover {
 }
 
 .image-wrapper {
-    width: calc(30% - 20px); /* Calcula a largura de cada bloco */
+    width: calc(30% - 20px);
     text-align: center;
     margin-bottom: 20px;
-    box-sizing: border-box; /* Inclui padding no cálculo da largura */
-    background-color: #f5f5f5; /* Cor de fundo padrão para espaços reservados */
-    border: 2px solid #ccc; /* Borda para melhor visualização */
+    box-sizing: border-box; 
+    background-color: #f5f5f5; 
+    border: 2px solid #ccc; 
 }
 
 .image {
     width: 100%;
-    height: 400px; /* Altura ajustada para exemplo */
+    height: 400px; 
     background-size: cover;
     background-position: 50%;
 }
@@ -263,8 +263,8 @@ li:hover {
     font-size: 1.2em;
     color: #FA6800;
     font-family: "Play", sans-serif;
-    font-weight: bold; /* Texto em negrito */
-    margin-bottom: 0; /* Remove o espaçamento abaixo do parágrafo */
+    font-weight: bold; 
+    margin-bottom: 0; 
 }
 
 
@@ -278,497 +278,4 @@ li:hover {
     height: 80px;
     background-color: #1e6d94;;
     font-family: "Play", sans-serif;
-}
-
-.texto-jovens p {
-    font-size: 1.5em;
-    color: #ffffff;
-}
-
-/* Estilos para Antes e Depois */
-.antes-depois {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #1e6d94;;
-    padding: 20px;
-}
-
-.antes-depois-item {
-    width: 600px;
-    height: 600px;
-    background-size: cover;
-    border-radius: 10px;
-}
-
-#antes-depois-1 {
- background-image: url('/src/media/Comparativos/MariaClara.webp');
-}
-
-#antes-depois-2 {
-    background-image: url('/src/media/Comparativos/Sofia.webp');
-}
-
-#antes-depois-3 {
-    background-image: url('/src/media/Comparativos/Valentina.webp');
-}
-
-
-/* Estilos para Informação */
-.informacao-container {
-    background-color: #f9f9f9; /* Cor de fundo suave */
-    padding: 40px 20px; /* Espaçamento interno */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    margin: 20px 0; /* Espaçamento externo */
-}
-
-.informacao-content {
-    max-width: 800px; /* Largura máxima para o conteúdo */
-    margin: 0 auto; /* Centraliza o conteúdo */
-}
-
-.informacao-content h2 {
-    font-size: 2.5em; /* Tamanho da fonte do título */
-    color: #0b5394; /* Cor do título */
-    margin-bottom: 20px; /* Espaçamento inferior para o título */
-    font-family: "Play", sans-serif; /* Fonte do título */
-}
-
-.informacao-content p {
-    font-size: 1.2em; /* Tamanho da fonte do parágrafo */
-    color: #333; /* Cor do texto */
-    line-height: 1.6; /* Altura da linha */
-    font-family: "Play", sans-serif; /* Fonte do texto */
-    margin: 10px 0; /* Espaçamento vertical dos parágrafos */
-}
-
-.informacao-content p::before {
-    content: "• "; /* Adiciona uma bolinha antes do texto */
-    color: #FA6800; /* Cor da bolinha */
-    font-size: 1.5em; /* Tamanho da bolinha */
-    margin-right: 10px; /* Espaçamento à direita da bolinha */
-    vertical-align: middle; /* Alinha verticalmente no meio */
-}
-
-
-/* Divider com ícone */
-.divider {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin: 40px 0;
-}
-
-.divider::before,
-.divider::after {
-    content: '';
-    flex: 1;
-    border-bottom: 2px solid #ccc; /* Cor do divisor */
-}
-
-.divider:not(:empty)::before {
-    margin-right: .25em;
-}
-
-.divider:not(:empty)::after {
-    margin-left: .25em;
-}
-
-.divider span {
-    padding: 0 10px;
-    color: #FA6800; /* Cor do texto/ícone */
-    font-size: 1.5em; /* Tamanho do texto/ícone */
-}
-
-
-/* Estilos para Depoimentos */
-.depoimentos-container {
-    text-align: center;
-    padding: 20px;
-    background-color: #0b5394;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.depoimentos-container h2 {
-    font-size: 2em;
-    color: #ffffff;
-    font-family: "Play", sans-serif;
-}
-
-.depoimentos-texto-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-}
-
-.depoimentos-texto-content {
-    width: 100%;
-    max-width: 800px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.depoimento {
-    width: 100%;
-    max-width: 700px;
-    padding: 20px;
-    margin-bottom: 20px;
-    background-color: #f2f2f2;
-    text-align: center;
-    border-radius: 10px;
-}
-
-.depoimento p {
-    font-size: 1.5em;
-    color: #333;
-    line-height: 1.6;
-    font-family: "Play", sans-serif;
-}
-
-.depoimento h3 {
-    font-size: 1.2em;
-    color: #0b5394;
-    margin-top: 10px;
-    font-family: "Lato", sans-serif;
-}
-
-
-/* Estilos para Atendimento */
-.atendimento-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    text-align: center;
-}
-
-.atendimento-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    max-width: 80%;
-}
-
-.atendimento-item {
-    text-align: center;
-    padding: 10px;
-    flex: 1;
-}
-
-.icon {
-    width: 350px; /* Ajuste conforme necessário */
-    height: 350px; /* Ajuste conforme necessário */
-    background-size: cover;
-    background-position: center;
-    margin: 0 auto 10px; /* Centraliza o ícone e adiciona espaçamento inferior */
-    border-radius: 10px;
-}
-
-/* Adicione estilos específicos para cada ícone aqui */
-.atendimento-item:nth-child(1) .icon {
-    background-image: url('/src/media/1.webp');
-}
-
-.atendimento-item:nth-child(2) .icon {
-    background-image: url('/src/media/2.webp');
-}
-
-.atendimento-item:nth-child(3) .icon {
-    background-image: url('/src/media/3.webp');
-}
-
-.atendimento-item:nth-child(4) .icon {
-    background-image: url('/src/media/4.webp');
-}
-
-.atendimento-item h4 {
-    font-size: 1.5em;
-    color: #0b5394;
-    margin-top: 10px;
-    font-family: "Play", sans-serif;
-}
-
-
-.local-container {
-    padding: 40px 20px;
-    background-color: #f9f9f9;
-    text-align: center;
-}
-
-.local-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.local-content h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.local-content p {
-    font-size: 18px;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.map-container {
-    width: 100%;
-    height: 400px;
-}
-
-.social-container {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    background-color: #fff;
-}
-
-.social-link {
-    margin: 0 10px;
-    font-size: 24px;
-    color: #333;
-    text-decoration: none;
-}
-
-.social-link.whatsapp {
-    color: #25d366;
-}
-
-.social-link.instagram {
-    color: #e4405f;
-}
-
-.fotos-curso-container {
-    padding: 40px 20px;
-    background-color: #f2f2f2;
-    text-align: center;
-}
-
-.fotos-curso-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.foto-curso {
-    width: 30%;
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-}
-
-#foto-curso-1 { background-image: url('./src/media/curso1.jpg'); }
-#foto-curso-2 { background-image: url('./src/media/curso2.jpg'); }
-#foto-curso-3 { background-image: url('./src/media/curso3.jpg'); }
-
-/* ícones da página */
-
-.contact-info i {
-color: #007BFF;
-font-size: 1.5rem;
-}
-
-.contact-info p {
-    font-size: 1.2rem;
-}
-    
-.icon-info i {
-    font-size: 2rem; /* Tamanho maior para os ícones */
-    color: #007BFF; /* Cor padrão dos ícones */
-}
-
-.icon-info a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.icon-info a:hover {
-    text-decoration: none; /* Sem sublinhado ao passar o mouse */
-}
-
-.icon-info p {
-    display: inline-block;
-    margin: 0 10px; /* Espaçamento entre os ícones */
-}
-
-#zap {
-    color: #25d366;
-}
-
-#insta {
-    color: #e4405f;
-}
-
-#email {
-    color: #e65c00;
-}
-
-
-
-/* final da página */
-.footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    border-top: 4px solid #007bff;
-}
-
-.footer-links {
-    margin-bottom: 20px;
-}
-
-.footer-links a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-.footer-links a:hover {
-    color: #007bff;
-}
-
-/* Estilos para Fotos do Curso */
-.fotos-curso-container {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    background-color: #f2f2f2;
-}
-
-.fotos-curso-content {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 1200px;
-    
-}
-
-.foto-curso {
-    width: calc(25% - 20px);
-    height: 200px;
-    margin: 10px;
-    background-color: #ddd;
-    background-size: cover;
-    background-position: center;
-    border-radius: 5px;
-}
-
-#foto-curso-1 {
-    background-image: url('/src/media/fotos-do-estudio/estudioweb.png');
-}
-
-#foto-curso-2 {
-    background-image: url('/src/media/fotos-do-estudio/estudioweb2.png');
-}
-
-#foto-curso-3 {
-    background-image: url('/src/media/bio.png');
-}
-
-#foto-curso-4 {
-    background-image: url('/src/media/shopping.jpg');
-}
-
-.reserva-lugar-container {
-    margin: 20px 0;
-}
-
-.reserva-lugar-container button {
-    padding: 10px 20px;
-    font-size: 1em;
-    color: #fff;
-    background-color: #0b5394;
-    border: none;
-    cursor: pointer;
-}
-
-/* Estilos para Localização */
-.local-container {
-    text-align: center;
-    padding: 20px;
-}
-
-.local-content h2 {
-    font-size: 2em;
-    color: #0b5394;
-    margin-bottom: 20px;
-    font-family: "Play", sans-serif;
-}
-
-.local-content p {
-    font-size: 1em;
-    color: #333;
-    font-family: "Play", sans-serif;
-}
-
-.map-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-.static-map {
-    max-width: 100%;
-    height: 400px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-/* Estilos para informações de contato */
-.contact-info {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    font-family: "Lato", sans-serif;
-    color: #333;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    
-}
-
-.contact-info p {
-    margin-bottom: 10px;
-}
-
-.contact-info a {
-    color: #1e6d94;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.contact-info a:hover {
-    text-decoration: underline;
-}
-
-/* Estilos para o botão de reserva */
-.reserva-lugar-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.reserva-lugar-container button {
-    background-color: #fa6800;
-    color: #fff;
-    border: none;
-    padding: 15px 30px;
-    font-size: 1.2em;
-    font-family: "Lato", sans-serif;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.reserva-lugar-container button:hover {
-    background-color: #e65c00;
-    transform: scale(1.05);
 }
