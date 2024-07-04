@@ -1,9 +1,3 @@
-
-.texto-jovens p {
-    font-size: 1.5em;
-    color: #ffffff;
-}
-
 /* Estilos para Antes e Depois */
 .antes-depois {
     display: flex;
@@ -13,11 +7,22 @@
     padding: 20px;
 }
 
+.antes-depois-carousel {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .antes-depois-item {
-    width: 600px;
-    height: 600px;
+    width: 500px;
+    height: 500px;
     background-size: cover;
     border-radius: 10px;
+    margin: 0 20px;
+}
+
+.buttoncar {
+    display: none;
 }
 
 

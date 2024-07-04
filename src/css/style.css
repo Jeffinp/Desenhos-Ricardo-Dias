@@ -152,51 +152,7 @@ html, body {
     padding: 20px;
 }
 
-.carousel-container {
-    position: relative;
-    max-width: 1800px;
-    margin: 0 auto;
-}
 
-.cards-contents {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.card-banner {
-    flex: 0 0 470px;
-    height: 470px;
-    margin: 0 10px;
-    background-color: #ddd;
-    border-radius: 10px;
-    opacity: 0.5;
-    transition: opacity 0.5s ease;
-}
-
-.card-banner.active {
-    opacity: 1;
-}
-
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 18px;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
 
 /* Estilos específicos para cada card-banner */
 #card-banner-1 { background-image: url('/src/media/desenhos/aguiaPS.webp'); }
@@ -307,3 +263,7 @@ html, body {
     font-family: "Play", sans-serif;
 }
 
+.texto-jovens p {
+    font-size: 1.5em;
+    color: #ffffff;
+}
