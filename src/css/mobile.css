@@ -4,6 +4,11 @@
         padding: 0.5rem;
     }
 
+    #banner {
+        height: 400px;
+        background-size: 800px;
+    }
+
     .logotipo {
         margin-left: 20px;
     }
