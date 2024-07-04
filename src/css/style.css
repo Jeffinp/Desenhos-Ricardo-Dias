@@ -314,16 +314,41 @@ li:hover {
 }
 /* Estilos para Informação */
 .informacao-container {
-    text-align: center;
-    padding: 20px;
+    background-color: #f9f9f9; /* Cor de fundo suave */
+    padding: 40px 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin: 20px 0; /* Espaçamento externo */
+}
+
+.informacao-content {
+    max-width: 800px; /* Largura máxima para o conteúdo */
+    margin: 0 auto; /* Centraliza o conteúdo */
+}
+
+.informacao-content h2 {
+    font-size: 2.5em; /* Tamanho da fonte do título */
+    color: #0b5394; /* Cor do título */
+    margin-bottom: 20px; /* Espaçamento inferior para o título */
+    font-family: "Play", sans-serif; /* Fonte do título */
 }
 
 .informacao-content p {
-    font-size: 1.2em;
-    color: #333;
-    line-height: 3;
-    font-family: "Play", sans-serif;
+    font-size: 1.2em; /* Tamanho da fonte do parágrafo */
+    color: #333; /* Cor do texto */
+    line-height: 1.6; /* Altura da linha */
+    font-family: "Play", sans-serif; /* Fonte do texto */
+    margin: 10px 0; /* Espaçamento vertical dos parágrafos */
 }
+
+.informacao-content p::before {
+    content: "• "; /* Adiciona uma bolinha antes do texto */
+    color: #FA6800; /* Cor da bolinha */
+    font-size: 1.5em; /* Tamanho da bolinha */
+    margin-right: 10px; /* Espaçamento à direita da bolinha */
+    vertical-align: middle; /* Alinha verticalmente no meio */
+}
+
 
 /* Divider com ícone */
 .divider {
@@ -362,6 +387,7 @@ li:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .depoimentos-container h2 {
@@ -392,6 +418,7 @@ li:hover {
     margin-bottom: 20px;
     background-color: #f2f2f2;
     text-align: center;
+    border-radius: 10px;
 }
 
 .depoimento p {
