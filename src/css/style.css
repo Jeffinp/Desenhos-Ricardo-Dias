@@ -152,8 +152,6 @@ html, body {
     padding: 20px;
 }
 
-
-
 /* Estilos específicos para cada card-banner */
 #card-banner-1 { background-image: url('/src/media/desenhos/aguiaPS.webp'); }
 #card-banner-2 { background-image: url('/src/media/desenhos/arara2.webp'); }
