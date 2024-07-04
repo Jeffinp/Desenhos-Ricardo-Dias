@@ -28,6 +28,7 @@ html, body {
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
+    border-bottom: 5px solid rgb(0, 195, 255);
   }
 
 nav {
@@ -39,7 +40,7 @@ ul {
     justify-content: space-between;
     align-items: center;
     list-style: none; /* Remove marcadores da lista */
-    padding: 0 140px;
+    padding: 0 250px;
     font-family: "Lato", sans-serif;
 }
 
