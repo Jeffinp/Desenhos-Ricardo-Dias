@@ -98,40 +98,7 @@
 }
 
 @media screen and (max-width: 768px) {
-/* Estilos para Antes e Depois */
-.antes-depois {
-    display: flex;
-    overflow: hidden; /* Esconde conteúdo além do contêiner */
-    position: relative; /* Necessário para controlar a posição dos slides */
-    justify-content: space-around;
-    align-items: center;
-    background-color: #1e6d94;
-    padding: 20px;
-    margin-top: 10px;
-    
-}
 
-.antes-depois-item {
-    width: 200px; /* Ajusta para ocupar a largura do contêiner */
-    height: 400px;
-    background-size: cover;
-    border-radius: 10px;
-    transition: transform 0.5s ease; /* Transição suave de deslize */
-    
-}
-
-#antes-depois-1 {
-    background-image: url('/src/media/Comparativos/MariaClara.webp');
-    width: 1000000%;
-}
-
-#antes-depois-2 {
-    background-image: none;
-}
-
-#antes-depois-3 {
-    background-image: none;
-}
 
 /* CSS para Fotos do Curso */
 .fotos-curso-container {
@@ -217,3 +184,44 @@
 
 
 }
+
+/* Estilos para celular */
+@media (max-width: 767px) {
+    .antes-depois {
+        flex-direction: column; /* Altera para coluna para empilhar os itens */
+        align-items: center; /* Centraliza os itens na coluna */
+    }
+
+    .antes-depois-item {
+        width: 100%; /* Ocupa toda a largura disponível */
+        height: 300px; /* Altura ajustada para celular */
+        margin-bottom: 20px; /* Espaçamento entre os itens */
+    }
+
+    /* Esconde as imagens 2 e 3 em telas menores */
+    #antes-depois-2,
+    #antes-depois-3 {
+        display: none;
+    }
+}
+
+/* Estilos padrão para desktop */
+.antes-depois {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1e6d94;
+    padding: 20px;
+}
+
+.antes-depois-item {
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+#antes-depois-1 {
+    background-image: url('/src/media/Comparativos/MariaClara.webp');
+}
+
