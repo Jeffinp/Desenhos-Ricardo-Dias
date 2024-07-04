@@ -157,4 +157,63 @@
     }
 }
 
+
+/* Estilos para Atendimento */
+.atendimento-container {
+    padding: 20px;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+
+}
+
+.atendimento-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 600px; /* Limita a largura máxima dos itens para melhor legibilidade */
+    width: 100%; /* Garante que a largura seja responsiva */
+}
+
+.atendimento-item {
+    width: calc(50% - 20px); /* Cada item ocupa metade da largura disponível, com espaço entre eles */
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.atendimento-item .icon {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    flex-shrink: 0; /* Evita que o ícone seja reduzido em tamanhos menores */
+    margin-right: 15px;
+}
+
+.atendimento-item:nth-child(1) .icon {
+    background-image: url('/src/media/1.webp');
+}
+
+.atendimento-item:nth-child(2) .icon {
+    background-image: url('/src/media/2.webp');
+}
+
+.atendimento-item:nth-child(3) .icon {
+    background-image: url('/src/media/3.webp');
+}
+
+.atendimento-item:nth-child(4) .icon {
+    background-image: url('/src/media/4.webp');
+}
+
+.atendimento-item h4 {
+    font-size: 1em;
+    color: #0b5394;
+    font-family: "Play", sans-serif;
+    margin: 0;
+}
+
+
 }

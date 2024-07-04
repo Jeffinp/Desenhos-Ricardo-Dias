@@ -601,6 +601,7 @@ li:hover {
     flex-wrap: wrap;
     width: 100%;
     max-width: 1200px;
+    
 }
 
 .foto-curso {
@@ -610,6 +611,7 @@ li:hover {
     background-color: #ddd;
     background-size: cover;
     background-position: center;
+    border-radius: 5px;
 }
 
 #foto-curso-1 {
@@ -683,6 +685,7 @@ li:hover {
     color: #333;
     line-height: 1.6;
     margin-bottom: 20px;
+    
 }
 
 .contact-info p {
