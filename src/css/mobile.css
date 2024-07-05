@@ -1,9 +1,5 @@
 /* Estilos para o cabeçalho e nav em dispositivos móveis */
 @media screen and (max-width: 768px) {
-    .header {
-        padding: 0.5rem;
-    }
-
     #banner {
         height: 400px;
         background-size: 800px;
@@ -34,13 +30,6 @@
         padding: 20px;
     }
 
-    .carousel-button {
-        display: none;
-    }
-
-    .cards-contents {
-        display: block;
-    }
 
     .informacao-content h2 {
         font-size: 2em;
@@ -50,6 +39,26 @@
     .informacao-content p {
         font-size: 1em;
         line-height: 1.6;
+    }
+
+}
+
+/* PARA CARDS IMAGEN */
+@media screen and (max-width: 1365px) {
+    .card-banner {
+        flex: 0 0 calc(50% - 20px);
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card-banner {
+        flex: 0 0 calc(100% - 20px);
+        height: 350px;
+    }
+
+    .carousel-button {
+        padding: 25px 10px;
     }
 }
 
@@ -186,66 +195,6 @@
     color: #0b5394;
     font-family: "Play", sans-serif;
     margin: 0;
-}
-#card-banner-8 {
-    background-position: 10% 50%;
-}
-
-#card-banner-7 {
-    background-position: 10% 50%;
-}
-
-#card-banner-6 {
-    background-position: 10% 50%;
-}
-
-}
-
-/* Estilos para celular */
-@media (max-width: 767px) {
-    .antes-depois {
-        flex-direction: column; /* Altera para coluna para empilhar os itens */
-        align-items: center; /* Centraliza os itens na coluna */
-    }
-
-    .antes-depois-item {
-        width: 100%; /* Ocupa toda a largura disponível */
-        height: 300px; /* Altura ajustada para celular */
-        margin-bottom: 20px; /* Espaçamento entre os itens */
-    }
-
-    /* Esconde as imagens 2 e 3 em telas menores */
-    #antes-depois-2,
-    #antes-depois-3 {
-        display: none;
-    }
-
-    .card-banner {
-        opacity: 1;
-}
-/* Estilos padrão para desktop */
-.antes-depois {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #1e6d94;
-    padding: 20px;
-}
-
-.antes-depois-item {
-    width: 400px;
-    height: 400px;
-    background-size: cover;
-    border-radius: 10px;
-}
-
-
-#antes-depois-1 {
-    background-image: url('/src/media/Comparativos/MariaClara.webp');
-}
-
-.footer-links {
-    display: none;
 }
 
 }
