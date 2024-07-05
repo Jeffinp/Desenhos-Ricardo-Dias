@@ -1228,9 +1228,9 @@ font-size: 1.5rem;
 .imagem-centro {
     display: block;
     margin: 0 auto; /* Centraliza horizontalmente */
-    max-width: 40%; /* Garante que a imagem não ultrapasse o contêiner */
+    max-width: 25%; /* Garante que a imagem não ultrapasse o contêiner */
     height: auto; /* Altura automática proporcional à largura */
-    margin-top: 80px;
+    margin-top: 130px;
 }
 
     /* Estilos para o mobile */
@@ -1248,7 +1248,7 @@ font-size: 1.5rem;
 /* ÁREA DE DÚVIDAS */
 .beneficios-container {
     padding: 20px;
-    max-width: 90%; /* Reduz a largura máxima para telas menores */
+    max-width: 70%; /* Reduz a largura máxima para telas menores */
     margin: 20px auto;
     font-family: 'Lato', sans-serif;
     text-align: center;
@@ -1272,7 +1272,6 @@ font-size: 1.5rem;
 
 .beneficios-container p {
     margin-bottom: 20px;
-    text-align: justify; /* Alinha o texto justificado para melhor legibilidade */
 }
 
 .beneficio {
@@ -1329,7 +1328,9 @@ font-size: 1.5rem;
 
 /* Estilo para dispositivos Android */
 @media only screen and (max-width: 767px) {
-    
+    .beneficios-container {
+        max-width: 90%;
+    }
     .italic {
         text-align: left; 
     }
