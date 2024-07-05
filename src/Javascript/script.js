@@ -147,12 +147,12 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCarousel();
 });
 
-//para menu
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.header nav');
 
-    menuToggle.addEventListener('click', function() {
-        nav.classList.toggle('active');
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    mobileNavToggle.addEventListener('click', function() {
+        mobileNav.classList.toggle('active');
     });
 });

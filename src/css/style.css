@@ -17,6 +17,7 @@ html, body {
     background-color: #eee8e8;
 }
 /* Estilo do cabeçalho */
+/* Estilo do cabeçalho */
 .header {
     position: fixed;
     width: 100%;
@@ -27,6 +28,7 @@ html, body {
     align-items: center;
     z-index: 1000;
     border-bottom: 5px solid #007bff;
+    text-align: center; /* Centraliza o texto para PC */
 }
 
 .header::before,
@@ -69,115 +71,104 @@ html, body {
     transition: 0.3s;
 }
 
-.header nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-.header nav ul li {
-    margin-right: 20px;
-    font-family: 'Lato', sans-serif;
-}
-
-.header nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.1rem;
-}
-
-.header a {
-    transition: transform 0.3s ease;
-    display: inline-block;
-}
-
-.header a:hover{
-    color: rgb(255, 174, 0);
-    transition: 0.3s;
-    transform: scale(1.1);
-}
-
-/* Estilos para o menu móvel */
-.menu-toggle {
+.mobile-nav-toggle {
     display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.menu-toggle span {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 3px 0;
-}
-
-/* Estilos para o footer */
-.footer {
     background-color: #333;
     color: #fff;
-    padding: 1rem;
+    padding: 10px;
+    cursor: pointer;
     text-align: center;
 }
 
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 76px; /* Ajuste conforme necessário */
+    left: 0;
+    width: 100%;
+    background-color: #333;
 }
 
-.footer-links {
-    margin-bottom: 1rem;
+.mobile-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
-.footer-links a {
+.mobile-nav ul li {
+    border-bottom: 1px solid #fff;
+}
+
+.mobile-nav ul li:last-child {
+    border-bottom: none;
+}
+
+.mobile-nav ul li a {
+    display: block;
     color: #fff;
     text-decoration: none;
-    margin: 0 10px;
-    display: none;
+    padding: 15px;
+    font-family: 'Lato', sans-serif;
 }
 
-/* Media queries para responsividade */
 @media screen and (max-width: 768px) {
-    .header nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #000;
-    }
-
-    .header nav.active {
+    .mobile-nav-toggle {
         display: block;
     }
 
-    .header nav ul {
-        flex-direction: column;
+    .desktop-nav {
+        display: none;
     }
-
-    .header nav ul li {
-        margin: 10px 0;
-        text-align: center;
+    
+    .mobile-nav.active {
+        display: block;
     }
+}
 
-    .menu-toggle {
-        display: flex;
-    }
-
-    .header::before,
-    .header::after {
+@media screen and (min-width: 769px) {
+    .mobile-nav-toggle, .mobile-nav {
         display: none;
     }
 
-    .footer-links {
-        display: flex;
-        flex-direction: column;
+    .header .desktop-nav {
+        display: block;
     }
 
-    .footer-links a {
-        margin: 5px 0;
-        display: unset;
+    .header .desktop-nav ul {
+        display: flex;
+        justify-content: center; /* Centraliza horizontalmente */
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header .desktop-nav ul li {
+        margin-right: 20px;
+    }
+
+    .header .desktop-nav ul li a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.1rem;
+        font-family: 'Lato', sans-serif;
+    }
+
+    .header .desktop-nav ul li a i {
+        width: 20px; /* Ajuste conforme necessário */
+        margin-right: 5px; /* Espaçamento entre ícone e texto */
+    }
+
+    .header a {
+        transition: transform 0.3s ease;
+        display: inline-block;
+    }
+
+    .header a:hover {
+        color: rgb(255, 174, 0);
+        transition: 0.3s;
+        transform: scale(1.1);
     }
 }
 
@@ -926,4 +917,19 @@ font-size: 1.5rem;
 .reserva-lugar-container button:hover {
     background-color: #e65c00;
     transform: scale(1.05);
+}
+
+/* Estilos para o rodapé */
+.copyright {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0; /* Ajuste conforme necessário */
+    font-size: 0.9rem;
+    font-family: 'lato', sans-serif;
+    font-weight: bold;
+}
+
+.copyright p {
+    margin: 0;
 }
