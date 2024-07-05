@@ -1152,10 +1152,20 @@ font-size: 1.5rem;
         transition: 0.3s;
         transform: scale(1.1);
     }
+
+    
 }
 
+@media (max-width: 768px) {
+    .beneficios-container {
+        max-width: 90%;
+    }
 
-/* Estilos para a seção de cursos */
+    .beneficios-container .divider span {
+        font-size: 1.5em;
+    }
+    
+}
 
 /* Estilos para a seção de cursos */
 .cursos-container {
@@ -1234,3 +1244,93 @@ font-size: 1.5rem;
             margin-top: 150px; /* Reduz o espaçamento superior da imagem */
         }
     }
+
+/* ÁREA DE DÚVIDAS */
+.beneficios-container {
+    padding: 20px;
+    max-width: 90%; /* Reduz a largura máxima para telas menores */
+    margin: 20px auto;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.beneficios-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.8em; /* Reduz o tamanho do título para telas menores */
+    font-family: 'Arvo', serif;
+}
+
+.beneficios-container .divider {
+    margin: 20px 0;
+}
+
+.beneficios-container .divider span {
+    font-size: 1.5em; /* Reduz o tamanho do emoji na divisória para telas menores */
+}
+
+.beneficios-container p {
+    margin-bottom: 20px;
+    text-align: justify; /* Alinha o texto justificado para melhor legibilidade */
+}
+
+.beneficio {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.beneficio-title {
+    color: #333;
+    font-size: 1.4em; /* Reduz o tamanho do título dos benefícios */
+    margin-bottom: 10px;
+    font-family: 'Arvo', serif;
+}
+
+.beneficio ul, .beneficio ol {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: left;
+}
+
+.beneficio ul li, .beneficio ol li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.beneficio ol {
+    counter-reset: list;
+}
+
+.beneficio ol li {
+    counter-increment: list;
+}
+
+.beneficio ol li::before {
+    content: counter(list) ". ";
+    font-weight: bold;
+    color: #007bff;
+}
+
+.beneficio p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.italic p {
+    font-size: 1.1rem;
+    font-style: italic;
+    text-align: center; 
+}
+
+/* Estilo para dispositivos Android */
+@media only screen and (max-width: 767px) {
+    
+    .italic {
+        text-align: left; 
+    }
+}
