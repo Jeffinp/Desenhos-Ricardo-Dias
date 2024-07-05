@@ -1153,3 +1153,72 @@ font-size: 1.5rem;
         transform: scale(1.1);
     }
 }
+
+
+/* Estilos para a seção de cursos */
+
+/* Estilos para a seção de cursos */
+.cursos-container {
+    padding: 20px;
+    max-width: 70%;
+    margin: 20px auto; /* centraliza horizontalmente */
+    font-family: 'Lato', sans-serif; /* Fallback para Lato caso a Arvo não carregue */
+    text-align: center;
+}
+
+.cursos-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2em;
+    font-family: 'Arvo', serif;
+}
+
+.curso {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: left; /* alinha o texto do curso à esquerda */
+}
+
+.curso h3 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-family: 'Arvo', serif;
+}
+
+.curso p {
+    color: #555;
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.curso ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.curso ul li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* Estilos específicos para links dentro dos cursos */
+.curso a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.curso a:hover {
+    text-decoration: underline;
+}
+
+.imagem-centro {
+    display: block;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    max-width: 40%; /* Garante que a imagem não ultrapasse o contêiner */
+    height: auto; /* Altura automática proporcional à largura */
+    margin-top: 80px;
+}
