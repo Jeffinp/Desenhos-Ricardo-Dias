@@ -34,9 +34,6 @@ html, body {
 .header::after {
     content: '';
     display: block;
-    width: 40px; 
-    height: 10px; 
-    background-color: #fff; 
 }
 
 .header::before {
@@ -156,7 +153,6 @@ html, body {
     font-family: "Play", sans-serif;
     letter-spacing: 2px;
 }
-
 .cards-de-desenhos {
     background-color: #f2f2f2;
     padding: 20px;
@@ -242,6 +238,7 @@ html, body {
 #card-banner-21 { background-image: url('/src/media/Fotos-alunos/foto12.webp'); }
 #card-banner-22 { background-image: url('/src/media/Fotos-alunos/foto13.webp'); }
 #card-banner-23 { background-image: url('/src/media/Fotos-alunos/foto14.webp'); }
+#card-banner-24 { background-image: url('/src/media/Fotos-alunos/foto15.webp'); }
 
 
 /* Estilos para Objetivos */
@@ -897,7 +894,7 @@ font-size: 1.5rem;
 }
 
 /* PARA CARDS IMAGEN */
-@media screen and (max-width: 1365px) {
+@media screen and (max-width: 1024px) {
     .card-banner {
         flex: 0 0 calc(50% - 20px);
         height: 400px;
@@ -922,6 +919,7 @@ font-size: 1.5rem;
         font-size: 1em;
     }
 }
+
 
 @media screen and (max-width: 768px) {
 .image-container {
@@ -985,6 +983,8 @@ font-size: 1.5rem;
     background-size: cover;
     border-radius: 10px;
 }
+
+
 
 @media screen and (min-width: 768px) {
     .foto-curso {
@@ -1050,7 +1050,7 @@ font-size: 1.5rem;
 
 }
 
-@media screen and (min-width: 481px) and (max-width: 1024px) {
+@media screen and (min-width: 481px) and (max-width: 1280px) {
     .atendimento-content {
         display: flex;
         flex-wrap: wrap;

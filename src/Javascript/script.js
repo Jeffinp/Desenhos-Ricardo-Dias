@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const cards = Array.from(slider.getElementsByClassName('card-banner'));
     const prevBtn = document.querySelector('.prev');
     const nextBtn = document.querySelector('.next');
-    let currentIndex = 0;
+    const initialIndex = 9; // Índice para começar no banner 10 (índice baseado em 0)
+    let currentIndex = initialIndex;
 
     function updateCarousel() {
         const cardWidth = cards[0].offsetWidth + 20; // Width + margin
@@ -63,9 +64,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Ajustar o carousel quando a janela é redimensionada
     window.addEventListener('resize', updateCarousel);
 
-    // Inicializa o carousel
+    // Inicializa o carousel no banner desejado
     updateCarousel();
 });
+
 
 //ANTES E DEPOIS SLIDER
 document.addEventListener('DOMContentLoaded', function() {
