@@ -154,17 +154,8 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
     const mobileNav = document.querySelector('.mobile-nav');
-    const mobileNavItems = document.querySelectorAll('.mobile-nav ul li');
 
     mobileNavToggle.addEventListener('click', function() {
-        if (mobileNav.classList.contains('active')) {
-            mobileNav.classList.remove('active');
-            mobileNavItems.forEach(item => {
-                item.style.opacity = 0;
-                item.style.transform = 'translateY(-20px)';
-            });
-        } else {
-            mobileNav.classList.add('active');
-        }
+        mobileNav.classList.toggle('active');
     });
 });
