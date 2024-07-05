@@ -1222,3 +1222,15 @@ font-size: 1.5rem;
     height: auto; /* Altura automática proporcional à largura */
     margin-top: 80px;
 }
+
+    /* Estilos para o mobile */
+    @media (max-width: 768px) {
+        .cursos-container {
+            max-width: 90%; /* Reduz a largura máxima para telas menores */
+        }
+
+        .imagem-centro {
+            max-width: 80%; /* Ajusta o tamanho máximo da imagem para telas menores */
+            margin-top: 150px; /* Reduz o espaçamento superior da imagem */
+        }
+    }
