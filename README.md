@@ -17,7 +17,6 @@ Desenhos Ricardo Dias é um site que criei para um cliente que é professor de d
 - HTML5
 - CSS3
 - JavaScript
-- [Framework/Biblioteca, se aplicável]
 
 ## Instalação e Uso
 
