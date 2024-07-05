@@ -992,8 +992,6 @@ font-size: 1.5rem;
     }
 }
 
-
-/* Estilos para Atendimento */
 /* Estilos para Atendimento */
 .atendimento-container {
     padding: 20px;
@@ -1051,6 +1049,24 @@ font-size: 1.5rem;
 }
 
 }
+
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    .atendimento-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .atendimento-item {
+        text-align: center; /* Centraliza o conteúdo dentro de cada item */
+        margin-bottom: 20px; /* Espaçamento inferior entre os itens */
+    }
+}
+
+
+    
+
 /* configuração de antes e depois  */
 
 @media screen and (min-width: 768px) {
