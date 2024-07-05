@@ -180,3 +180,89 @@
 }
 
 }
+/* configuração de antes e depois  */
+
+@media screen and (min-width: 768px) {
+    .antes-depois-item {
+        flex: 0 0 calc(50% - 40px);
+        height: 400px;
+        margin: 0 20px;
+    }
+}
+
+@media screen and (min-width: 1366px) {
+    .antes-depois-carousel {
+        justify-content: center;
+    }
+
+    .antes-depois-item {
+        flex: 0 0 calc(33.333% - 60px);
+        height: 500px;
+        margin: 0 30px;
+        background-size: cover;
+    }
+}
+
+/* configuração do header */
+
+
+@media screen and (max-width: 768px) {
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+    
+    .mobile-nav.active {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .mobile-nav-toggle, .mobile-nav {
+        display: none;
+    }
+
+    .header .desktop-nav {
+        display: block;
+    }
+
+    .header .desktop-nav ul {
+        display: flex;
+        justify-content: center; /* Centraliza horizontalmente */
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header .desktop-nav ul li {
+        margin-right: 20px;
+    }
+
+    .header .desktop-nav ul li a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.1rem;
+        font-family: 'Lato', sans-serif;
+    }
+
+    .header .desktop-nav ul li a i {
+        width: 20px; /* Ajuste conforme necessário */
+        margin-right: 5px; /* Espaçamento entre ícone e texto */
+    }
+
+    .header a {
+        transition: transform 0.3s ease;
+        display: inline-block;
+    }
+
+    .header a:hover {
+        color: rgb(255, 174, 0);
+        transition: 0.3s;
+        transform: scale(1.1);
+    }
+}
