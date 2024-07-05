@@ -192,7 +192,7 @@ html, body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+  
     color: white;
     border: none;
     padding: 10px 15px;
@@ -200,10 +200,6 @@ html, body {
     cursor: pointer;
     z-index: 10;
     transition: background-color 0.3s ease;
-}
-
-.carousel-button:hover {
-    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .carousel-button.prev {
@@ -239,6 +235,7 @@ html, body {
 #card-banner-22 { background-image: url('/src/media/Fotos-alunos/foto13.webp'); }
 #card-banner-23 { background-image: url('/src/media/Fotos-alunos/foto14.webp'); }
 #card-banner-24 { background-image: url('/src/media/Fotos-alunos/foto15.webp'); }
+#card-banner-25 { background-image: url('/src/media/Fotos-alunos/foto16.webp'); }
 
 
 /* Estilos para Objetivos */
@@ -390,18 +387,21 @@ html, body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    background-color: rgb(99, 99, 255);
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
     border: none;
     padding: 10px 15px;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
     z-index: 10;
     transition: background-color 0.3s ease;
 }
 
 .carousel-button:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+ color: rgb(99, 99, 255);
+ background-color: rgb(255, 255, 255);
+ transition: 0.3s;
 }
 
 .carousel-button.prev {
@@ -411,8 +411,6 @@ html, body {
 .carousel-button.next {
     right: 10px;
 }
-
-
 
 /* Estilos para Informação */
 .informacao-container {
@@ -1063,9 +1061,6 @@ font-size: 1.5rem;
         margin-bottom: 20px; /* Espaçamento inferior entre os itens */
     }
 }
-
-
-    
 
 /* configuração de antes e depois  */
 

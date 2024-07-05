@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateCarousel() {
         const cardWidth = cards[0].offsetWidth + 20; // Width + margin
         const visibleCards = window.innerWidth > 1365 ? 3 : window.innerWidth > 768 ? 2 : 1;
-        
+
         slider.style.transition = 'transform 0.3s ease-in-out';
         slider.style.transform = `translateX(${-currentIndex * cardWidth}px)`;
 
-        // Update active class
+        // Atualizar a classe active
         cards.forEach((card, index) => {
             card.classList.toggle('active', index >= currentIndex && index < currentIndex + visibleCards);
         });
@@ -34,13 +34,13 @@ document.addEventListener('DOMContentLoaded', function() {
     nextBtn.addEventListener('click', nextCard);
     prevBtn.addEventListener('click', prevCard);
 
-    // Adiciona navegação por teclado
+    // Adicionar navegação por teclado
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') prevCard();
         if (e.key === 'ArrowRight') nextCard();
     });
 
-    // Adiciona suporte para swipe em dispositivos touch
+    // Adicionar suporte para swipe em dispositivos touch
     let touchStartX = 0;
     let touchEndX = 0;
 
@@ -64,9 +64,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Ajustar o carousel quando a janela é redimensionada
     window.addEventListener('resize', updateCarousel);
 
-    // Inicializa o carousel no banner desejado
+    // Inicializar o carrossel no banner desejado
     updateCarousel();
 });
+
 
 
 //ANTES E DEPOIS SLIDER
