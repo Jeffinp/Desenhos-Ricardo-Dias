@@ -286,11 +286,24 @@ html, body {
 #card-banner-3 { background-image: url('/src/media/desenhos/borboleta.webp'); }
 #card-banner-4 { background-image: url('/src/media/desenhos/dino2.webp'); }
 #card-banner-5 { background-image: url('/src/media/desenhos/InstagramCapture_88f4e346-2bac-4d34-8554-5073a70fce71.webp'); }
-#card-banner-6 {background-image: url('/src/media/desenhos/20200602_075745.webp'); background-position: 40% 50%;}
-#card-banner-7 {background-image: url('/src/media/desenhos/20200602_075915.webp');}
-#card-banner-8 {background-image: url('/src/media/desenhos/20200602_075959.webp');}
-#card-banner-9 {background-image: url('/src/media/desenhos/IMG_20200416_160332_954.webp');}
-
+#card-banner-6 { background-image: url('/src/media/desenhos/20200602_075745.webp'); background-position: 40% 50%; }
+#card-banner-7 { background-image: url('/src/media/desenhos/20200602_075915.webp'); }
+#card-banner-8 { background-image: url('/src/media/desenhos/20200602_075959.webp'); }
+#card-banner-9 { background-image: url('/src/media/desenhos/IMG_20200416_160332_954.webp'); }
+#card-banner-10 { background-image: url('/src/media/Fotos-alunos/foto1.webp'); }
+#card-banner-11 { background-image: url('/src/media/Fotos-alunos/foto2.webp'); }
+#card-banner-12 { background-image: url('/src/media/Fotos-alunos/foto3.webp'); }
+#card-banner-13 { background-image: url('/src/media/Fotos-alunos/foto4.webp'); }
+#card-banner-14 { background-image: url('/src/media/Fotos-alunos/foto5.webp'); }
+#card-banner-15 { background-image: url('/src/media/Fotos-alunos/foto6.webp'); }
+#card-banner-16 { background-image: url('/src/media/Fotos-alunos/foto7.webp'); }
+#card-banner-17 { background-image: url('/src/media/Fotos-alunos/foto8.webp'); }
+#card-banner-18 { background-image: url('/src/media/Fotos-alunos/foto9.webp'); }
+#card-banner-19 { background-image: url('/src/media/Fotos-alunos/foto10.webp'); }
+#card-banner-20 { background-image: url('/src/media/Fotos-alunos/foto11.webp'); }
+#card-banner-21 { background-image: url('/src/media/Fotos-alunos/foto12.webp'); }
+#card-banner-22 { background-image: url('/src/media/Fotos-alunos/foto13.webp'); }
+#card-banner-23 { background-image: url('/src/media/Fotos-alunos/foto14.webp'); }
 
 /* Estilos para Objetivos */
 .objetivos-container {
