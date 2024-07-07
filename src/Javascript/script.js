@@ -34,13 +34,13 @@ document.addEventListener('DOMContentLoaded', function() {
     nextBtn.addEventListener('click', nextCard);
     prevBtn.addEventListener('click', prevCard);
 
-    // Adicionar navegação por teclado
+    //navegação por teclado
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') prevCard();
         if (e.key === 'ArrowRight') nextCard();
     });
 
-    // Adicionar suporte para swipe em dispositivos touch
+    //suporte para swipe em dispositivos touch
     let touchStartX = 0;
     let touchEndX = 0;
 
@@ -64,11 +64,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Ajustar o carousel quando a janela é redimensionada
     window.addEventListener('resize', updateCarousel);
 
-    // Inicializar o carrossel no banner desejado
+    // Inicializar o carrossel no banner certo
     updateCarousel();
 });
-
-
 
 //ANTES E DEPOIS SLIDER
 document.addEventListener('DOMContentLoaded', function() {
@@ -116,13 +114,13 @@ document.addEventListener('DOMContentLoaded', function() {
     nextBtn.addEventListener('click', nextItem);
     prevBtn.addEventListener('click', prevItem);
 
-    // Adiciona navegação por teclado
+    //navegação por teclado
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') prevItem();
         if (e.key === 'ArrowRight') nextItem();
     });
 
-    // Adiciona suporte para swipe em dispositivos touch
+    //suporte para swipe em dispositivos touch
     let touchStartX = 0;
     let touchEndX = 0;
 
