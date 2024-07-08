@@ -1047,8 +1047,7 @@ font-size: 1.5rem;
 }
 
 }
-
-@media screen and (min-width: 481px) and (max-width: 1280px) {
+@media screen and (max-width: 1600px) {
     .atendimento-content {
         display: flex;
         flex-wrap: wrap;
@@ -1057,10 +1056,14 @@ font-size: 1.5rem;
     }
 
     .atendimento-item {
+        flex: 0 0 45%; /* Cada item ocupará aproximadamente 45% da largura do container */
         text-align: center; /* Centraliza o conteúdo dentro de cada item */
         margin-bottom: 20px; /* Espaçamento inferior entre os itens */
+        box-sizing: border-box; /* Inclui padding e border na largura e altura */
+        padding: 10px; /* Adiciona um pouco de padding ao redor de cada item */
     }
 }
+
 
 /* configuração de antes e depois  */
 
