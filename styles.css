@@ -111,7 +111,7 @@ html, body {
 #banner {
     background-color: #000000;
     text-align: center;
-    background-image: url('../media/naruto.webp');
+    background-image: url('imagens/naruto.webp');
     background-position: 50% 50%;
     background-size: cover;
     width: 100%;
@@ -211,31 +211,31 @@ html, body {
 }
 
 /* Estilos específicos para cada card-banner */
-#card-banner-1 { background-image: url('/src/media/desenhos/aguiaPS.webp'); }
-#card-banner-2 { background-image: url('/src/media/desenhos/arara2.webp'); }
-#card-banner-3 { background-image: url('/src/media/desenhos/borboleta.webp'); }
-#card-banner-4 { background-image: url('/src/media/desenhos/dino2.webp'); }
-#card-banner-5 { background-image: url('/src/media/desenhos/InstagramCapture_88f4e346-2bac-4d34-8554-5073a70fce71.webp'); }
-#card-banner-6 { background-image: url('/src/media/desenhos/20200602_075745.webp'); background-position: 40% 50%; }
-#card-banner-7 { background-image: url('/src/media/desenhos/20200602_075915.webp'); }
-#card-banner-8 { background-image: url('/src/media/desenhos/20200602_075959.webp'); }
-#card-banner-9 { background-image: url('/src/media/desenhos/IMG_20200416_160332_954.webp'); }
-#card-banner-10 { background-image: url('/src/media/Fotos-alunos/foto1.webp'); }
-#card-banner-11 { background-image: url('/src/media/Fotos-alunos/foto2.webp'); }
-#card-banner-12 { background-image: url('/src/media/Fotos-alunos/foto3.webp'); }
-#card-banner-13 { background-image: url('/src/media/Fotos-alunos/foto4.webp'); }
-#card-banner-14 { background-image: url('/src/media/Fotos-alunos/foto5.webp'); }
-#card-banner-15 { background-image: url('/src/media/Fotos-alunos/foto6.webp'); }
-#card-banner-16 { background-image: url('/src/media/Fotos-alunos/foto7.webp'); }
-#card-banner-17 { background-image: url('/src/media/Fotos-alunos/foto8.webp'); }
-#card-banner-18 { background-image: url('/src/media/Fotos-alunos/foto9.webp'); }
-#card-banner-19 { background-image: url('/src/media/Fotos-alunos/foto10.webp'); }
-#card-banner-20 { background-image: url('/src/media/Fotos-alunos/foto11.webp'); }
-#card-banner-21 { background-image: url('/src/media/Fotos-alunos/foto12.webp'); }
-#card-banner-22 { background-image: url('/src/media/Fotos-alunos/foto13.webp'); }
-#card-banner-23 { background-image: url('/src/media/Fotos-alunos/foto14.webp'); }
-#card-banner-24 { background-image: url('/src/media/Fotos-alunos/foto15.webp'); }
-#card-banner-25 { background-image: url('/src/media/Fotos-alunos/foto16.webp'); }
+#card-banner-1 { background-image: url('imagens/aguiaPS.webp'); }
+#card-banner-2 { background-image: url('imagens/arara2.webp'); }
+#card-banner-3 { background-image: url('imagens/borboleta.webp'); }
+#card-banner-4 { background-image: url('imagens/dino2.webp'); }
+#card-banner-5 { background-image: url('imagens/InstagramCapture_88f4e346-2bac-4d34-8554-5073a70fce71.webp'); }
+#card-banner-6 { background-image: url('imagens/20200602_075745.webp'); background-position: 40% 50%; }
+#card-banner-7 { background-image: url('imagens/20200602_075915.webp'); }
+#card-banner-8 { background-image: url('imagens/20200602_075959.webp'); }
+#card-banner-9 { background-image: url('imagens/IMG_20200416_160332_954.webp'); }
+#card-banner-10 { background-image: url('imagens/foto1.webp'); }
+#card-banner-11 { background-image: url('imagens/foto2.webp'); }
+#card-banner-12 { background-image: url('imagens/foto3.webp'); }
+#card-banner-13 { background-image: url('imagens/foto4.webp'); }
+#card-banner-14 { background-image: url('imagens/foto5.webp'); }
+#card-banner-15 { background-image: url('imagens/foto6.webp'); }
+#card-banner-16 { background-image: url('imagens/foto7.webp'); }
+#card-banner-17 { background-image: url('imagens/foto8.webp'); }
+#card-banner-18 { background-image: url('imagens/foto9.webp'); }
+#card-banner-19 { background-image: url('imagens/foto10.webp'); }
+#card-banner-20 { background-image: url('imagens/foto11.webp'); }
+#card-banner-21 { background-image: url('imagens/foto12.webp'); }
+#card-banner-22 { background-image: url('imagens/foto13.webp'); }
+#card-banner-23 { background-image: url('imagens/foto14.webp'); }
+#card-banner-24 { background-image: url('imagens/foto15.webp'); }
+#card-banner-25 { background-image: url('imagens/foto16.webp'); }
 
 
 /* Estilos para Objetivos */
@@ -287,15 +287,15 @@ html, body {
 }
 
 .image-1 {
-    background-image: url('../media/image1.webp');
+    background-image: url('imagens/image1.webp');
 }
 
 .image-2 {
-    background-image: url('../media/image2.webp');
+    background-image: url('imagens/image2.webp');
 }
 
 .image-3 {
-    background-image: url('../media/image3.webp');
+    background-image: url('imagens/image3.webp');
 }
 
 .text-container {
@@ -372,15 +372,15 @@ html, body {
 }
 
 #antes-depois-1 {
-    background-image: url('/src/media/Comparativos/MariaClara.webp');
+    background-image: url('imagens/MariaClara.webp');
 }
 
 #antes-depois-2 {
-    background-image: url('/src/media/Comparativos/Sofia.webp');
+    background-image: url('imagens/Sofia.webp');
 }
 
 #antes-depois-3 {
-    background-image: url('/src/media/Comparativos/Valentina.webp');
+    background-image: url('imagens/Valentina.webp');
 }
 
 .carousel-button {
@@ -573,19 +573,19 @@ html, body {
 }
 
 .atendimento-item:nth-child(1) .icon {
-    background-image: url('/src/media/1.webp');
+    background-image: url('imagens/1.webp');
 }
 
 .atendimento-item:nth-child(2) .icon {
-    background-image: url('/src/media/2.webp');
+    background-image: url('imagens/2.webp');
 }
 
 .atendimento-item:nth-child(3) .icon {
-    background-image: url('/src/media/3.webp');
+    background-image: url('imagens/3.webp');
 }
 
 .atendimento-item:nth-child(4) .icon {
-    background-image: url('/src/media/4.webp');
+    background-image: url('imagens/4.webp');
 }
 
 .atendimento-item h4 {
@@ -663,9 +663,9 @@ html, body {
     background-position: center;
 }
 
-#foto-curso-1 { background-image: url('./src/media/curso1.jpg'); }
-#foto-curso-2 { background-image: url('./src/media/curso2.jpg'); }
-#foto-curso-3 { background-image: url('./src/media/curso3.jpg'); }
+#foto-curso-1 { background-image: url('imagens/curso1.jpg'); }
+#foto-curso-2 { background-image: url('imagens/curso2.jpg'); }
+#foto-curso-3 { background-image: url('imagens/curso3.jpg'); }
 
 /* ícones da página */
 
@@ -737,19 +737,19 @@ font-size: 1.5rem;
 }
 
 #foto-curso-1 {
-    background-image: url('/src/media/fotos-do-estudio/estudioweb.webp');
+    background-image: url('imagens/estudioweb.webp');
 }
 
 #foto-curso-2 {
-    background-image: url('/src/media/fotos-do-estudio/estudioweb2.webp');
+    background-image: url('imagens/estudioweb2.webp');
 }
 
 #foto-curso-3 {
-    background-image: url('/src/media/bio.webp');
+    background-image: url('imagens/bio.webp');
 }
 
 #foto-curso-4 {
-    background-image: url('/src/media/shopping.webp');
+    background-image: url('imagens/shopping.webp');
 }
 
 .reserva-lugar-container {
@@ -1031,19 +1031,19 @@ font-size: 1.5rem;
 
 
 .atendimento-item:nth-child(1) .icon {
-    background-image: url('/src/media/1.webp');
+    background-image: url('imagens/1.webp');
 }
 
 .atendimento-item:nth-child(2) .icon {
-    background-image: url('/src/media/2.webp');
+    background-image: url('imagens/2.webp');
 }
 
 .atendimento-item:nth-child(3) .icon {
-    background-image: url('/src/media/3.webp');
+    background-image: url('imagens/3.webp');
 }
 
 .atendimento-item:nth-child(4) .icon {
-    background-image: url('/src/media/4.webp');
+    background-image: url('imagens/4.webp');
 }
 
 }
