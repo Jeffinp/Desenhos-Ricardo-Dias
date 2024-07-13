@@ -1333,3 +1333,14 @@ font-size: 1.5rem;
         text-align: left; 
     }
 }
+
+#foto-curso-3 {
+    color: white;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    align-items: flex-end;
+    font-size: 1.2rem;
+    text-shadow: 1px 4px 5px black;
+    justify-content: center;
+}
