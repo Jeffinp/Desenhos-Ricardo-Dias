@@ -1344,3 +1344,7 @@ font-size: 1.5rem;
     text-shadow: 1px 4px 5px black;
     justify-content: center;
 }
+
+.map-iframe {
+    border: 0;
+}
