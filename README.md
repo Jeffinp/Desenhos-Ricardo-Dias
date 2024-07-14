@@ -1,6 +1,6 @@
 # Desenhos Ricardo Dias
 
-<img src="https://github.com/Jeffinp/Desenhos-Ricardo-Dias/raw/main/src/media/LOGOTIPO.webp" alt="Logo" width="150" height="150">
+<img src="https://github.com/Jeffinp/Desenhos-Ricardo-Dias/blob/main/imagens/icon.ico" alt="Logo" width="150" height="150">
 
 Desenhos Ricardo Dias é um site que criei para um cliente que é professor de desenho. O site foca em otimização, SEO, acessibilidade, velocidade, fluidez e design atraente, com seções bem definidas para atrair diferentes tipos de alunos interessados em aprender a desenhar.
 
