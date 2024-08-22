@@ -8,40 +8,28 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
-    
 }
 
 html, body {
     overflow-x: hidden;
-    background-color: #eee8e8;
+    background-color: #f4f4f4;
+    font-family: 'Lato', sans-serif;
+    color: #333;
 }
-/* Estilo do cabeçalho */
+
 /* Estilo do cabeçalho */
 .header {
     position: fixed;
     width: 100%;
-    background-color: #000;
-    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    border-bottom: 5px solid #007bff;
-    text-align: center; /* Centraliza o texto para PC */
-}
-
-.header::before,
-.header::after {
-    content: '';
-    display: block;
-}
-
-.header::before {
-    margin-right: 10px; 
-}
-
-.header::after {
-    margin-left: 10px; 
+    border-bottom: 3px solid #007bff;
+    transition: all 0.3s ease;
 }
 
 .header .logotipo {
@@ -49,50 +37,50 @@ html, body {
     align-items: center;
     text-decoration: none;
     color: #fff;
+    margin-left: 120px;
 }
 
 .header .logotipo img {
-    width: 60px; 
-    margin-right: 10px;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+.header .logotipo img:hover {
+    transform: scale(1.1);
 }
 
 .header .logoname {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    font-family: "Lato", sans-serif;
+    font-family: "Play", sans-serif;
+    transition: color 0.3s ease;
 }
 
-.header .logoname:hover{
+.header .logoname:hover {
     color: #FA6800;
-    transition: 0.3s;
 }
 
 .mobile-nav-toggle {
     display: none;
-    background-color: #333;
+    background-color: transparent;
     color: #fff;
-    padding: 10px;
+    border: none;
+    font-size: 1.5rem;
     cursor: pointer;
-    text-align: center;
 }
 
 .mobile-nav {
     display: none;
     position: fixed;
-    top: 76px; /* Ajuste conforme necessário */
+    top: 76px;
     left: 0;
     width: 100%;
-    background-color: #333;
-}
-
-.mobile-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+    background-color: rgba(51, 51, 51, 0.95);
+    backdrop-filter: blur(10px);
 }
 
 .mobile-nav ul li {
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .mobile-nav ul li:last-child {
@@ -102,9 +90,13 @@ html, body {
 .mobile-nav ul li a {
     display: block;
     color: #fff;
-    text-decoration: none;
     padding: 15px;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Play', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.mobile-nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Estilos para o banner */
@@ -115,10 +107,13 @@ html, body {
     background-position: 50% 50%;
     background-size: cover;
     width: 100%;
-    height: 600px;
+    height: 90vh;
+    background-attachment: fixed;
     position: relative;
     overflow: hidden;
-    margin-top: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #banner::before {
@@ -128,78 +123,102 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(36, 35, 35, 0.205);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .banner-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
     z-index: 1;
     text-align: center;
-    width: 80%;
+    color: #fff;
+    max-width: 800px;
+    padding: 0 20px;
 }
 
+.banner-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-family: "Play", sans-serif;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.banner-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Aulas */
 .aulas {
-    padding: 20px 20px;
+    padding: 5rem 0;
     text-align: center;
+    background-color: #fff;
 }
 
 .aulas h2 {
-    font-size: 2em;
-    color: #0b5394;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 2rem;
     font-family: "Play", sans-serif;
     letter-spacing: 2px;
 }
+
+/* Cards de desenhos */
 .cards-de-desenhos {
-    background-color: #f2f2f2;
-    padding: 20px;
-    overflow: hidden;
+    background-color: #f8f9fa;
+    padding: 5rem 0;
 }
 
 .carousel-container {
     position: relative;
-    max-width: 1500px;
+    max-width: 1200px;
     margin: 0 auto;
     overflow: hidden;
 }
 
 .cards-contents {
     display: flex;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.5s ease;
 }
 
 .card-banner {
     flex: 0 0 calc(33.333% - 20px);
-    height: 500px;
+    height: 400px;
     background-color: #ddd;
     background-size: cover;
     background-position: 50% 50%;
-    border-radius: 10px;
+    border-radius: 15px;
     margin: 0 10px;
-    opacity: 0.5;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.card-banner.active {
+.card-banner:hover {
     opacity: 1;
-    transform: scale(1.05);
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
 .carousel-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-  
+    background-color: rgba(0,0,0,0.5);
     color: white;
     border: none;
-    padding: 10px 15px;
-    font-size: 18px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
     cursor: pointer;
-    z-index: 10;
     transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0,0,0,0.8);
 }
 
 .carousel-button.prev {
@@ -237,133 +256,160 @@ html, body {
 #card-banner-24 { background-image: url('imagens/foto15.webp'); }
 #card-banner-25 { background-image: url('imagens/foto16.webp'); }
 
-
 /* Estilos para Objetivos */
 .objetivos-container {
     display: flex;
+    flex-direction: column;
     text-align: center;
-    padding: 20px;
-    justify-content: center;
-    align-items: center;
+    padding: 5rem 2rem;
+    background-color:#f8f9fa;
 }
 
 .objetivos-container h2 {
-    font-size: 2.5em;
-    font-family: "Lato", sans-serif;
-    color: #0b5394;
+    font-size: 2.8rem;
+    font-family: "Play", sans-serif;
+    color: #007bff;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.objetivos-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: #007bff;
 }
 
 /* Estilos para Experiências, Técnicas, Criatividade */
 .image-container {
     display: flex;
-    justify-content: space-around; 
-    align-items: center; 
+    justify-content: center;
+    align-items: stretch;
     flex-wrap: wrap;
-    padding: 20px;
+    gap: 2rem;
+    padding: 4rem 2rem;
+    background-color: #ffffff;
 }
 
 .image-wrapper {
-    width: calc(30% - 20px); 
+    width: calc(33.333% - 2rem);
     text-align: center;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-    background-color: #f5f5f5;
-    border: 2px solid #ccc;
-    border-radius: 40px;
+    background-color: #ffffff;
+    border-radius: 15px;
     overflow: hidden;
-    transition: transform 0.3s ease; 
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .image-wrapper:hover {
-    transform: translateY(-10px); 
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
 .image {
     width: 100%;
-    height: 300px; 
+    height: 250px;
     background-size: cover;
-    background-position: 50%;
-    border-radius: 15px;
+    background-position: center;
+    transition: transform 0.3s ease;
 }
 
-.image-1 {
-    background-image: url('imagens/image1.webp');
+.image-wrapper:hover .image {
+    transform: scale(1.05);
 }
 
-.image-2 {
-    background-image: url('imagens/image2.webp');
-}
-
-.image-3 {
-    background-image: url('imagens/image3.webp');
-}
+.image-1 { background-image: url('imagens/image1.webp'); }
+.image-2 { background-image: url('imagens/image2.webp'); }
+.image-3 { background-image: url('imagens/image3.webp'); }
 
 .text-container {
-    padding: 20px;
+    padding: 1.5rem;
 }
 
 .text-container h3 {
-    font-size: 3em;
-    color: #0b5394;
-    margin-bottom: 10px;
-    font-family: "Lato", sans-serif;
-   
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-family: "Play", sans-serif;
+    transition: color 0.3s ease;
+}
+
+.image-wrapper:hover .text-container h3 {
+    color: #007bff;
 }
 
 .text-container p {
-    font-size: 1.2em;
-    color: #fa6800;
-    font-family: "Play", sans-serif;
-    font-weight: bold;
-    margin-bottom: 0;
+    font-size: 1rem;
+    color: #666;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
 }
-
 
 /* Estilos para Texto Jovens */
 .texto-jovens {
     display: flex;
-    text-align: center;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    height: 80px;
-    background-color: #1e6d94;;
+    padding: 2rem;
+    background-color: #007bff;
     font-family: "Play", sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.texto-jovens::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.05) 50%,
+        transparent 50%,
+        transparent 100%
+    );
+    transform: rotate(-45deg);
+    z-index: 1;
 }
 
 .texto-jovens p {
-    font-size: 1.5em;
+    font-size: 1.8rem;
     color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 2;
 }
 
 /* Estilos para Antes e Depois */
 .antes-depois {
-    background: linear-gradient(to bottom, #1e6d94, #0b5394);
-    padding: 20px;
-    overflow: hidden;
-}
-
-.carousel-container {
-    position: relative;
-    max-width: 1500px;
-    margin: 0 auto;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    padding: 4rem 2rem;
     overflow: hidden;
 }
 
 .antes-depois-carousel {
     display: flex;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.5s ease-in-out;
 }
 
 .antes-depois-item {
     flex: 0 0 100%;
-    height: 400px;
+    height: 500px;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    border-radius: 10px;
+    border-radius: 15px;
     margin: 0 10px;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .antes-depois-item.active {
@@ -371,84 +417,87 @@ html, body {
     transform: scale(1.05);
 }
 
-#antes-depois-1 {
-    background-image: url('imagens/MariaClara.webp');
-}
-
-#antes-depois-2 {
-    background-image: url('imagens/Sofia.webp');
-}
-
-#antes-depois-3 {
-    background-image: url('imagens/Valentina.webp');
-}
+#antes-depois-1 { background-image: url('imagens/MariaClara.webp'); }
+#antes-depois-2 { background-image: url('imagens/Sofia.webp'); }
+#antes-depois-3 { background-image: url('imagens/Valentina.webp'); }
 
 .carousel-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgb(99, 99, 255);
-    border-radius: 5px;
-    color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: #ffffff;
     border: none;
-    padding: 10px 15px;
-    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
     cursor: pointer;
     z-index: 10;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .carousel-button:hover {
-    color: rgb(99, 99, 255);
-    background-color: rgb(255, 255, 255);
-    transition: 0.3s;
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
-.carousel-button.prev {
-    left: 10px;
-}
-
-.carousel-button.next {
-    right: 10px;
-}
+.carousel-button.prev { left: 20px; }
+.carousel-button.next { right: 20px; }
 
 /* Estilos para Informação */
 .informacao-container {
-    background-color: #f9f9f9; 
-    padding: 40px 20px; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    margin: 20px 0; 
+    background-color: #ffffff;
+    padding: 5rem 2rem;
+    border-radius: 0;
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.05);
+    margin: 0;
 }
 
 .informacao-content {
-    max-width: 800px; 
-    margin: 0 auto; 
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .informacao-content h2 {
-    font-size: 2.5em; 
-    color: #0b5394; 
-    margin-bottom: 20px; 
-    font-family: "Play", sans-serif; 
+    font-size: 2.8rem;
+    color: #007bff;
+    margin-bottom: 2rem;
+    font-family: "Play", sans-serif;
+    text-align: center;
+    position: relative;
+}
+
+.informacao-content h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #007bff;
+    margin: 1rem auto 0;
 }
 
 .informacao-content p {
-    font-size: 1.2em; 
-    color: #333; 
-    line-height: 1.6;
-    font-family: "Play", sans-serif; 
-    margin: 10px 0; 
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    font-family: "Lato", sans-serif;
+    margin: 1.5rem 0;
+    position: relative;
+    padding-left: 30px;
 }
 
 .informacao-content p::before {
-    content: "• "; 
-    color: #FA6800; 
-    font-size: 1.5em; 
-    margin-right: 10px; 
-    vertical-align: middle; 
+    content: "•";
+    color: #007bff;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
-
 
 /* Divider com ícone */
 .divider {
@@ -479,7 +528,6 @@ html, body {
     font-size: 1.5em; 
 }
 
-
 /* Estilos para Depoimentos */
 .depoimentos-container {
     text-align: center;
@@ -488,7 +536,6 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .depoimentos-container h2 {
@@ -502,7 +549,6 @@ html, body {
     flex-direction: column;
     align-items: center;
     padding: 20px;
-   
 }
 
 .depoimentos-texto-content {
@@ -511,7 +557,6 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 }
 
 .depoimento {
@@ -538,7 +583,6 @@ html, body {
     font-family: "Lato", sans-serif;
 }
 
-
 /* Estilos para Atendimento */
 .atendimento-container {
     display: flex;
@@ -559,7 +603,9 @@ html, body {
 
 .atendimento-item {
     text-align: center;
-    padding: 10px;
+    padding: 10px
+
+;
     flex: 1;
 }
 
@@ -595,7 +641,7 @@ html, body {
     font-family: "Play", sans-serif;
 }
 
-
+/* Estilos para Localização */
 .local-container {
     padding: 40px 20px;
     background-color: #f9f9f9;
@@ -645,6 +691,7 @@ html, body {
     color: #e4405f;
 }
 
+/* Estilos para Fotos do Curso */
 .fotos-curso-container {
     padding: 40px 20px;
     background-color: #f2f2f2;
@@ -668,16 +715,15 @@ html, body {
 #foto-curso-3 { background-image: url('imagens/curso3.jpg'); }
 
 /* ícones da página */
-
 .contact-info i {
-color: #007BFF;
-font-size: 1.5rem;
+    color: #007BFF;
+    font-size: 1.5rem;
 }
 
 .contact-info p {
     font-size: 1.2rem;
 }
-    
+
 .icon-info i {
     font-size: 2rem; 
     color: #007BFF; 
@@ -723,7 +769,6 @@ font-size: 1.5rem;
     flex-wrap: wrap;
     width: 100%;
     max-width: 1200px;
-    
 }
 
 .foto-curso {
@@ -736,21 +781,10 @@ font-size: 1.5rem;
     border-radius: 5px;
 }
 
-#foto-curso-1 {
-    background-image: url('imagens/estudioweb.webp');
-}
-
-#foto-curso-2 {
-    background-image: url('imagens/estudioweb2.webp');
-}
-
-#foto-curso-3 {
-    background-image: url('imagens/bio.webp');
-}
-
-#foto-curso-4 {
-    background-image: url('imagens/shopping.webp');
-}
+#foto-curso-1 { background-image: url('imagens/estudioweb.webp'); }
+#foto-curso-2 { background-image: url('imagens/estudioweb2.webp'); }
+#foto-curso-3 { background-image: url('imagens/bio.webp'); }
+#foto-curso-4 { background-image: url('imagens/shopping.webp'); }
 
 .reserva-lugar-container {
     margin: 20px 0;
@@ -807,7 +841,6 @@ font-size: 1.5rem;
     color: #333;
     line-height: 1.6;
     margin-bottom: 20px;
-    
 }
 
 .contact-info p {
@@ -862,7 +895,6 @@ font-size: 1.5rem;
     margin: 0;
 }
 
-
 /* CONFIGURAÇÃO MOBILE */
 /* Estilos para o cabeçalho e nav em dispositivos móveis */
 @media screen and (max-width: 768px) {
@@ -878,17 +910,14 @@ font-size: 1.5rem;
         padding: 20px;
     }
 
-
     .informacao-content h2 {
         font-size: 2em;
     }
 
-    
     .informacao-content p {
         font-size: 1em;
         line-height: 1.6;
     }
-
 }
 
 /* PARA CARDS IMAGEN */
@@ -908,6 +937,14 @@ font-size: 1.5rem;
     .carousel-button {
         padding: 25px 10px;
     }
+
+    #banner {
+        background-size: cover;
+        background-position: 50% 50%;
+        background-size: cover;
+        width: 100%;
+        height: 60vh;
+    }
 }
 
 /* Adaptação específica para a seção 'E quem pode aprender?' em dispositivos móveis */
@@ -918,135 +955,133 @@ font-size: 1.5rem;
     }
 }
 
-
 @media screen and (max-width: 768px) {
-.image-container {
-    display: flex;
-    overflow: hidden; /* Esconde conteúdo além do contêiner */
-    position: relative; /* Necessário para controlar a posição dos slides */
-}
+    .image-container {
+        display: flex;
+        overflow: hidden; /* Esconde conteúdo além do contêiner */
+        position: relative; /* Necessário para controlar a posição dos slides */
+    }
 
-.image-wrapper {
-    flex: 0 0 100%; /* Ocupa 100% da largura inicialmente */
-    transition: transform 0.5s ease; /* Transição suave de deslize */
-}
+    .image-wrapper {
+        flex: 0 0 100%; /* Ocupa 100% da largura inicialmente */
+        transition: transform 0.5s ease; /* Transição suave de deslize */
+    }
 
-.image {
-    width: 100%;
-    height: 400px; /* Altura ajustada para exemplo */
-    background-size: cover;
-    background-position: 50%;
-}
-.texto-jovens {
-    height: 150px;
-}
-.text-container {
-    padding: 20px;
-    text-align: center;
-}
+    .image {
+        width: 100%;
+        height: 400px; /* Altura ajustada para exemplo */
+        background-size: cover;
+        background-position: 50%;
+    }
+    
+    .texto-jovens
 
-.text-container h2 {
-    font-size: 3em;
-    color: #0b5394;
-    margin-bottom: 10px;
-    font-family: "Lato", sans-serif;
-}
+ {
+        height: 150px;
+    }
 
-.text-container p {
-    font-size: 1em;
-    color: #FA6800;
-    font-family: "Play", sans-serif;
-    font-weight: bold;
-    margin-bottom: 0;
-}
-}
+    .text-container {
+        padding: 20px;
+        text-align: center;
+    }
 
-@media screen and (max-width: 768px) {
+    .text-container h2 {
+        font-size: 3em;
+        color: #0b5394;
+        margin-bottom: 10px;
+        font-family: "Lato", sans-serif;
+    }
 
-
-/* CSS para Fotos do Curso */
-.fotos-curso-container {
-    padding: 20px;
-}
-
-.fotos-curso-content {
-    display: flex;
-    flex-wrap: wrap; /* Permite que as fotos sejam organizadas em linhas e colunas */
-    gap: 20px; /* Espaçamento entre as fotos */
-}
-
-.foto-curso {
-    flex: 1 0 calc(50% - 20px); /* Cada foto ocupa metade da largura disponível, com espaço entre elas */
-    height: 300px; /* Altura das fotos */
-    background-size: cover;
-    border-radius: 10px;
-}
-
-
-
-@media screen and (min-width: 768px) {
-    .foto-curso {
-        flex-basis: calc(25% - 20px); /* Cada foto ocupa um quarto da largura disponível */
+    .text-container p {
+        font-size: 1em;
+        color: #FA6800;
+        font-family: "Play", sans-serif;
+        font-weight: bold;
+        margin-bottom: 0;
     }
 }
 
-/* Estilos para Atendimento */
-.atendimento-container {
-    padding: 20px;
-    background-color: #f5f5f5;
-    text-align: center; /* Centraliza o conteúdo em telas menores */
+@media screen and (max-width: 768px) {
+    /* CSS para Fotos do Curso */
+    .fotos-curso-container {
+        padding: 20px;
+    }
+
+    .fotos-curso-content {
+        display: flex;
+        flex-wrap: wrap; /* Permite que as fotos sejam organizadas em linhas e colunas */
+        gap: 20px; /* Espaçamento entre as fotos */
+    }
+
+    .foto-curso {
+        flex: 1 0 calc(50% - 20px); /* Cada foto ocupa metade da largura disponível, com espaço entre elas */
+        height: 300px; /* Altura das fotos */
+        background-size: cover;
+        border-radius: 10px;
+    }
+
+    @media screen and (min-width: 768px) {
+        .foto-curso {
+            flex-basis: calc(25% - 20px); /* Cada foto ocupa um quarto da largura disponível */
+        }
+    }
+
+    /* Estilos para Atendimento */
+    .atendimento-container {
+        padding: 20px;
+        background-color: #f5f5f5;
+        text-align: center; /* Centraliza o conteúdo em telas menores */
+    }
+
+    .atendimento-content {
+        display: flex;
+        flex-direction: column; /* Empilha os itens verticalmente em telas menores */
+        gap: 20px;
+        max-width: 600px; /* Limita a largura máxima dos itens para melhor legibilidade */
+        margin: 0 auto; /* Centraliza o container */
+    }
+
+    .atendimento-item {
+        background-color: #fff;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .atendimento-item .icon {
+        width: 80px;
+        height: 80px;
+        background-size: cover;
+        flex-shrink: 0; /* Evita que o ícone seja reduzido em tamanhos menores */
+        margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+    }
+
+    .atendimento-item h4 {
+        font-size: 1em;
+        color: #0b5394;
+        font-family: "Play", sans-serif;
+        margin: 0;
+        flex-grow: 1; /* Ocupa todo o espaço disponível */
+    }
+
+    .atendimento-item:nth-child(1) .icon {
+        background-image: url('imagens/1.webp');
+    }
+
+    .atendimento-item:nth-child(2) .icon {
+        background-image: url('imagens/2.webp');
+    }
+
+    .atendimento-item:nth-child(3) .icon {
+        background-image: url('imagens/3.webp');
+    }
+
+    .atendimento-item:nth-child(4) .icon {
+        background-image: url('imagens/4.webp');
+    }
 }
 
-.atendimento-content {
-    display: flex;
-    flex-direction: column; /* Empilha os itens verticalmente em telas menores */
-    gap: 20px;
-    max-width: 600px; /* Limita a largura máxima dos itens para melhor legibilidade */
-    margin: 0 auto; /* Centraliza o container */
-}
-
-.atendimento-item {
-    background-color: #fff;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-}
-
-.atendimento-item .icon {
-    width: 80px;
-    height: 80px;
-    background-size: cover;
-    flex-shrink: 0; /* Evita que o ícone seja reduzido em tamanhos menores */
-    margin-right: 10px; /* Espaçamento entre o ícone e o texto */
-}
-
-.atendimento-item h4 {
-    font-size: 1em;
-    color: #0b5394;
-    font-family: "Play", sans-serif;
-    margin: 0;
-    flex-grow: 1; /* Ocupa todo o espaço disponível */
-}
-
-
-.atendimento-item:nth-child(1) .icon {
-    background-image: url('imagens/1.webp');
-}
-
-.atendimento-item:nth-child(2) .icon {
-    background-image: url('imagens/2.webp');
-}
-
-.atendimento-item:nth-child(3) .icon {
-    background-image: url('imagens/3.webp');
-}
-
-.atendimento-item:nth-child(4) .icon {
-    background-image: url('imagens/4.webp');
-}
-
-}
 @media screen and (max-width: 1600px) {
     .atendimento-content {
         display: flex;
@@ -1064,9 +1099,7 @@ font-size: 1.5rem;
     }
 }
 
-
-/* configuração de antes e depois  */
-
+/* configuração de antes e depois */
 @media screen and (min-width: 768px) {
     .antes-depois-item {
         flex: 0 0 calc(50% - 40px);
@@ -1089,8 +1122,6 @@ font-size: 1.5rem;
 }
 
 /* configuração do header */
-
-
 @media screen and (max-width: 768px) {
     .mobile-nav-toggle {
         display: block;
@@ -1150,8 +1181,6 @@ font-size: 1.5rem;
         transition: 0.3s;
         transform: scale(1.1);
     }
-
-    
 }
 
 @media (max-width: 768px) {
@@ -1162,7 +1191,6 @@ font-size: 1.5rem;
     .beneficios-container .divider span {
         font-size: 1.5em;
     }
-    
 }
 
 /* Estilos para a seção de cursos */
@@ -1231,17 +1259,17 @@ font-size: 1.5rem;
     margin-top: 130px;
 }
 
-    /* Estilos para o mobile */
-    @media (max-width: 768px) {
-        .cursos-container {
-            max-width: 90%; /* Reduz a largura máxima para telas menores */
-        }
-
-        .imagem-centro {
-            max-width: 80%; /* Ajusta o tamanho máximo da imagem para telas menores */
-            margin-top: 150px; /* Reduz o espaçamento superior da imagem */
-        }
+/* Estilos para o mobile */
+@media (max-width: 768px) {
+    .cursos-container {
+        max-width: 90%; /* Reduz a largura máxima para telas menores */
     }
+
+    .imagem-centro {
+        max-width: 80%; /* Ajusta o tamanho máximo da imagem para telas menores */
+        margin-top: 150px; /* Reduz o espaçamento superior da imagem */
+    }
+}
 
 /* ÁREA DE DÚVIDAS */
 .beneficios-container {
@@ -1265,7 +1293,9 @@ font-size: 1.5rem;
 }
 
 .beneficios-container .divider span {
-    font-size: 1.5em; /* Reduz o tamanho do emoji na divisória para telas menores */
+    font-size: 1.5em; /* Reduz o
+
+ tamanho do emoji na divisória para telas menores */
 }
 
 .beneficios-container p {
@@ -1329,6 +1359,7 @@ font-size: 1.5rem;
     .beneficios-container {
         max-width: 90%;
     }
+    
     .italic {
         text-align: left; 
     }
