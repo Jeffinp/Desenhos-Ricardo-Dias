@@ -1,72 +1,40 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const slider = document.getElementById('card-slider');
-    const cards = Array.from(slider.getElementsByClassName('card-banner'));
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
-    const initialIndex = 9; // Índice para começar no banner 10 (índice baseado em 0)
-    let currentIndex = initialIndex;
+document.addEventListener('DOMContentLoaded', () => {
+    const carouselContents = document.getElementById('card-slider');
+    const cards = document.querySelectorAll('.card-banner');
+    const prevButton = document.querySelector('.carousel-button.prev');
+    const nextButton = document.querySelector('.carousel-button.next');
+    const cardWidth = cards[0].offsetWidth + 20; // Inclui a margem
+    
+    let currentIndex = 10;
+    const totalCards = cards.length;
 
     function updateCarousel() {
-        const cardWidth = cards[0].offsetWidth + 20; // Width + margin
-        const visibleCards = window.innerWidth > 1365 ? 3 : window.innerWidth > 768 ? 2 : 1;
-
-        slider.style.transition = 'transform 0.3s ease-in-out';
-        slider.style.transform = `translateX(${-currentIndex * cardWidth}px)`;
-
-        // Atualizar a classe active
-        cards.forEach((card, index) => {
-            card.classList.toggle('active', index >= currentIndex && index < currentIndex + visibleCards);
-        });
+        carouselContents.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
     }
 
-    function nextCard() {
-        const visibleCards = window.innerWidth > 1365 ? 3 : window.innerWidth > 768 ? 2 : 1;
-        currentIndex = (currentIndex + visibleCards) % cards.length;
+    function showNextCard() {
+        currentIndex = (currentIndex + 1) % totalCards;
         updateCarousel();
     }
 
-    function prevCard() {
-        const visibleCards = window.innerWidth > 1365 ? 3 : window.innerWidth > 768 ? 2 : 1;
-        currentIndex = (currentIndex - visibleCards + cards.length) % cards.length;
+    function showPreviousCard() {
+        currentIndex = (currentIndex - 1 + totalCards) % totalCards;
         updateCarousel();
     }
 
-    nextBtn.addEventListener('click', nextCard);
-    prevBtn.addEventListener('click', prevCard);
+    nextButton.addEventListener('click', showNextCard);
+    prevButton.addEventListener('click', showPreviousCard);
 
-    //navegação por teclado
+    // Opcional: Adicionar navegação por teclado
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') prevCard();
-        if (e.key === 'ArrowRight') nextCard();
+        if (e.key === 'ArrowRight') showNextCard();
+        if (e.key === 'ArrowLeft') showPreviousCard();
     });
 
-    //suporte para swipe em dispositivos touch
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    slider.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    });
-
-    slider.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    });
-
-    function handleSwipe() {
-        if (touchStartX - touchEndX > 50) {
-            nextCard();
-        } else if (touchEndX - touchStartX > 50) {
-            prevCard();
-        }
-    }
-
-    // Ajustar o carousel quando a janela é redimensionada
-    window.addEventListener('resize', updateCarousel);
-
-    // Inicializar o carrossel no banner certo
+    // Inicializar o carrossel
     updateCarousel();
 });
+
 
 //ANTES E DEPOIS SLIDER
 document.addEventListener('DOMContentLoaded', function() {

@@ -177,48 +177,56 @@ html, body {
 
 .cards-contents {
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease-in-out;
 }
 
 .card-banner {
     flex: 0 0 calc(33.333% - 20px);
-    height: 400px;
-    background-color: #ddd;
-    background-size: cover;
-    background-position: 50% 50%;
     border-radius: 15px;
     margin: 0 10px;
     opacity: 0.8;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+}
+
+.card-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 15px;
 }
 
 .card-banner:hover {
     opacity: 1;
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .carousel-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.5);
-    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    color: #ffffff;
     border: none;
     width: 50px;
     height: 50px;
-    border-radius: 50%;
     font-size: 24px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    z-index: 10;
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .carousel-button:hover {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .carousel-button.prev {
@@ -228,33 +236,6 @@ html, body {
 .carousel-button.next {
     right: 10px;
 }
-
-/* Estilos específicos para cada card-banner */
-#card-banner-1 { background-image: url('imagens/aguiaPS.webp'); }
-#card-banner-2 { background-image: url('imagens/arara2.webp'); }
-#card-banner-3 { background-image: url('imagens/borboleta.webp'); }
-#card-banner-4 { background-image: url('imagens/dino2.webp'); }
-#card-banner-5 { background-image: url('imagens/InstagramCapture_88f4e346-2bac-4d34-8554-5073a70fce71.webp'); }
-#card-banner-6 { background-image: url('imagens/20200602_075745.webp'); background-position: 40% 50%; }
-#card-banner-7 { background-image: url('imagens/20200602_075915.webp'); }
-#card-banner-8 { background-image: url('imagens/20200602_075959.webp'); }
-#card-banner-9 { background-image: url('imagens/IMG_20200416_160332_954.webp'); }
-#card-banner-10 { background-image: url('imagens/foto1.webp'); }
-#card-banner-11 { background-image: url('imagens/foto2.webp'); }
-#card-banner-12 { background-image: url('imagens/foto3.webp'); }
-#card-banner-13 { background-image: url('imagens/foto4.webp'); }
-#card-banner-14 { background-image: url('imagens/foto5.webp'); }
-#card-banner-15 { background-image: url('imagens/foto6.webp'); }
-#card-banner-16 { background-image: url('imagens/foto7.webp'); }
-#card-banner-17 { background-image: url('imagens/foto8.webp'); }
-#card-banner-18 { background-image: url('imagens/foto9.webp'); }
-#card-banner-19 { background-image: url('imagens/foto10.webp'); }
-#card-banner-20 { background-image: url('imagens/foto11.webp'); }
-#card-banner-21 { background-image: url('imagens/foto12.webp'); }
-#card-banner-22 { background-image: url('imagens/foto13.webp'); }
-#card-banner-23 { background-image: url('imagens/foto14.webp'); }
-#card-banner-24 { background-image: url('imagens/foto15.webp'); }
-#card-banner-25 { background-image: url('imagens/foto16.webp'); }
 
 /* Estilos para Objetivos */
 .objetivos-container {
@@ -404,12 +385,20 @@ html, body {
 .antes-depois-item {
     flex: 0 0 100%;
     height: 500px;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 15px;
     margin: 0 10px;
     transition: all 0.3s ease;
+    overflow: hidden; /* Para garantir que a imagem não saia da div */
+}
+
+.antes-depois-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 15px;
 }
 
 .antes-depois-item.active {
@@ -417,11 +406,7 @@ html, body {
     transform: scale(1.05);
 }
 
-#antes-depois-1 { background-image: url('imagens/MariaClara.webp'); }
-#antes-depois-2 { background-image: url('imagens/Sofia.webp'); }
-#antes-depois-3 { background-image: url('imagens/Valentina.webp'); }
-
-.carousel-button {
+.carousel-button2 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
