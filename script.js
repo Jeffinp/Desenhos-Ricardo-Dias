@@ -1,24 +1,49 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const carouselContents = document.getElementById('card-slider');
+    const carouselContents = document.querySelector('.cards-contents');
     const cards = document.querySelectorAll('.card-banner');
     const prevButton = document.querySelector('.carousel-button.prev');
     const nextButton = document.querySelector('.carousel-button.next');
-    const cardWidth = cards[0].offsetWidth + 20; // Inclui a margem
-    
+    const cardMargin = 20; // Margem horizontal aplicada às cartas
+    const cardsPerViewLarge = 3; // Imagens visíveis em telas grandes
+    const cardsPerViewMedium = 2; // Imagens visíveis em tamanhos entre 820px e 1024px
+    const cardsPerViewSmall = 1; // Imagens visíveis em dispositivos móveis
+
     let currentIndex = 10;
+    let cardsPerView = cardsPerViewLarge;
     const totalCards = cards.length;
 
     function updateCarousel() {
+        const cardWidth = cards[0].offsetWidth + cardMargin;
         carouselContents.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
     }
 
     function showNextCard() {
-        currentIndex = (currentIndex + 1) % totalCards;
+        if (currentIndex + cardsPerView < totalCards) {
+            currentIndex += cardsPerView;
+        } else {
+            currentIndex = 0; // Retorna ao início se atingir o final
+        }
         updateCarousel();
     }
 
     function showPreviousCard() {
-        currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+        if (currentIndex - cardsPerView >= 0) {
+            currentIndex -= cardsPerView;
+        } else {
+            currentIndex = totalCards - cardsPerView; // Vai para o final se estiver no início
+        }
+        updateCarousel();
+    }
+
+    function updateCardsPerView() {
+        if (window.matchMedia('(max-width: 820px)').matches) {
+            cardsPerView = cardsPerViewSmall;
+        } else if (window.matchMedia('(max-width: 1024px)').matches) {
+            cardsPerView = cardsPerViewMedium;
+        } else {
+            cardsPerView = cardsPerViewLarge;
+        }
+        currentIndex = Math.min(currentIndex, totalCards - cardsPerView); // Ajusta o índice atual
         updateCarousel();
     }
 
@@ -31,8 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'ArrowLeft') showPreviousCard();
     });
 
-    // Inicializar o carrossel
-    updateCarousel();
+    // Atualiza o carrossel ao redimensionar a tela
+    window.addEventListener('resize', updateCardsPerView);
+
+    // Inicializa o carrossel
+    updateCardsPerView();
 });
 
 
