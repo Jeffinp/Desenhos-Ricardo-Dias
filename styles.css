@@ -1104,6 +1104,7 @@ html, body {
         margin: 0 30px;
         background-size: cover;
     }
+    
 }
 
 /* configuração do header */
@@ -1118,6 +1119,11 @@ html, body {
     
     .mobile-nav.active {
         display: block;
+    }
+    
+    .carousel-button2 {
+        right: 10px; /* Coloca o botão à direita no mobile */
+        left: auto; /* Remove qualquer valor left que possa estar presente */
     }
 }
 
