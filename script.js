@@ -64,6 +64,27 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+
+    mobileNavToggle.addEventListener('click', function() {
+        if (mobileNav.classList.contains('open')) {
+            mobileNav.classList.remove('open');
+            mobileNav.style.maxHeight = '0'; // Reseta a altura máxima
+            mobileNav.style.opacity = '0'; // Reseta a opacidade
+        } else {
+            mobileNav.classList.add('open');
+            mobileNav.style.maxHeight = mobileNav.scrollHeight + 'px'; // Ajusta a altura máxima para a altura real do conteúdo
+            mobileNav.style.opacity = '1'; // Torna visível
+        }
+    });
+});
+
+
+
+
 //ANTES E DEPOIS SLIDER
 document.addEventListener('DOMContentLoaded', function() {
     const slider = document.getElementById('antes-depois-slider');

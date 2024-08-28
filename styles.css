@@ -21,62 +21,90 @@ html, body {
 .header {
     position: fixed;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente */
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
     padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    border-bottom: 3px solid #007bff;
-    transition: all 0.3s ease;
+    border-bottom: 3px solid #007bff; /* Borda inferior azul */
+    transition: background-color 0.3s ease, padding 0.3s ease; /* Transição suave */
 }
 
+.header.scrolled {
+    background-color: rgba(0, 0, 0, 1); /* Fundo sólido quando rolar */
+    padding: 0.5rem 5%; /* Reduz o padding ao rolar */
+}
+
+/* Estilo do logotipo */
 .header .logotipo {
     display: flex;
     align-items: center;
     text-decoration: none;
     color: #fff;
-    margin-left: 120px;
 }
 
 .header .logotipo img {
     margin-right: 15px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Efeito suave de transformação e filtro */
 }
 
 .header .logotipo img:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Aumenta o logo ao passar o mouse */
+    filter: brightness(1.2); /* Aumenta o brilho do logo ao passar o mouse */
 }
 
 .header .logoname {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.8rem; /* Aumenta o tamanho da fonte */
+    font-weight: 600; /* Peso da fonte mais leve */
     font-family: "Play", sans-serif;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Efeito suave de cor e sombra */
 }
 
 .header .logoname:hover {
-    color: #FA6800;
+    color: #FA6800; /* Cor de destaque ao passar o mouse */
+    text-shadow: 0 0 10px rgba(250, 104, 0, 0.5); /* Sombra ao passar o mouse */
 }
 
+/* Estilo do menu móvel */
 .mobile-nav-toggle {
-    display: none;
+    display: block; /* Mostra o botão para dispositivos móveis */
     background-color: transparent;
     color: #fff;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.8rem; /* Aumenta o ícone */
     cursor: pointer;
 }
 
+/* Estilo do menu móvel */
 .mobile-nav {
-    display: none;
+    display: block; /* Inicialmente exibido para cálculo */
     position: fixed;
-    top: 76px;
+    top: 95px;
     left: 0;
     width: 100%;
-    background-color: rgba(51, 51, 51, 0.95);
-    backdrop-filter: blur(10px);
+    background-color: rgba(51, 51, 51, 0.95); /* Fundo escuro transparente */
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para destacar o menu */
+    overflow: hidden; /* Garante que o conteúdo não transborde durante a animação */
+    max-height: 0; /* Inicialmente escondido */
+    opacity: 0; /* Inicialmente invisível */
+    transition: max-height 0.4s ease, opacity 0.4s ease; /* Transição suave */
+    z-index: 999; /* Garante que o menu fique acima de outros elementos */
+}
+
+/* Abre o menu móvel */
+.mobile-nav.open {
+    display: block; /* Torna o menu visível */
+    max-height: 500px; /* Define uma altura máxima para animação */
+    opacity: 1; /* Torna o menu visível */
+}
+
+.mobile-nav ul {
+    list-style: none; /* Remove marcadores da lista */
+    padding: 0;
+    margin: 0;
 }
 
 .mobile-nav ul li {
@@ -96,14 +124,44 @@ html, body {
 }
 
 .mobile-nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo ao passar o mouse */
+}
+
+/* Estilo da navegação desktop */
+.desktop-nav {
+    display: flex; /* Exibe o menu para desktop */
+}
+
+.desktop-nav ul {
+    list-style: none; /* Remove marcadores da lista */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Layout horizontal */
+}
+
+.desktop-nav ul li {
+    margin-left: 20px; /* Espaçamento entre itens do menu */
+}
+
+.desktop-nav ul li a {
+    color: #fff;
+    font-size: 1rem; /* Tamanho da fonte */
+    font-family: 'Play', sans-serif;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.desktop-nav ul li a:hover {
+    color: #FA6800; /* Cor ao passar o mouse */
 }
 
 /* Estilos para o banner */
 #banner {
-    background-color: #000000;
+    background-color: #000; /* Preto sólido */
     background-image: url('imagens/naruto.webp');
-    background-position: center center;
+    background-position: center;
     background-size: cover;
     width: 100%;
     height: 90vh;
@@ -112,8 +170,9 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #fff; /* Texto branco por padrão */
+    text-align: center; /* Centraliza o texto */
 }
-
 
 #banner::before {
     content: "";
@@ -122,49 +181,54 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.096);
+    background: rgba(0, 0, 0, 0.3); /* Escurece o fundo para melhorar a legibilidade do texto */
 }
 
 .banner-content {
     position: relative;
     z-index: 1;
-    text-align: center;
-    color: #fff;
-    max-width: 800px;
+    max-width: 90%; /* Ajusta a largura máxima */
     padding: 0 20px;
 }
 
 .banner-content h1 {
-    font-size: 3.5rem;
+    font-size: 4rem; /* Tamanho maior do título para mais impacto */
     margin-bottom: 1rem;
     font-family: "Play", sans-serif;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    font-weight: bold; /* Negrito para destaque */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6); /* Sombra mais pronunciada */
 }
 
-.banner-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
-
-/* Aulas */
+/* Aulas Presenciais */
 .aulas {
-    padding: 5rem 0;
+    padding: 5rem 2rem; /* Ajusta o padding para dispositivos móveis */
     text-align: center;
-    background-color: #fff;
+    background-color: #f8f9fa; /* Cor de fundo suave */
+    border-top: 2px solid #007bff; /* Linha superior para destaque */
 }
 
 .aulas h2 {
-    font-size: 2.5rem;
-    color: #007bff;
+    font-size: 3rem; /* Tamanho maior do subtítulo */
+    color: #007bff; /* Cor do texto */
     margin-bottom: 2rem;
     font-family: "Play", sans-serif;
-    letter-spacing: 2px;
+    font-weight: bold; /* Negrito para destaque */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+.aulas p {
+    font-size: 1.2rem; /* Tamanho da fonte para o texto */
+    color: #333; /* Cor do texto */
+    line-height: 1.6; /* Melhora a legibilidade */
+    max-width: 800px; /* Limita a largura do parágrafo */
+    margin-left: auto;
+    margin-right: auto; /* Centraliza o texto */
 }
 
 /* Cards de desenhos */
 .cards-de-desenhos {
-    background-color: #f8f9fa;
-    padding: 5rem 0;
+    background-color: #f0f2f5; /* Cor de fundo mais suave */
+    padding: 5rem 2rem; /* Ajusta o padding para dispositivos móveis */
 }
 
 .carousel-container {
@@ -172,6 +236,8 @@ html, body {
     max-width: 1200px;
     margin: 0 auto;
     overflow: hidden;
+    border-radius: 15px; /* Adiciona bordas arredondadas ao container */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra mais suave ao container */
 }
 
 .cards-contents {
@@ -183,13 +249,9 @@ html, body {
     flex: 0 0 calc(33.333% - 20px);
     border-radius: 15px;
     margin: 0 10px;
-    opacity: 0.8;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     overflow: hidden; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Sombra mais suave */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Transições mais suaves */
 }
 
 .card-banner img {
@@ -200,16 +262,15 @@ html, body {
 }
 
 .card-banner:hover {
-    opacity: 1;
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Aumenta o tamanho do cartão com efeito suave */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
 }
 
 .carousel-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6); /* Escurece o fundo dos botões */
     border-radius: 50%;
     color: #ffffff;
     border: none;
@@ -218,23 +279,25 @@ html, body {
     font-size: 24px;
     cursor: pointer;
     z-index: 10;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .carousel-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8); /* Escurece o fundo ao passar o mouse */
+    transform: scale(1.1); /* Aumenta o botão com efeito suave */
 }
 
 .carousel-button.prev {
-    left: 10px;
+    left: 15px;
 }
 
 .carousel-button.next {
-    right: 10px;
+    right: 15px;
 }
+
 
 /* Estilos para Objetivos */
 .objetivos-container {
@@ -341,6 +404,7 @@ html, body {
     font-family: "Play", sans-serif;
     position: relative;
     overflow: hidden;
+    text-align: center; /* Centraliza o texto */
 }
 
 .texto-jovens::before {
@@ -359,6 +423,7 @@ html, body {
     );
     transform: rotate(-45deg);
     z-index: 1;
+    pointer-events: none; /* Garante que o gradiente não bloqueie a interação com o texto */
 }
 
 .texto-jovens p {
@@ -367,18 +432,31 @@ html, body {
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
     position: relative;
     z-index: 2;
+    margin: 0; /* Remove margem padrão para melhor alinhamento */
 }
+
 
 /* Estilos para Antes e Depois */
 .antes-depois {
     background: linear-gradient(135deg, #007bff, #0056b3);
     padding: 4rem 2rem;
     overflow: hidden;
+    position: relative; /* Para posicionar os botões de navegação */
+}
+
+.carousel-container2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    overflow: hidden; /* Oculta o conteúdo que sai da área do container */
+    border-radius: 15px;
 }
 
 .antes-depois-carousel {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    width: 100%;
 }
 
 .antes-depois-item {
@@ -390,7 +468,7 @@ html, body {
     border-radius: 15px;
     margin: 0 10px;
     transition: all 0.3s ease;
-    overflow: hidden; /* Para garantir que a imagem não saia da div */
+    overflow: hidden; /* Garante que a imagem não saia da div */
 }
 
 .antes-depois-item img {
@@ -400,36 +478,36 @@ html, body {
     border-radius: 15px;
 }
 
-.antes-depois-item.active {
-    opacity: 1;
-    transform: scale(1.05);
-}
-
 .carousel-button2 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background-color: rgba(255, 255, 255, 0.84);
     border-radius: 50%;
-    color: #000000;
+    color: #000;
     border: none;
     width: 50px;
     height: 50px;
     font-size: 24px;
     cursor: pointer;
     z-index: 10;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .carousel-button2:hover {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
-.carousel-button2.prev { left: 20px; }
-.carousel-button2.next { right: 20px; }
+.carousel-button2.prev {
+    left: 20px;
+}
+
+.carousel-button2.next {
+    right: 20px;
+}
 
 /* Estilos para Informação */
 .informacao-container {
@@ -514,18 +592,16 @@ html, body {
 
 /* Estilos para Depoimentos */
 .depoimentos-container {
-    text-align: center;
     padding: 20px;
     background-color: #0b5394;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
 }
 
 .depoimentos-container h2 {
     font-size: 2em;
     color: #ffffff;
     font-family: "Play", sans-serif;
+    margin-bottom: 20px;
 }
 
 .depoimentos-texto-container {
@@ -548,20 +624,21 @@ html, body {
     max-width: 700px;
     padding: 20px;
     margin-bottom: 20px;
-    background-color: #f2f2f2;
+    background-color: #f9f9f9;
     text-align: center;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .depoimento p {
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: #333;
     line-height: 1.6;
     font-family: "Play", sans-serif;
 }
 
 .depoimento h3 {
-    font-size: 1.2em;
+    font-size: 1.3em;
     color: #0b5394;
     margin-top: 10px;
     font-family: "Lato", sans-serif;
@@ -569,33 +646,30 @@ html, body {
 
 /* Estilos para Atendimento */
 .atendimento-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 20px;
+    background-color: #f5f5f5;
     text-align: center;
 }
 
 .atendimento-content {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    max-width: 80%;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .atendimento-item {
     text-align: center;
-    padding: 10px
-
-;
-    flex: 1;
+    padding: 15px;
+    flex: 1 1 22%;
+    box-sizing: border-box;
 }
 
 .icon {
-    width: 350px; 
-    height: 350px; 
+    width: 200px; 
+    height: 200px; 
     background-size: cover;
     background-position: center;
     margin: 0 auto 10px; 
@@ -619,11 +693,12 @@ html, body {
 }
 
 .atendimento-item h4 {
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: #0b5394;
     margin-top: 10px;
     font-family: "Play", sans-serif;
 }
+
 
 /* Estilos para Localização */
 .local-container {
@@ -638,21 +713,37 @@ html, body {
 }
 
 .local-content h2 {
-    font-size: 28px;
+    font-size: 32px; /* Aumenta o tamanho do título para maior destaque */
     margin-bottom: 20px;
+    color: #333; /* Cor do título ajustada para um contraste melhor */
 }
 
-.local-content p {
+.local-text p {
     font-size: 18px;
     color: #666;
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Ajusta o espaçamento entre os parágrafos */
+}
+
+.local-text p:last-of-type {
+    font-weight: bold; /* Destaca o último parágrafo com negrito */
+    color: #333; /* Ajusta a cor para destacar informações importantes */
 }
 
 .map-container {
-    width: 100%;
-    height: 400px;
+    margin-top: 30px; /* Adiciona espaçamento acima do mapa para separar do texto */
 }
 
+.map-iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 8px; /* Cantos arredondados para o iframe */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra para destacar o mapa */
+    max-width: 100%; /* Garante que o mapa não exceda o container em dispositivos menores */
+    margin: 0 auto; /* Centraliza o iframe dentro do container */
+}
+
+/* SOCIAL LINKS  */
 .social-container {
     display: flex;
     justify-content: center;
@@ -875,10 +966,6 @@ html, body {
     font-weight: bold;
 }
 
-.copyright p {
-    margin: 0;
-}
-
 /* Estilos para a seção de cursos */
 .cursos-container {
     padding: 20px;
@@ -904,7 +991,7 @@ html, body {
     text-align: left; /* alinha o texto do curso à esquerda */
 }
 
-.curso h3 {
+.curso h2 {
     color: #333;
     font-size: 1.5em;
     margin-bottom: 10px;
@@ -955,7 +1042,7 @@ html, body {
     margin-top: 150px;
 }
 
-.beneficios-container h2 {
+.beneficios-container h1 {
     color: #333;
     margin-bottom: 20px;
     font-size: 1.8em; /* Reduz o tamanho do título para telas menores */
@@ -1035,10 +1122,6 @@ html, body {
     font-size: 1.2rem;
     text-shadow: 1px 4px 5px black;
     justify-content: center;
-}
-
-.map-iframe {
-    border: 0;
 }
 
 /* CONFIGURAÇÃO MOBILE */
@@ -1264,7 +1347,7 @@ html, body {
 
 @media screen and (max-width: 820px) {
     .header .logotipo {
-        margin-left: 5%;
+        margin-left: 0%;
     }
 }
 
@@ -1274,7 +1357,7 @@ html, body {
         display: block;
     }
     .header .logotipo {
-        margin-left: 34%;
+        margin-left: 32%;
     }
     .desktop-nav {
         display: none;
@@ -1307,18 +1390,6 @@ html, body {
         padding: 0;
     }
 
-    .header .desktop-nav ul li {
-        margin-right: 20px;
-    }
-
-    .header .desktop-nav ul li a {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        color: #fff;
-        font-size: 1.1rem;
-        font-family: 'Lato', sans-serif;
-    }
 
     .header .desktop-nav ul li a i {
         width: 20px; /* Ajuste conforme necessário */
@@ -1350,7 +1421,7 @@ html, body {
 
 @media (max-width: 700px) {
     .header .logotipo {
-        margin-left: 16%;
+        margin-left: 10%;
     }
 
     .aulas h2 {
@@ -1361,10 +1432,15 @@ html, body {
             font-size: 1.3rem;
         
     }
+    
 }
 
 @media (max-width: 400px) {
     .aulas h2 {
         font-size: 2.7rem;
+    }
+    .header .logoname {
+        font-size: 1.6rem;
+        
     }
 }
