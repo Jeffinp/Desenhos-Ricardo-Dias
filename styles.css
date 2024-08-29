@@ -1435,12 +1435,16 @@ html, body {
     
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
     .aulas h2 {
         font-size: 2.7rem;
     }
     .header .logoname {
         font-size: 1.6rem;
         
+    }
+
+    .imagem-centro {
+        max-width: 50%;
     }
 }
