@@ -227,8 +227,8 @@ html, body {
 
 /* Cards de desenhos */
 .cards-de-desenhos {
-    background-color: #f0f2f5; /* Cor de fundo mais suave */
-    padding: 5rem 2rem; /* Ajusta o padding para dispositivos móveis */
+    background-color: #f0f2f5;
+    padding: clamp(2rem, 5vw, 5rem);
 }
 
 .carousel-container {
@@ -236,8 +236,8 @@ html, body {
     max-width: 1200px;
     margin: 0 auto;
     overflow: hidden;
-    border-radius: 15px; /* Adiciona bordas arredondadas ao container */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra mais suave ao container */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .cards-contents {
@@ -247,11 +247,11 @@ html, body {
 
 .card-banner {
     flex: 0 0 calc(33.333% - 20px);
-    border-radius: 15px;
     margin: 0 10px;
+    border-radius: 15px;
     overflow: hidden; 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Sombra mais suave */
-    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Transições mais suaves */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .card-banner img {
@@ -262,15 +262,15 @@ html, body {
 }
 
 .card-banner:hover {
-    transform: scale(1.05); /* Aumenta o tamanho do cartão com efeito suave */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .carousel-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.6); /* Escurece o fundo dos botões */
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 50%;
     color: #ffffff;
     border: none;
@@ -286,18 +286,12 @@ html, body {
 }
 
 .carousel-button:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Escurece o fundo ao passar o mouse */
-    transform: scale(1.1); /* Aumenta o botão com efeito suave */
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%) scale(1.1);
 }
 
-.carousel-button.prev {
-    left: 15px;
-}
-
-.carousel-button.next {
-    right: 15px;
-}
-
+.carousel-button.prev { left: 15px; }
+.carousel-button.next { right: 15px; }
 
 /* Estilos para Objetivos */
 .objetivos-container {
@@ -1446,5 +1440,11 @@ html, body {
 
     .imagem-centro {
         max-width: 50%;
+    }
+    
+    .carousel-button {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
     }
 }
