@@ -297,28 +297,31 @@ html, body {
 .objetivos-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     text-align: center;
     padding: 5rem 2rem;
-    background-color:#f8f9fa;
+    background-color: #f8f9fa;
+    animation: fadeInUp 1s ease-in-out;
 }
 
 .objetivos-container h2 {
-    font-size: 2.8rem;
+    font-size: 3rem;
     font-family: "Play", sans-serif;
     color: #007bff;
     margin-bottom: 2rem;
     position: relative;
     display: inline-block;
+    letter-spacing: 2px;
 }
 
 .objetivos-container h2::after {
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: -12px;
     left: 50%;
     transform: translateX(-50%);
-    width: 50px;
-    height: 3px;
+    width: 60px;
+    height: 4px;
     background-color: #007bff;
 }
 
@@ -339,13 +342,13 @@ html, body {
     background-color: #ffffff;
     border-radius: 15px;
     overflow: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .image-wrapper:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .image {
@@ -353,11 +356,11 @@ html, body {
     height: 250px;
     background-size: cover;
     background-position: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease-in-out;
 }
 
 .image-wrapper:hover .image {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 .image-1 { background-image: url('imagens/image1.webp'); }
@@ -369,11 +372,13 @@ html, body {
 }
 
 .text-container h3 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: #333;
     margin-bottom: 0.5rem;
     font-family: "Play", sans-serif;
-    transition: color 0.3s ease;
+    text-transform: uppercase;
+    transition: color 0.4s ease;
+    letter-spacing: 1.5px;
 }
 
 .image-wrapper:hover .text-container h3 {
@@ -386,6 +391,11 @@ html, body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
     line-height: 1.6;
+    transition: color 0.4s ease;
+}
+
+.image-wrapper:hover .text-container p {
+    color: #333;
 }
 
 /* Estilos para Texto Jovens */
