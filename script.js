@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         medium: 1024
     };
 
-    let currentIndex = 10;
+    let currentIndex = 0;
     let cardsPerView = 3;
     const totalCards = cards.length;
 
@@ -20,8 +20,17 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const showCard = (direction) => {
-        const step = direction === 'next' ? cardsPerView : -cardsPerView;
-        currentIndex = (currentIndex + step + totalCards) % totalCards;
+        if (direction === 'next') {
+            currentIndex += cardsPerView;
+            if (currentIndex >= totalCards) {
+                currentIndex = 0; // Volta ao início
+            }
+        } else {
+            currentIndex -= cardsPerView;
+            if (currentIndex < 0) {
+                currentIndex = totalCards - cardsPerView;
+            }
+        }
         updateCarousel();
     };
 
