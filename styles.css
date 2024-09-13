@@ -225,7 +225,6 @@ html, body {
     margin-right: auto; /* Centraliza o texto */
 }
 
-/* Cards de desenhos */
 .cards-de-desenhos {
     background-color: #f0f2f5;
     padding: clamp(2rem, 5vw, 5rem);
@@ -242,7 +241,7 @@ html, body {
 
 .cards-contents {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.8s ease-in-out;
 }
 
 .card-banner {

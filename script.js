@@ -1,4 +1,4 @@
-// Carousel functionality
+// Infinite Carousel functionality
 document.addEventListener('DOMContentLoaded', () => {
     const carouselContents = document.querySelector('.cards-contents');
     const cards = document.querySelectorAll('.card-banner');
@@ -14,21 +14,44 @@ document.addEventListener('DOMContentLoaded', () => {
     let cardsPerView = 3;
     const totalCards = cards.length;
 
+    // Clone cards for infinite effect
+    cards.forEach(card => {
+        const clone = card.cloneNode(true);
+        carouselContents.appendChild(clone);
+    });
+
     const updateCarousel = () => {
         const cardWidth = cards[0].offsetWidth + cardMargin;
+        carouselContents.style.transition = 'transform 0.3s ease-in-out';
+        carouselContents.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+    };
+
+    const resetCarousel = () => {
+        const cardWidth = cards[0].offsetWidth + cardMargin;
+        carouselContents.style.transition = 'none';
+        currentIndex = totalCards;
         carouselContents.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
     };
 
     const showCard = (direction) => {
+        const cardWidth = cards[0].offsetWidth + cardMargin;
         if (direction === 'next') {
-            currentIndex += cardsPerView;
-            if (currentIndex >= totalCards) {
-                currentIndex = 0; // Volta ao início
+            currentIndex++;
+            if (currentIndex >= totalCards * 2) {
+                setTimeout(() => resetCarousel(), 300);
             }
         } else {
-            currentIndex -= cardsPerView;
+            currentIndex--;
             if (currentIndex < 0) {
-                currentIndex = totalCards - cardsPerView;
+                currentIndex = totalCards - 1;
+                carouselContents.style.transition = 'none';
+                carouselContents.style.transform = `translateX(-${(totalCards * 2 - 1) * cardWidth}px)`;
+                setTimeout(() => {
+                    carouselContents.style.transition = 'transform 0.3s ease-in-out';
+                    currentIndex = totalCards * 2 - 1;
+                    updateCarousel();
+                }, 10);
+                return;
             }
         }
         updateCarousel();
@@ -37,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const updateCardsPerView = () => {
         const windowWidth = window.innerWidth;
         cardsPerView = windowWidth <= breakpoints.small ? 1 : windowWidth <= breakpoints.medium ? 2 : 3;
-        currentIndex = Math.min(currentIndex, totalCards - cardsPerView);
         updateCarousel();
     };
 
