@@ -1,4 +1,4 @@
-// Infinite Carousel functionality
+// Modern Infinite Carousel functionality
 document.addEventListener('DOMContentLoaded', () => {
     const carouselContents = document.querySelector('.cards-contents');
     const cards = document.querySelectorAll('.card-banner');
@@ -20,37 +20,45 @@ document.addEventListener('DOMContentLoaded', () => {
         carouselContents.appendChild(clone);
     });
 
-    const updateCarousel = () => {
+    const updateCarousel = (smooth = true) => {
         const cardWidth = cards[0].offsetWidth + cardMargin;
-        carouselContents.style.transition = 'transform 0.3s ease-in-out';
+        if (smooth) {
+            carouselContents.style.transition = 'transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1)';
+        } else {
+            carouselContents.style.transition = 'none';
+        }
         carouselContents.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        
+        // Apply animations to visible cards
+        cards.forEach((card, index) => {
+            if (index >= currentIndex && index < currentIndex + cardsPerView) {
+                card.style.animation = 'fadeIn 0.8s forwards, slideIn 0.8s forwards';
+            } else {
+                card.style.animation = 'none';
+            }
+        });
     };
 
     const resetCarousel = () => {
-        const cardWidth = cards[0].offsetWidth + cardMargin;
-        carouselContents.style.transition = 'none';
         currentIndex = totalCards;
-        carouselContents.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        updateCarousel(false);
     };
 
     const showCard = (direction) => {
-        const cardWidth = cards[0].offsetWidth + cardMargin;
         if (direction === 'next') {
             currentIndex++;
             if (currentIndex >= totalCards * 2) {
-                setTimeout(() => resetCarousel(), 300);
+                setTimeout(() => resetCarousel(), 800);
             }
         } else {
             currentIndex--;
             if (currentIndex < 0) {
                 currentIndex = totalCards - 1;
-                carouselContents.style.transition = 'none';
-                carouselContents.style.transform = `translateX(-${(totalCards * 2 - 1) * cardWidth}px)`;
+                updateCarousel(false);
                 setTimeout(() => {
-                    carouselContents.style.transition = 'transform 0.3s ease-in-out';
                     currentIndex = totalCards * 2 - 1;
                     updateCarousel();
-                }, 10);
+                }, 20);
                 return;
             }
         }
@@ -60,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const updateCardsPerView = () => {
         const windowWidth = window.innerWidth;
         cardsPerView = windowWidth <= breakpoints.small ? 1 : windowWidth <= breakpoints.medium ? 2 : 3;
-        updateCarousel();
+        updateCarousel(false);
     };
 
     nextButton.addEventListener('click', () => showCard('next'));
