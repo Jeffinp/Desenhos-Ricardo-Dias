@@ -236,8 +236,8 @@ html, body {
     max-width: 1200px;
     margin: 0 auto;
     overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .cards-contents {
@@ -250,8 +250,8 @@ html, body {
     margin: 0 10px;
     border-radius: 15px;
     overflow: hidden; 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
     position: relative;
 }
 
@@ -260,7 +260,7 @@ html, body {
     height: 100%;
     object-fit: cover; 
     border-radius: 15px;
-    transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: transform 0.5s ease-in-out;
 }
 
 .card-banner::before {
@@ -276,8 +276,8 @@ html, body {
 }
 
 .card-banner:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
 .card-banner:hover::before {
@@ -292,24 +292,24 @@ html, body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(5px);
     border-radius: 50%;
-    color: #ffffff;
+    color: #fff;
     border: none;
     width: 60px;
     height: 60px;
     font-size: 24px;
     cursor: pointer;
     z-index: 10;
-    transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .carousel-button:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.4);
     transform: translateY(-50%) scale(1.1);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
