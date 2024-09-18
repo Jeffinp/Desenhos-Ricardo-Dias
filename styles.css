@@ -473,7 +473,6 @@ html, body {
     margin: 0; /* Remove margem padrão para melhor alinhamento */
 }
 
-
 /* Estilos para Antes e Depois - Versão Mobile-First */
 .antes-depois {
     background: linear-gradient(135deg, #007bff, #0056b3);
@@ -561,33 +560,6 @@ html, body {
 
 .indicator-dot.active {
     background-color: white;
-}
-
-@media (min-width: 768px) {
-    .antes-depois {
-        padding: 4rem 2rem;
-    }
-
-    .carousel-container2 {
-        max-width: none;
-        box-shadow: none;
-    }
-
-    .antes-depois-carousel {
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: center;
-        transform: none !important;
-    }
-
-    .antes-depois-item {
-        flex: 0 1 calc(33.333% - 20px);
-        margin: 0 10px;
-    }
-
-    .carousel-button2, .slider-indicator {
-        display: none;
-    }
 }
 
 /* Estilos para Informação */
@@ -1403,28 +1375,6 @@ html, body {
     }
 }
 
-/* configuração de antes e depois */
-@media screen and (min-width: 768px) {
-    .antes-depois-item {
-        flex: 0 0 calc(50% - 40px);
-        height: 400px;
-        margin: 0 20px;
-    }
-}
-
-@media screen and (min-width: 1366px) {
-    .antes-depois-carousel {
-        justify-content: center;
-    }
-
-    .antes-depois-item {
-        flex: 0 0 calc(33.333% - 60px);
-        height: 500px;
-        margin: 0 30px;
-        background-size: cover;
-    }
-    
-}
 
 @media screen and (max-width: 820px) {
     .header .logotipo {

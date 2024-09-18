@@ -111,11 +111,11 @@ const initMobileNavigation = () => {
 
 // Before and After Slider
 const initBeforeAfterSlider = () => {
-    const slider = $('#antes-depois-slider');
-    const items = $$('.antes-depois-item');
-    const prevBtn = $('.carousel-button2.prev');
-    const nextBtn = $('.carousel-button2.next');
-    const container = $('.carousel-container2');
+    const slider = document.getElementById('antes-depois-slider');
+    const items = document.querySelectorAll('.antes-depois-item');
+    const prevBtn = document.querySelector('.carousel-button2.prev');
+    const nextBtn = document.querySelector('.carousel-button2.next');
+    const container = document.querySelector('.carousel-container2');
 
     if (!slider || items.length === 0 || !prevBtn || !nextBtn || !container) {
         console.warn('Before and after slider elements are missing. Skipping slider initialization.');
@@ -136,30 +136,24 @@ const initBeforeAfterSlider = () => {
     container.appendChild(indicatorContainer);
 
     const updateCarousel = () => {
-        const isMobile = window.innerWidth < 768;
-        slider.style.transform = isMobile ? `translateX(${-currentIndex * 100}%)` : 'none';
+        slider.style.transform = `translateX(${-currentIndex * 100}%)`;
         
-        $$('.indicator-dot').forEach((dot, index) => {
+        document.querySelectorAll('.indicator-dot').forEach((dot, index) => {
             dot.classList.toggle('active', index === currentIndex);
         });
 
-        prevBtn.style.visibility = isMobile ? (currentIndex === 0 ? 'hidden' : 'visible') : 'hidden';
-        nextBtn.style.visibility = isMobile ? (currentIndex === items.length - 1 ? 'hidden' : 'visible') : 'hidden';
-        indicatorContainer.style.display = isMobile ? 'flex' : 'none';
+        prevBtn.style.visibility = currentIndex === 0 ? 'hidden' : 'visible';
+        nextBtn.style.visibility = currentIndex === items.length - 1 ? 'hidden' : 'visible';
     };
 
     const goToSlide = (index) => {
-        if (window.innerWidth < 768) {
-            currentIndex = index;
-            updateCarousel();
-        }
+        currentIndex = index;
+        updateCarousel();
     };
 
     const moveSlider = (direction) => {
-        if (window.innerWidth < 768) {
-            currentIndex = Math.max(0, Math.min(currentIndex + direction, items.length - 1));
-            updateCarousel();
-        }
+        currentIndex = Math.max(0, Math.min(currentIndex + direction, items.length - 1));
+        updateCarousel();
     };
 
     const handleTouchStart = (e) => {
@@ -169,7 +163,7 @@ const initBeforeAfterSlider = () => {
     const handleTouchEnd = (e) => {
         const touchEndX = e.changedTouches[0].screenX;
         const diff = touchStartX - touchEndX;
-        if (window.innerWidth < 768 && Math.abs(diff) > 50) {
+        if (Math.abs(diff) > 50) {
             moveSlider(diff > 0 ? 1 : -1);
         }
     };
@@ -178,7 +172,6 @@ const initBeforeAfterSlider = () => {
     prevBtn.addEventListener('click', () => moveSlider(-1));
     slider.addEventListener('touchstart', handleTouchStart);
     slider.addEventListener('touchend', handleTouchEnd);
-    window.addEventListener('resize', updateCarousel);
 
     updateCarousel();
 };
