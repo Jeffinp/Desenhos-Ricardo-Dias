@@ -119,99 +119,116 @@ const initMobileNavigation = () => {
     });
 };
 
-// Antes e depois slider
-let beforeAfterSliderInitialized = false;  // Flag to track initialization state
+/* JavaScript */
+let beforeAfterSliderInitialized = false;
 
 const initBeforeAfterSlider = () => {
     const slider = document.querySelector('#antes-depois-slider');
     const items = Array.from(document.querySelectorAll('.antes-depois-item'));
-    const prevBtn = slider?.parentElement?.querySelector('.prev');
-    const nextBtn = slider?.parentElement?.querySelector('.next');
+    const prevBtn = document.querySelector('.carousel-button2.prev');
+    const nextBtn = document.querySelector('.carousel-button2.next');
+    const container = document.querySelector('.carousel-container2');
 
-    // Check if elements exist, and if slider is not already initialized
-    if (!slider || items.length === 0 || !prevBtn || !nextBtn) {
+    if (!slider || items.length === 0 || !prevBtn || !nextBtn || !container) {
         console.warn('Before and after slider elements are missing. Skipping slider initialization.');
         return;
     }
 
     if (beforeAfterSliderInitialized) {
         console.log('Slider is already initialized.');
-        return;  // Exit if already initialized
+        return;
     }
 
     let currentIndex = 0;
 
+    // Create indicator dots
+    const indicatorContainer = document.createElement('div');
+    indicatorContainer.className = 'slider-indicator';
+    items.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.className = 'indicator-dot';
+        dot.addEventListener('click', () => goToSlide(index));
+        indicatorContainer.appendChild(dot);
+    });
+    container.appendChild(indicatorContainer);
+
     const updateCarousel = () => {
-        const containerWidth = slider.offsetWidth;
-        const itemWidth = items[0].offsetWidth;
-        const visibleItems = Math.floor(containerWidth / itemWidth);
-        
-        slider.style.transform = `translateX(${-currentIndex * itemWidth}px)`;
+        if (window.innerWidth < 768) {
+            slider.style.transform = `translateX(${-currentIndex * 100}%)`;
+            
+            // Update indicator dots
+            document.querySelectorAll('.indicator-dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
 
-        items.forEach((item, index) => {
-            item.classList.toggle('active', index >= currentIndex && index < currentIndex + visibleItems);
-        });
+            prevBtn.style.visibility = currentIndex === 0 ? 'hidden' : 'visible';
+            nextBtn.style.visibility = currentIndex === items.length - 1 ? 'hidden' : 'visible';
+        } else {
+            slider.style.transform = 'none';
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+            indicatorContainer.style.display = 'none';
+        }
+    };
 
-        prevBtn.style.display = currentIndex === 0 ? 'none' : 'block';
-        nextBtn.style.display = currentIndex >= items.length - visibleItems ? 'none' : 'block';
+    const goToSlide = (index) => {
+        if (window.innerWidth < 768) {
+            currentIndex = index;
+            updateCarousel();
+        }
     };
 
     const moveSlider = (direction) => {
-        const containerWidth = slider.offsetWidth;
-        const itemWidth = items[0].offsetWidth;
-        const visibleItems = Math.floor(containerWidth / itemWidth);
-        currentIndex = Math.max(0, Math.min(currentIndex + direction, items.length - visibleItems));
-        updateCarousel();
+        if (window.innerWidth < 768) {
+            currentIndex = Math.max(0, Math.min(currentIndex + direction, items.length - 1));
+            updateCarousel();
+        }
     };
 
     nextBtn.addEventListener('click', () => moveSlider(1));
     prevBtn.addEventListener('click', () => moveSlider(-1));
 
-    const handleKeydown = (e) => {
-        if (e.key === 'ArrowLeft') moveSlider(-1);
-        if (e.key === 'ArrowRight') moveSlider(1);
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    const handleTouchStart = (e) => {
+        touchStartX = e.changedTouches[0].screenX;
     };
 
-    document.addEventListener('keydown', handleKeydown);
+    const handleTouchEnd = (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    };
 
-    let touchStartX = 0;
-    slider.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; });
-    slider.addEventListener('touchend', (e) => {
-        const touchEndX = e.changedTouches[0].screenX;
-        const diff = touchStartX - touchEndX;
-        if (Math.abs(diff) > 50) moveSlider(diff > 0 ? 1 : -1);
-    });
+    const handleSwipe = () => {
+        if (window.innerWidth < 768) {
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                moveSlider(diff > 0 ? 1 : -1);
+            }
+        }
+    };
 
-    const handleResize = () => updateCarousel();
-    window.addEventListener('resize', handleResize);
+    slider.addEventListener('touchstart', handleTouchStart);
+    slider.addEventListener('touchend', handleTouchEnd);
 
-    // Mark the slider as initialized
+    window.addEventListener('resize', updateCarousel);
+
     beforeAfterSliderInitialized = true;
-
-    // Initial update
     updateCarousel();
 
-    // Function to clean up event listeners if needed
     const destroySlider = () => {
         nextBtn.removeEventListener('click', () => moveSlider(1));
         prevBtn.removeEventListener('click', () => moveSlider(-1));
-        document.removeEventListener('keydown', handleKeydown);
-        slider.removeEventListener('touchstart', touchStartX);
-        slider.removeEventListener('touchend', touchEndX);
-        window.removeEventListener('resize', handleResize);
-
+        slider.removeEventListener('touchstart', handleTouchStart);
+        slider.removeEventListener('touchend', handleTouchEnd);
+        window.removeEventListener('resize', updateCarousel);
         beforeAfterSliderInitialized = false;
     };
 
-    return destroySlider;  // Optionally return the destroy function to be called if needed
+    return destroySlider;
 };
 
-// Call this when the page loads or relevant section becomes visible
-initBeforeAfterSlider();
-
-// Initialize all components
 document.addEventListener('DOMContentLoaded', () => {
-    initInfiniteCarousel();
-    initMobileNavigation();
     initBeforeAfterSlider();
 });

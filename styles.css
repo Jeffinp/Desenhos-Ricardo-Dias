@@ -474,77 +474,120 @@ html, body {
 }
 
 
-/* Estilos para Antes e Depois */
+/* Estilos para Antes e Depois - Versão Mobile-First */
 .antes-depois {
     background: linear-gradient(135deg, #007bff, #0056b3);
-    padding: 4rem 2rem;
+    padding: 2rem 1rem;
     overflow: hidden;
-    position: relative; /* Para posicionar os botões de navegação */
+    position: relative;
 }
 
 .carousel-container2 {
     position: relative;
-    display: flex;
-    align-items: center;
-    max-width: 100%;
-    overflow: hidden; /* Oculta o conteúdo que sai da área do container */
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    overflow: hidden;
     border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .antes-depois-carousel {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%;
+    transition: transform 0.4s ease;
 }
 
 .antes-depois-item {
     flex: 0 0 100%;
-    height: 500px;
+    width: 100%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 15px;
-    margin: 0 10px;
-    transition: all 0.3s ease;
-    overflow: hidden; /* Garante que a imagem não saia da div */
 }
 
 .antes-depois-item img {
     max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    border-radius: 15px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .carousel-button2 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.84);
-    border-radius: 50%;
-    color: #000;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #6e48aa;
     border: none;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 10;
-    transition: background-color 0.3s ease;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    transition: all 0.3s ease;
 }
 
 .carousel-button2:hover {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: white;
 }
 
 .carousel-button2.prev {
-    left: 20px;
+    left: 10px;
 }
 
 .carousel-button2.next {
-    right: 20px;
+    right: 10px;
+}
+
+.slider-indicator {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.indicator-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+.indicator-dot.active {
+    background-color: white;
+}
+
+@media (min-width: 768px) {
+    .antes-depois {
+        padding: 4rem 2rem;
+    }
+
+    .carousel-container2 {
+        max-width: none;
+        box-shadow: none;
+    }
+
+    .antes-depois-carousel {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        transform: none !important;
+    }
+
+    .antes-depois-item {
+        flex: 0 1 calc(33.333% - 20px);
+        margin: 0 10px;
+    }
+
+    .carousel-button2, .slider-indicator {
+        display: none;
+    }
 }
 
 /* Estilos para Informação */
