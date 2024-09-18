@@ -9,7 +9,6 @@ const initInfiniteCarousel = () => {
     const prevButton = $('.carousel-button.prev');
     const nextButton = $('.carousel-button.next');
 
-    // Check if all necessary elements exist
     if (!carouselContents || cards.length === 0 || !prevButton || !nextButton) {
         console.warn('Some carousel elements are missing. Skipping carousel initialization.');
         return;
@@ -22,32 +21,24 @@ const initInfiniteCarousel = () => {
     let cardsPerView = 3;
     const totalCards = cards.length;
 
-    // Touch functionality for swiping
     let touchStartX = 0;
-    let touchEndX = 0;
 
-    carouselContents.addEventListener('touchstart', (e) => {
+    const handleTouchStart = (e) => {
         touchStartX = e.changedTouches[0].screenX;
-    });
+    };
 
-    carouselContents.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    });
-
-    const handleSwipe = () => {
+    const handleTouchEnd = (e) => {
+        const touchEndX = e.changedTouches[0].screenX;
         const swipeThreshold = 50;
         const swipeDistance = touchStartX - touchEndX;
         if (Math.abs(swipeDistance) > swipeThreshold) {
-            if (swipeDistance > 0) {
-                showCard('next');
-            } else {
-                showCard('prev');
-            }
+            showCard(swipeDistance > 0 ? 'next' : 'prev');
         }
     };
 
-    // Clone cards for infinite effect
+    carouselContents.addEventListener('touchstart', handleTouchStart);
+    carouselContents.addEventListener('touchend', handleTouchEnd);
+
     cards.forEach(card => carouselContents.appendChild(card.cloneNode(true)));
 
     const updateCarousel = (smooth = true) => {
@@ -101,7 +92,6 @@ const initInfiniteCarousel = () => {
     updateCardsPerView();
 };
 
-
 // Mobile navigation
 const initMobileNavigation = () => {
     const mobileNavToggle = $('.mobile-nav-toggle');
@@ -119,29 +109,22 @@ const initMobileNavigation = () => {
     });
 };
 
-/* JavaScript */
-let beforeAfterSliderInitialized = false;
-
+// Before and After Slider
 const initBeforeAfterSlider = () => {
-    const slider = document.querySelector('#antes-depois-slider');
-    const items = Array.from(document.querySelectorAll('.antes-depois-item'));
-    const prevBtn = document.querySelector('.carousel-button2.prev');
-    const nextBtn = document.querySelector('.carousel-button2.next');
-    const container = document.querySelector('.carousel-container2');
+    const slider = $('#antes-depois-slider');
+    const items = $$('.antes-depois-item');
+    const prevBtn = $('.carousel-button2.prev');
+    const nextBtn = $('.carousel-button2.next');
+    const container = $('.carousel-container2');
 
     if (!slider || items.length === 0 || !prevBtn || !nextBtn || !container) {
         console.warn('Before and after slider elements are missing. Skipping slider initialization.');
         return;
     }
 
-    if (beforeAfterSliderInitialized) {
-        console.log('Slider is already initialized.');
-        return;
-    }
-
     let currentIndex = 0;
+    let touchStartX = 0;
 
-    // Create indicator dots
     const indicatorContainer = document.createElement('div');
     indicatorContainer.className = 'slider-indicator';
     items.forEach((_, index) => {
@@ -153,22 +136,16 @@ const initBeforeAfterSlider = () => {
     container.appendChild(indicatorContainer);
 
     const updateCarousel = () => {
-        if (window.innerWidth < 768) {
-            slider.style.transform = `translateX(${-currentIndex * 100}%)`;
-            
-            // Update indicator dots
-            document.querySelectorAll('.indicator-dot').forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentIndex);
-            });
+        const isMobile = window.innerWidth < 768;
+        slider.style.transform = isMobile ? `translateX(${-currentIndex * 100}%)` : 'none';
+        
+        $$('.indicator-dot').forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
 
-            prevBtn.style.visibility = currentIndex === 0 ? 'hidden' : 'visible';
-            nextBtn.style.visibility = currentIndex === items.length - 1 ? 'hidden' : 'visible';
-        } else {
-            slider.style.transform = 'none';
-            prevBtn.style.display = 'none';
-            nextBtn.style.display = 'none';
-            indicatorContainer.style.display = 'none';
-        }
+        prevBtn.style.visibility = isMobile ? (currentIndex === 0 ? 'hidden' : 'visible') : 'hidden';
+        nextBtn.style.visibility = isMobile ? (currentIndex === items.length - 1 ? 'hidden' : 'visible') : 'hidden';
+        indicatorContainer.style.display = isMobile ? 'flex' : 'none';
     };
 
     const goToSlide = (index) => {
@@ -185,50 +162,30 @@ const initBeforeAfterSlider = () => {
         }
     };
 
-    nextBtn.addEventListener('click', () => moveSlider(1));
-    prevBtn.addEventListener('click', () => moveSlider(-1));
-
-    let touchStartX = 0;
-    let touchEndX = 0;
-
     const handleTouchStart = (e) => {
         touchStartX = e.changedTouches[0].screenX;
     };
 
     const handleTouchEnd = (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    };
-
-    const handleSwipe = () => {
-        if (window.innerWidth < 768) {
-            const diff = touchStartX - touchEndX;
-            if (Math.abs(diff) > 50) {
-                moveSlider(diff > 0 ? 1 : -1);
-            }
+        const touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (window.innerWidth < 768 && Math.abs(diff) > 50) {
+            moveSlider(diff > 0 ? 1 : -1);
         }
     };
 
+    nextBtn.addEventListener('click', () => moveSlider(1));
+    prevBtn.addEventListener('click', () => moveSlider(-1));
     slider.addEventListener('touchstart', handleTouchStart);
     slider.addEventListener('touchend', handleTouchEnd);
-
     window.addEventListener('resize', updateCarousel);
 
-    beforeAfterSliderInitialized = true;
     updateCarousel();
-
-    const destroySlider = () => {
-        nextBtn.removeEventListener('click', () => moveSlider(1));
-        prevBtn.removeEventListener('click', () => moveSlider(-1));
-        slider.removeEventListener('touchstart', handleTouchStart);
-        slider.removeEventListener('touchend', handleTouchEnd);
-        window.removeEventListener('resize', updateCarousel);
-        beforeAfterSliderInitialized = false;
-    };
-
-    return destroySlider;
 };
 
+// Initialize all components
 document.addEventListener('DOMContentLoaded', () => {
+    initInfiniteCarousel();
+    initMobileNavigation();
     initBeforeAfterSlider();
 });
