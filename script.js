@@ -1,8 +1,16 @@
-// Utilities
+/**
+ * Utilitários
+ * ===========
+ * Funções auxiliares para seleção de elementos do DOM.
+ */
 const $ = selector => document.querySelector(selector);
 const $$ = selector => document.querySelectorAll(selector);
 
-// Modern Infinite Carousel functionality
+/**
+ * Carrossel Infinito Moderno
+ * ==========================
+ * Funcionalidade para um carrossel infinito, responsivo e com suporte a toque.
+ */
 const initInfiniteCarousel = () => {
     const carouselContents = $('.cards-contents');
     const cards = $$('.card-banner');
@@ -10,7 +18,7 @@ const initInfiniteCarousel = () => {
     const nextButton = $('.carousel-button.next');
 
     if (!carouselContents || cards.length === 0 || !prevButton || !nextButton) {
-        console.warn('Some carousel elements are missing. Skipping carousel initialization.');
+        console.warn('Alguns elementos do carrossel estão faltando. Ignorando a inicialização do carrossel.');
         return;
     }
 
@@ -39,15 +47,17 @@ const initInfiniteCarousel = () => {
     carouselContents.addEventListener('touchstart', handleTouchStart);
     carouselContents.addEventListener('touchend', handleTouchEnd);
 
+    // Duplica os cards para criar o efeito de loop infinito
     cards.forEach(card => carouselContents.appendChild(card.cloneNode(true)));
 
     const updateCarousel = (smooth = true) => {
         const cardWidth = cards[0].offsetWidth + cardMargin;
         carouselContents.style.transition = smooth ? 'transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1)' : 'none';
         carouselContents.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-        
+
         cards.forEach((card, index) => {
-            card.style.animation = (index >= currentIndex && index < currentIndex + cardsPerView) 
+            // Aplica animações de fadeIn e slideIn apenas aos cards visíveis
+            card.style.animation = (index >= currentIndex && index < currentIndex + cardsPerView)
                 ? 'fadeIn 0.8s forwards, slideIn 0.8s forwards'
                 : 'none';
         });
@@ -55,14 +65,16 @@ const initInfiniteCarousel = () => {
 
     const resetCarousel = () => {
         currentIndex = totalCards;
-        updateCarousel(false);
+        updateCarousel(false); // Atualiza sem transição suave
     };
 
     const showCard = (direction) => {
         currentIndex += direction === 'next' ? 1 : -1;
         if (currentIndex >= totalCards * 2) {
+            // Quando chega ao final do loop, reseta para o início
             setTimeout(resetCarousel, 800);
         } else if (currentIndex < 0) {
+            // Quando chega ao início do loop, reseta para o final
             currentIndex = totalCards - 1;
             updateCarousel(false);
             setTimeout(() => {
@@ -92,39 +104,51 @@ const initInfiniteCarousel = () => {
     updateCardsPerView();
 };
 
-// Mobile navigation
+/**
+ * Navegação Mobile
+ * =================
+ * Funcionalidade para o menu de navegação em dispositivos móveis.
+ */
 const initMobileNavigation = () => {
     const mobileNavToggle = $('.mobile-nav-toggle');
     const mobileNav = $('.mobile-nav');
 
     if (!mobileNavToggle || !mobileNav) {
-        console.warn('Mobile navigation elements are missing. Skipping mobile navigation initialization.');
+        console.warn('Elementos de navegação móvel estão faltando. Ignorando a inicialização da navegação móvel.');
         return;
     }
 
     mobileNavToggle.addEventListener('click', () => {
         const isOpen = mobileNav.classList.toggle('open');
+        // Ajusta a altura máxima e a opacidade para a animação
         mobileNav.style.maxHeight = isOpen ? `${mobileNav.scrollHeight}px` : '0';
         mobileNav.style.opacity = isOpen ? '1' : '0';
+        // Atualiza o atributo aria-expanded para acessibilidade
+        mobileNavToggle.setAttribute('aria-expanded', isOpen);
     });
 };
 
-// Before and After Slider
+/**
+ * Slider Antes e Depois
+ * =====================
+ * Funcionalidade para um slider de comparação de imagens "antes e depois".
+ */
 const initBeforeAfterSlider = () => {
-    const slider = document.getElementById('antes-depois-slider');
-    const items = document.querySelectorAll('.antes-depois-item');
-    const prevBtn = document.querySelector('.carousel-button2.prev');
-    const nextBtn = document.querySelector('.carousel-button2.next');
-    const container = document.querySelector('.carousel-container2');
+    const slider = $('#antes-depois-slider');
+    const items = $$('.antes-depois-item');
+    const prevBtn = $('.carousel-button2.prev');
+    const nextBtn = $('.carousel-button2.next');
+    const container = $('.carousel-container2');
 
     if (!slider || items.length === 0 || !prevBtn || !nextBtn || !container) {
-        console.warn('Before and after slider elements are missing. Skipping slider initialization.');
+        console.warn('Elementos do slider "antes e depois" estão faltando. Ignorando a inicialização do slider.');
         return;
     }
 
     let currentIndex = 0;
     let touchStartX = 0;
 
+    // Cria os indicadores de slide
     const indicatorContainer = document.createElement('div');
     indicatorContainer.className = 'slider-indicator';
     items.forEach((_, index) => {
@@ -137,11 +161,13 @@ const initBeforeAfterSlider = () => {
 
     const updateCarousel = () => {
         slider.style.transform = `translateX(${-currentIndex * 100}%)`;
-        
-        document.querySelectorAll('.indicator-dot').forEach((dot, index) => {
+
+        // Atualiza os indicadores de slide
+        $$('.indicator-dot').forEach((dot, index) => {
             dot.classList.toggle('active', index === currentIndex);
         });
 
+        // Controla a visibilidade dos botões de navegação
         prevBtn.style.visibility = currentIndex === 0 ? 'hidden' : 'visible';
         nextBtn.style.visibility = currentIndex === items.length - 1 ? 'hidden' : 'visible';
     };
@@ -176,7 +202,11 @@ const initBeforeAfterSlider = () => {
     updateCarousel();
 };
 
-// Initialize all components
+/**
+ * Inicialização de todos os componentes
+ * ====================================
+ * Executa as funções de inicialização de cada componente após o carregamento do DOM.
+ */
 document.addEventListener('DOMContentLoaded', () => {
     initInfiniteCarousel();
     initMobileNavigation();
