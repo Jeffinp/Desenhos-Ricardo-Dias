@@ -1,14 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Play:wght@400;700&display=swap');
+/* Font Imports */
 @import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Play:wght@400;700&display=swap');
 
-/* Reset global */
+/* Global Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
-}.carousel-button {
+}
+
+html,
+body {
+    overflow-x: hidden;
+    background-color: #f4f4f4;
+    font-family: 'Lato', sans-serif;
+    color: #333;
+}
+
+.carousel-button {
     background: transparent;
     border: none;
     cursor: pointer;
@@ -31,14 +41,8 @@
 .carousel-button:hover svg {
     opacity: 1;
 }
-html, body {
-    overflow-x: hidden;
-    background-color: #f4f4f4;
-    font-family: 'Lato', sans-serif;
-    color: #333;
-    overflow-x: hidden;
-}
 
+/* Header Styles */
 .header {
     position: fixed;
     width: 100%;
@@ -51,11 +55,12 @@ html, body {
     align-items: center;
     z-index: 1000;
     border-bottom: 2px solid rgba(0, 123, 255, 0.3);
-    transition: transform 0.3s ease-in-out; /* Changed from all to transform and added ease-in-out */
+    transition: transform 0.3s ease-in-out;
 }
 
 .header--hidden {
-    transform: translateY(-100%); /* Class to hide header */
+    transform: translateY(-100%);
+    /* Class to hide header */
 }
 
 /* Logo Styles */
@@ -172,94 +177,25 @@ html, body {
     -webkit-backdrop-filter: blur(12px);
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-    .desktop-nav {
-        display: none;
-    }
-
-    .mobile-nav-toggle {
-        display: block;
-    }
-
-    .mobile-nav.open {
-        display: block;
-    }
-
-    .mobile-nav ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-
-    .mobile-nav ul li a {
-        display: block;
-        padding: 1rem 5%;
-        color: #fff;
-        text-decoration: none;
-        font-family: "Play", sans-serif;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        transition: background-color 0.3s ease;
-    }
-
-    .mobile-nav ul li a:hover {
-        background-color: rgba(255, 255, 255, 0.05);
-    }
-
-    .logo-subtitle {
-        display: none;
-    }
+.mobile-nav.open {
+    animation: slideDown 0.3s ease forwards;
 }
 
-/* Animação do menu mobile */
 @keyframes slideDown {
     from {
         transform: translateY(-10px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
     }
 }
 
-.mobile-nav.open {
-    animation: slideDown 0.3s ease forwards;
-}
-
-/* Estilo da navegação desktop */
-.desktop-nav {
-    display: flex; /* Exibe o menu para desktop */
-}
-
-.desktop-nav ul {
-    list-style: none; /* Remove marcadores da lista */
-    margin: 0;
-    padding: 0;
-    display: flex; /* Layout horizontal */
-}
-
-.desktop-nav ul li {
-    margin-left: 20px; /* Espaçamento entre itens do menu */
-}
-
-.desktop-nav ul li a {
-    color: #fff;
-    font-size: 1rem; /* Tamanho da fonte */
-    font-family: 'Play', sans-serif;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.desktop-nav ul li a:hover {
-    color: #FA6800; /* Cor ao passar o mouse */
-}
-
-/* Estilos para o banner */
+/* Banner Styles */
 #banner {
-    background-color: #000; /* Preto sólido */
+    background-color: #000;
     background-image: url('imagens/naruto.webp');
     background-position: center;
     background-size: cover;
@@ -270,8 +206,8 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff; /* Texto branco por padrão */
-    text-align: center; /* Centraliza o texto */
+    color: #fff;
+    text-align: center;
 }
 
 #banner::before {
@@ -281,48 +217,48 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Escurece o fundo para melhorar a legibilidade do texto */
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .banner-content {
     position: relative;
     z-index: 1;
-    max-width: 90%; /* Ajusta a largura máxima */
+    max-width: 90%;
     padding: 0 20px;
 }
 
 .banner-content h1 {
-    font-size: 4rem; /* Tamanho maior do título para mais impacto */
+    font-size: 4rem;
     margin-bottom: 1rem;
     font-family: "Play", sans-serif;
-    font-weight: bold; /* Negrito para destaque */
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6); /* Sombra mais pronunciada */
+    font-weight: bold;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
 }
 
-/* Aulas Presenciais */
+/* Aulas Presenciais Section */
 .aulas {
-    padding: 5rem 2rem; /* Ajusta o padding para dispositivos móveis */
+    padding: 5rem 2rem;
     text-align: center;
-    background-color: #f8f9fa; /* Cor de fundo suave */
-    border-top: 2px solid #007bff; /* Linha superior para destaque */
+    background-color: #f8f9fa;
+    border-top: 2px solid #007bff;
 }
 
 .aulas h2 {
-    font-size: 3rem; /* Tamanho maior do subtítulo */
-    color: #007bff; /* Cor do texto */
+    font-size: 3rem;
+    color: #007bff;
     margin-bottom: 2rem;
     font-family: "Play", sans-serif;
-    font-weight: bold; /* Negrito para destaque */
-    letter-spacing: 1px; /* Espaçamento entre letras */
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .aulas p {
-    font-size: 1.2rem; /* Tamanho da fonte para o texto */
-    color: #333; /* Cor do texto */
-    line-height: 1.6; /* Melhora a legibilidade */
-    max-width: 800px; /* Limita a largura do parágrafo */
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+    max-width: 800px;
     margin-left: auto;
-    margin-right: auto; /* Centraliza o texto */
+    margin-right: auto;
 }
 
 /* Cards de desenhos */
@@ -349,7 +285,7 @@ html, body {
     flex: 0 0 calc(33.333% - 20px);
     margin: 0 10px;
     border-radius: 15px;
-    overflow: hidden; 
+    overflow: hidden;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
     position: relative;
@@ -358,7 +294,7 @@ html, body {
 .card-banner img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
     border-radius: 15px;
     transition: transform 0.5s ease-in-out;
 }
@@ -370,7 +306,7 @@ html, body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
     opacity: 0;
     transition: opacity 0.6s ease;
 }
@@ -414,20 +350,35 @@ html, body {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
-.carousel-button.prev { left: 15px; }
-.carousel-button.next { right: 15px; }
+.carousel-button.prev {
+    left: 15px;
+}
+
+.carousel-button.next {
+    right: 15px;
+}
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes slideIn {
-    from { transform: translateX(100%); }
-    to { transform: translateX(0); }
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
 }
 
-/* Estilos para Objetivos */
+/* Objetivos Section */
 .objetivos-container {
     display: flex;
     flex-direction: column;
@@ -459,7 +410,7 @@ html, body {
     background-color: #007bff;
 }
 
-/* Estilos para Experiências, Técnicas, Criatividade */
+/* Experiências, Técnicas, Criatividade Section */
 .image-container {
     display: flex;
     justify-content: center;
@@ -497,9 +448,17 @@ html, body {
     transform: scale(1.1);
 }
 
-.image-1 { background-image: url('imagens/image1.webp'); }
-.image-2 { background-image: url('imagens/image2.webp'); }
-.image-3 { background-image: url('imagens/image3.webp'); }
+.image-1 {
+    background-image: url('imagens/image1.webp');
+}
+
+.image-2 {
+    background-image: url('imagens/image2.webp');
+}
+
+.image-3 {
+    background-image: url('imagens/image3.webp');
+}
 
 .text-container {
     padding: 1.5rem;
@@ -532,7 +491,7 @@ html, body {
     color: #333;
 }
 
-/* Estilos para Texto Jovens */
+/* Texto Jovens Section */
 .texto-jovens {
     display: flex;
     justify-content: center;
@@ -542,7 +501,7 @@ html, body {
     font-family: "Play", sans-serif;
     position: relative;
     overflow: hidden;
-    text-align: center; /* Centraliza o texto */
+    text-align: center;
 }
 
 .texto-jovens::before {
@@ -552,28 +511,26 @@ html, body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(
-        to bottom right,
-        rgba(255, 255, 255, 0.1) 0%,
-        rgba(255, 255, 255, 0.05) 50%,
-        transparent 50%,
-        transparent 100%
-    );
+    background: linear-gradient(to bottom right,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0.05) 50%,
+            transparent 50%,
+            transparent 100%);
     transform: rotate(-45deg);
     z-index: 1;
-    pointer-events: none; /* Garante que o gradiente não bloqueie a interação com o texto */
+    pointer-events: none;
 }
 
 .texto-jovens p {
     font-size: 1.8rem;
     color: #ffffff;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 2;
-    margin: 0; /* Remove margem padrão para melhor alinhamento */
+    margin: 0;
 }
 
-/* Estilos para Antes e Depois - Versão Mobile-First */
+/* Antes e Depois Section */
 .antes-depois {
     background: linear-gradient(135deg, #007bff, #0056b3);
     padding: 3rem 1rem;
@@ -608,7 +565,7 @@ html, body {
 
 .antes-depois-item img {
     max-width: 100%;
-    max-height: 70vh; /* Limita a altura a 70% da altura da viewport */
+    max-height: 70vh;
     width: auto;
     height: auto;
     object-fit: contain;
@@ -676,35 +633,7 @@ html, body {
     transform: scale(1.2);
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .antes-depois {
-        padding: 2rem 1rem;
-    }
-
-    .carousel-button2 {
-        width: 35px;
-        height: 35px;
-    }
-
-    .carousel-button2 svg {
-        width: 20px;
-        height: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .carousel-button2 {
-        width: 30px;
-        height: 30px;
-    }
-
-    .carousel-button2 svg {
-        width: 16px;
-        height: 16px;
-    }
-}
-/* Estilos para Informação */
+/* Informação Section */
 .informacao-container {
     background-color: #ffffff;
     padding: 5rem 2rem;
@@ -756,7 +685,7 @@ html, body {
     transform: translateY(-50%);
 }
 
-/* Divider com ícone */
+/* Divider Styles */
 .divider {
     display: flex;
     align-items: center;
@@ -768,7 +697,7 @@ html, body {
 .divider::after {
     content: '';
     flex: 1;
-    border-bottom: 2px solid #ccc; 
+    border-bottom: 2px solid #ccc;
 }
 
 .divider:not(:empty)::before {
@@ -781,11 +710,11 @@ html, body {
 
 .divider span {
     padding: 0 10px;
-    color: #FA6800; 
-    font-size: 1.5em; 
+    color: #FA6800;
+    font-size: 1.5em;
 }
 
-/* Estilos para Depoimentos */
+/* Depoimentos Section */
 .depoimentos-container {
     padding: 20px;
     background-color: #0b5394;
@@ -839,7 +768,7 @@ html, body {
     font-family: "Lato", sans-serif;
 }
 
-/* Estilos para Atendimento */
+/* Atendimento Section */
 .atendimento-container {
     padding: 20px;
     background-color: #f5f5f5;
@@ -863,11 +792,11 @@ html, body {
 }
 
 .icon {
-    width: 200px; 
-    height: 200px; 
+    width: 200px;
+    height: 200px;
     background-size: cover;
     background-position: center;
-    margin: 0 auto 10px; 
+    margin: 0 auto 10px;
     border-radius: 10px;
 }
 
@@ -894,8 +823,7 @@ html, body {
     font-family: "Play", sans-serif;
 }
 
-
-/* Estilos para Localização */
+/* Localização Section */
 .local-container {
     padding: 40px 20px;
     background-color: #f9f9f9;
@@ -908,37 +836,37 @@ html, body {
 }
 
 .local-content h2 {
-    font-size: 32px; /* Aumenta o tamanho do título para maior destaque */
+    font-size: 32px;
     margin-bottom: 20px;
-    color: #333; /* Cor do título ajustada para um contraste melhor */
+    color: #333;
 }
 
 .local-text p {
     font-size: 18px;
     color: #666;
-    margin-bottom: 15px; /* Ajusta o espaçamento entre os parágrafos */
+    margin-bottom: 15px;
 }
 
 .local-text p:last-of-type {
-    font-weight: bold; /* Destaca o último parágrafo com negrito */
-    color: #333; /* Ajusta a cor para destacar informações importantes */
+    font-weight: bold;
+    color: #333;
 }
 
 .map-container {
-    margin-top: 30px; /* Adiciona espaçamento acima do mapa para separar do texto */
+    margin-top: 30px;
 }
 
 .map-iframe {
     width: 100%;
     height: 300px;
     border: 0;
-    border-radius: 8px; /* Cantos arredondados para o iframe */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra para destacar o mapa */
-    max-width: 100%; /* Garante que o mapa não exceda o container em dispositivos menores */
-    margin: 0 auto; /* Centraliza o iframe dentro do container */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    margin: 0 auto;
 }
 
-/* SOCIAL LINKS  */
+/* Social Links Section */
 .social-container {
     display: flex;
     justify-content: center;
@@ -961,76 +889,13 @@ html, body {
     color: #e4405f;
 }
 
-/* Estilos para Fotos do Curso */
+/* Fotos do Curso Section */
 .fotos-curso-container {
     padding: 40px 20px;
     background-color: #f2f2f2;
     text-align: center;
-}
-
-.fotos-curso-content {
-    display: flex;
-    justify-content: space-around;
-}
-
-.foto-curso {
-    width: 30%;
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-}
-
-#foto-curso-1 { background-image: url('imagens/curso1.jpg'); }
-#foto-curso-2 { background-image: url('imagens/curso2.jpg'); }
-#foto-curso-3 { background-image: url('imagens/curso3.jpg'); }
-
-/* ícones da página */
-.contact-info i {
-    color: #007BFF;
-    font-size: 1.5rem;
-}
-
-.contact-info p {
-    font-size: 1.2rem;
-}
-
-.icon-info i {
-    font-size: 2rem; 
-    color: #007BFF; 
-}
-
-.icon-info a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.icon-info a:hover {
-    text-decoration: none; 
-}
-
-.icon-info p {
-    display: inline-block;
-    margin: 0 10px; 
-}
-
-#zap {
-    color: #25d366;
-}
-
-#insta {
-    color: #e4405f;
-}
-
-#email {
-    color: #e65c00;
-}
-
-/* Estilos para Fotos do Curso */
-.fotos-curso-container {
     display: flex;
     justify-content: center;
-    padding: 20px;
-    background-color: #f2f2f2;
 }
 
 .fotos-curso-content {
@@ -1051,126 +916,80 @@ html, body {
     border-radius: 5px;
 }
 
-#foto-curso-1 { background-image: url('imagens/estudioweb.webp'); }
-#foto-curso-2 { background-image: url('imagens/estudioweb2.webp'); }
-#foto-curso-3 { background-image: url('imagens/bio.webp'); }
-#foto-curso-4 { background-image: url('imagens/shopping.webp'); }
-
-.reserva-lugar-container {
-    margin: 20px 0;
+#foto-curso-1 {
+    background-image: url('imagens/estudioweb.webp');
 }
 
-.reserva-lugar-container button {
-    padding: 10px 20px;
-    font-size: 1em;
-    color: #fff;
-    background-color: #0b5394;
-    border: none;
-    cursor: pointer;
+#foto-curso-2 {
+    background-image: url('imagens/estudioweb2.webp');
 }
 
-/* Estilos para Localização */
-.local-container {
-    text-align: center;
-    padding: 20px;
+#foto-curso-3 {
+    background-image: url('imagens/bio.webp');
 }
 
-.local-content h2 {
-    font-size: 2em;
-    color: #0b5394;
-    margin-bottom: 20px;
-    font-family: "Play", sans-serif;
+#foto-curso-4 {
+    background-image: url('imagens/shopping.webp');
 }
 
-.local-content p {
-    font-size: 1em;
-    color: #333;
-    font-family: "Play", sans-serif;
-}
 
-.map-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-.static-map {
-    max-width: 100%;
-    height: 400px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-/* Estilos para informações de contato */
-.contact-info {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    font-family: "Lato", sans-serif;
-    color: #333;
-    line-height: 1.6;
-    margin-bottom: 20px;
+/* ícones da página */
+.contact-info i {
+    color: #007BFF;
+    font-size: 1.5rem;
 }
 
 .contact-info p {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    font-size: 1.2rem;
 }
 
-.contact-info a {
-    color: #1e6d94;
+.icon-info i {
+    font-size: 2rem;
+    color: #007BFF;
+}
+
+.icon-info a {
     text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
+    color: inherit;
 }
 
-.contact-info a:hover {
+.icon-info a:hover {
     text-decoration: none;
-    opacity: 0.8;
-    transform: translateY(-2px);
 }
 
-.contact-icon {
-    color: #1e6d94;
-    flex-shrink: 0;
+.icon-info p {
+    display: inline-block;
+    margin: 0 10px;
 }
 
-.icon-info {
-    display: flex;
-    gap: 20px;
-    margin-top: 20px;
+#zap {
+    color: #25d366;
 }
 
-.social-icon {
-    width: 24px;
-    height: 24px;
-    color: #1e6d94;
-    transition: all 0.3s ease;
+#insta {
+    color: #e4405f;
 }
 
-.icon-info a:hover .social-icon {
-    transform: scale(1.1);
+#email {
+    color: #e65c00;
 }
 
-/* Estilos para o botão de reserva */
+
 .reserva-lugar-container {
+    margin: 20px 0;
     text-align: center;
-    margin-top: 20px;
 }
 
 .reserva-lugar-container button {
-    background-color: #fa6800;
-    color: #fff;
-    border: none;
     padding: 15px 30px;
     font-size: 1.2em;
     font-family: "Lato", sans-serif;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #fa6800;
+    color: #fff;
+    border: none;
 }
 
 .reserva-lugar-container button:hover {
@@ -1178,23 +997,160 @@ html, body {
     transform: scale(1.05);
 }
 
-/* Estilos para o rodapé */
-.copyright {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 25px 0; /* Ajuste conforme necessário */
-    font-size: 0.9rem;
-    font-family: 'lato', sans-serif;
-    font-weight: bold;
+/* Footer Moderno - Refinado */
+footer {
+    background-color: #2a2a2a; /* Cor base do fundo */
+    background-image: linear-gradient(180deg, #2a2a2a, #222222); /* Gradiente linear sutil */
+    color: #f4f4f4;
+    font-family: 'Lato', sans-serif;
+    padding: 50px 20px; /* Aumentando um pouco o padding superior e inferior */
 }
 
-/* Estilos para a seção de cursos */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 260px; /* Aumentando um pouco a largura mínima */
+    margin-bottom: 40px; /* Aumentando o margin bottom */
+    padding-right: 30px; /* Aumentando o padding right */
+}
+
+.footer-column:last-child {
+    padding-right: 0;
+}
+
+.footer-column h4 {
+    font-family: 'Arvo', serif;
+    font-size: 1.5rem; /* Aumentando um pouco o tamanho do título */
+    color: #fff;
+    margin-bottom: 1.8rem; /* Aumentando margin bottom do título */
+    border-bottom: 2px solid #555; /* Cor da linha divisória um pouco mais clara */
+    padding-bottom: 0.6rem; /* Aumentando padding bottom da linha */
+    font-weight: bold; /* Título em negrito */
+}
+
+.footer-column p,
+.footer-column ul,
+.footer-column li {
+    font-size: 1rem;
+    line-height: 1.8; /* Aumentando um pouco o line-height */
+    color: #ddd; /* Texto geral ainda mais claro */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-weight: 300; /* Peso da fonte mais leve para o texto geral */
+}
+
+.footer-column ul li {
+    margin-bottom: 1rem; /* Aumentando margin bottom dos itens da lista */
+}
+
+.footer-column a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 0.4rem 0; /* Aumentando padding vertical dos links */
+}
+
+.footer-column a:hover {
+    color: #fff;
+}
+
+/* Estilizando os ícones sociais no footer - Refinado */
+.footer-column .icon-info {
+    margin-top: 1.5rem; /* Aumentando margin top dos ícones */
+    justify-content: flex-start;
+}
+
+.footer-column .social-icon {
+    width: 40px; /* Ícones sociais um pouco maiores novamente */
+    height: 40px;
+    opacity: 0.7; /* Opacidade padrão um pouco menor */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transição para opacity suave */
+}
+
+.footer-column .icon-info a:hover .social-icon {
+    opacity: 1; /* Opacidade total no hover */
+    transform: scale(1.1); /* Mantendo o scale no hover */
+}
+
+/* Botão "Reservar Lugar" no Footer - Refinado */
+.footer-reserva-container {
+    margin-top: 2.5rem; /* Aumentando margin top do botão */
+    text-align: left;
+}
+
+.footer-reserva-container button {
+    background-color: #fa6800;
+    color: #fff;
+    border: none;
+    border-radius: 8px; /* Aumentando border-radius do botão */
+    padding: 18px 35px; /* Aumentando padding do botão */
+    font-size: 1.2rem; /* Aumentando tamanho da fonte do botão */
+    font-family: "Lato", sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transição para box-shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adicionando um leve box-shadow */
+}
+
+.footer-reserva-container button:hover {
+    background-color: #e65c00;
+    transform: scale(1.03); /* Reduzindo um pouco o scale no hover do botão */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25); /* Aumentando o box-shadow no hover */
+}
+
+
+/* Copyright no Footer - Refinado */
+.footer-copyright {
+    text-align: center;
+    padding-top: 40px; /* Aumentando padding top do copyright */
+    margin-top: 40px; /* Aumentando margin top do copyright */
+    border-top: 1px solid #555; /* Cor da linha divisória mais clara */
+    font-size: 0.85rem; /* Reduzindo um pouco o tamanho da fonte do copyright */
+    color: #888; /* Cor do copyright mais suave e clara */
+    font-weight: 400; /* Peso da fonte normal para o copyright */
+}
+
+
+/* Media Queries para Footer Responsivo - Sem alterações */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-column {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .footer-column h4 {
+        text-align: center;
+    }
+
+    .footer-column .icon-info {
+        justify-content: center;
+    }
+
+    .footer-reserva-container {
+        text-align: center;
+        margin-top: 1.5rem;
+    }
+}
+
+/* Cursos Section */
 .cursos-container {
     padding: 20px;
     max-width: 70%;
-    margin: 20px auto; /* centraliza horizontalmente */
-    font-family: 'Lato', sans-serif; /* Fallback para Lato caso a Arvo não carregue */
+    margin: 20px auto;
+    font-family: 'Lato', sans-serif;
     text-align: center;
 }
 
@@ -1210,8 +1166,8 @@ html, body {
     padding: 15px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    text-align: left; /* alinha o texto do curso à esquerda */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
 }
 
 .curso h2 {
@@ -1237,7 +1193,6 @@ html, body {
     line-height: 1.6;
 }
 
-/* Estilos específicos para links dentro dos cursos */
 .curso a {
     color: #007bff;
     text-decoration: none;
@@ -1247,18 +1202,19 @@ html, body {
     text-decoration: underline;
 }
 
+/* Imagem Centro */
 .imagem-centro {
     display: block;
-    margin: 0 auto; /* Centraliza horizontalmente */
-    max-width: 25%; /* Garante que a imagem não ultrapasse o contêiner */
-    height: auto; /* Altura automática proporcional à largura */
+    margin: 0 auto;
+    max-width: 25%;
+    height: auto;
     margin-top: 130px;
 }
 
-/* ÁREA DE DÚVIDAS */
+/* Benefícios - Área de Dúvidas Section */
 .beneficios-container {
     padding: 20px;
-    max-width: 70%; /* Reduz a largura máxima para telas menores */
+    max-width: 70%;
     margin: 20px auto;
     font-family: 'Lato', sans-serif;
     text-align: center;
@@ -1268,7 +1224,7 @@ html, body {
 .beneficios-container h1 {
     color: #333;
     margin-bottom: 20px;
-    font-size: 1.8em; /* Reduz o tamanho do título para telas menores */
+    font-size: 1.8em;
     font-family: 'Arvo', serif;
 }
 
@@ -1277,7 +1233,7 @@ html, body {
 }
 
 .beneficios-container .divider span {
-    font-size: 1.5em; /* Reduz o tamanho do emoji na divisória para telas menores */
+    font-size: 1.5em;
 }
 
 .beneficios-container p {
@@ -1295,18 +1251,20 @@ html, body {
 
 .beneficio-title {
     color: #333;
-    font-size: 1.4em; /* Reduz o tamanho do título dos benefícios */
+    font-size: 1.4em;
     margin-bottom: 10px;
     font-family: 'Arvo', serif;
 }
 
-.beneficio ul, .beneficio ol {
+.beneficio ul,
+.beneficio ol {
     list-style-type: none;
     padding-left: 0;
     text-align: left;
 }
 
-.beneficio ul li, .beneficio ol li {
+.beneficio ul li,
+.beneficio ol li {
     margin-bottom: 10px;
     line-height: 1.6;
 }
@@ -1333,7 +1291,7 @@ html, body {
 .italic p {
     font-size: 1.1rem;
     font-style: italic;
-    text-align: center; 
+    text-align: center;
 }
 
 #foto-curso-3 {
@@ -1347,18 +1305,69 @@ html, body {
     justify-content: center;
 }
 
-/* CONFIGURAÇÃO MOBILE */
 
-/* Estilos para o cabeçalho e nav em dispositivos móveis */
-@media screen and (max-width: 768px) {
-    #banner {
-        height: 400px;
-        background-size: 800px;
+/* Media Queries - Geral */
+@media screen and (max-width: 1600px) {
+    .aulas {
+        padding: 3rem 1rem;
+        /* Reduced padding for smaller screens */
     }
 }
 
-/* Estilos para a seção de informações em dispositivos móveis */
+@media screen and (max-width: 1024px) {
+    .card-banner {
+        flex: 0 0 calc(50% - 20px);
+        height: 400px;
+    }
+}
+
+
+/* Media Queries - Mobile Specific */
 @media screen and (max-width: 768px) {
+
+    /* Header */
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    .mobile-nav.open {
+        display: block;
+    }
+
+    .mobile-nav ul li a {
+        display: block;
+        padding: 1rem 5%;
+        color: #fff;
+        text-decoration: none;
+        font-family: "Play", sans-serif;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: background-color 0.3s ease;
+    }
+
+    .mobile-nav ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .logo-subtitle {
+        display: none;
+    }
+
+    /* Banner */
+    #banner {
+        height: 400px;
+        background-size: 800px;
+        /* Adjust background size for mobile */
+        background-size: cover;
+        background-position: 45% 50%;
+        width: 100%;
+        height: 80vh;
+    }
+
+    /* Informação Section */
     .informacao-container {
         padding: 20px;
     }
@@ -1371,57 +1380,37 @@ html, body {
         font-size: 1em;
         line-height: 1.6;
     }
-}
 
-/* PARA CARDS IMAGEN */
-@media screen and (max-width: 1024px) {
-    .card-banner {
-        flex: 0 0 calc(50% - 20px);
-        height: 400px;
+    .informacao-content p::before {
+        content: "• ";
+        font-size: 1em;
     }
-}
 
-@media screen and (max-width: 768px) {
+    /* Cards Image Section */
     .card-banner {
         flex: 0 0 calc(100% - 20px);
         height: 350px;
     }
 
-    #banner {
-        background-size: cover;
-        background-position: 45% 50%;
-        width: 100%;
-        height: 80vh;
-    }
-}
-
-/* Adaptação específica para a seção 'E quem pode aprender?' em dispositivos móveis */
-@media screen and (max-width: 768px) {
-    .informacao-content p::before {
-        content: "• ";
-        font-size: 1em;
-    }
-}
-
-@media screen and (max-width: 768px) {
+    /* Experiências, Técnicas, Criatividade Section - Mobile Slider */
     .image-container {
         display: flex;
-        overflow: hidden; /* Esconde conteúdo além do contêiner */
-        position: relative; /* Necessário para controlar a posição dos slides */
+        overflow: hidden;
+        position: relative;
     }
 
     .image-wrapper {
-        flex: 0 0 100%; /* Ocupa 100% da largura inicialmente */
-        transition: transform 0.5s ease; /* Transição suave de deslize */
+        flex: 0 0 100%;
+        transition: transform 0.5s ease;
     }
 
     .image {
         width: 100%;
-        height: 400px; /* Altura ajustada para exemplo */
+        height: 400px;
         background-size: cover;
         background-position: 50%;
     }
-    
+
     .texto-jovens {
         height: 150px;
     }
@@ -1445,46 +1434,37 @@ html, body {
         font-weight: bold;
         margin-bottom: 0;
     }
-}
 
-@media screen and (max-width: 768px) {
-    /* CSS para Fotos do Curso */
+    /* Fotos do Curso Section */
     .fotos-curso-container {
         padding: 20px;
     }
 
     .fotos-curso-content {
         display: flex;
-        flex-wrap: wrap; /* Permite que as fotos sejam organizadas em linhas e colunas */
-        gap: 20px; /* Espaçamento entre as fotos */
+        flex-wrap: wrap;
+        gap: 20px;
     }
 
     .foto-curso {
-        flex: 1 0 calc(50% - 20px); /* Cada foto ocupa metade da largura disponível, com espaço entre elas */
-        height: 300px; /* Altura das fotos */
+        flex: 1 0 calc(50% - 20px);
+        height: 300px;
         background-size: cover;
         border-radius: 10px;
     }
 
-    @media screen and (min-width: 768px) {
-        .foto-curso {
-            flex-basis: calc(25% - 20px); /* Cada foto ocupa um quarto da largura disponível */
-        }
-    }
-
-    /* Estilos para Atendimento */
+    /* Atendimento Section */
     .atendimento-container {
         padding: 20px;
-        background-color: #f5f5f5;
-        text-align: center; /* Centraliza o conteúdo em telas menores */
+        text-align: center;
     }
 
     .atendimento-content {
         display: flex;
-        flex-direction: column; /* Empilha os itens verticalmente em telas menores */
+        flex-direction: column;
         gap: 20px;
-        max-width: 600px; /* Limita a largura máxima dos itens para melhor legibilidade */
-        margin: 0 auto; /* Centraliza o container */
+        max-width: 600px;
+        margin: 0 auto;
     }
 
     .atendimento-item {
@@ -1498,160 +1478,233 @@ html, body {
     .atendimento-item .icon {
         width: 80px;
         height: 80px;
-        background-size: cover;
-        flex-shrink: 0; /* Evita que o ícone seja reduzido em tamanhos menores */
-        margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+        margin-right: 10px;
     }
 
     .atendimento-item h4 {
         font-size: 1em;
-        color: #0b5394;
-        font-family: "Play", sans-serif;
         margin: 0;
-        flex-grow: 1; /* Ocupa todo o espaço disponível */
     }
 
-    .atendimento-item:nth-child(1) .icon {
-        background-image: url('imagens/1.webp');
+    /* Antes e Depois Section */
+    .antes-depois {
+        padding: 2rem 1rem;
     }
 
-    .atendimento-item:nth-child(2) .icon {
-        background-image: url('imagens/2.webp');
+    .carousel-button2 {
+        width: 35px;
+        height: 35px;
     }
 
-    .atendimento-item:nth-child(3) .icon {
-        background-image: url('imagens/3.webp');
-    }
-
-    .atendimento-item:nth-child(4) .icon {
-        background-image: url('imagens/4.webp');
+    .carousel-button2 svg {
+        width: 20px;
+        height: 20px;
     }
 }
 
+/* Media Queries - Geral */
 @media screen and (max-width: 1600px) {
-    .atendimento-content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .atendimento-item {
-        flex: 0 0 45%; /* Cada item ocupará aproximadamente 45% da largura do container */
-        text-align: center; /* Centraliza o conteúdo dentro de cada item */
-        margin-bottom: 20px; /* Espaçamento inferior entre os itens */
-        box-sizing: border-box; /* Inclui padding e border na largura e altura */
-        padding: 10px; /* Adiciona um pouco de padding ao redor de cada item */
+    .aulas {
+        padding: 3rem 1rem;
+        /* Reduced padding for smaller screens */
     }
 }
 
-
-@media screen and (max-width: 820px) {
-    .header .logotipo {
-        margin-left: 0%;
+@media screen and (max-width: 1024px) {
+    .card-banner {
+        flex: 0 0 calc(50% - 20px);
+        height: 400px;
     }
 }
 
-/* configuração do header */
+/* Media Queries - Mobile Specific */
 @media screen and (max-width: 768px) {
-    .mobile-nav-toggle {
-        display: block;
-    }
-    .header .logotipo {
-        margin-left: 32%;
-    }
+
+    /* Header */
     .desktop-nav {
         display: none;
     }
-    
-    .mobile-nav.active {
-        display: block;
-    }
-    
-    .carousel-button2 {
-        right: 10px; /* Coloca o botão à direita no mobile */
-        left: auto; /* Remove qualquer valor left que possa estar presente */
-    }
-}
 
-@media screen and (min-width: 769px) {
-    .mobile-nav-toggle, .mobile-nav {
+    .logo-subtitle {
         display: none;
     }
 
-    .header .desktop-nav {
+    .mobile-nav.open {
         display: block;
     }
 
-    .header .desktop-nav ul {
+    .mobile-nav ul li a {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        color: #fff;
+        display: block;
+        font-family: "Play", sans-serif;
+        padding: 1rem 5%;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .mobile-nav ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    /* Banner */
+    #banner {
+        background-position: 45% 50%;
+        background-size: cover;
+        height: 80vh;
+        width: 100%;
+    }
+
+    /* Informação Section */
+    .informacao-container {
+        padding: 20px;
+    }
+
+    .informacao-content h2 {
+        font-size: 2em;
+    }
+
+    .informacao-content p {
+        font-size: 1em;
+        line-height: 1.6;
+    }
+
+    .informacao-content p::before {
+        content: "• ";
+        font-size: 1em;
+    }
+
+    /* Cards Image Section */
+    .card-banner {
+        flex: 0 0 calc(100% - 20px);
+        height: 350px;
+    }
+
+    /* Experiências, Técnicas, Criatividade Section - Mobile Slider */
+    .image-container {
         display: flex;
-        justify-content: center; /* Centraliza horizontalmente */
-        list-style-type: none;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .image-wrapper {
+        flex: 0 0 100%;
+        transition: transform 0.5s ease;
+    }
+
+    .image {
+        background-position: 50%;
+        background-size: cover;
+        height: 400px;
+        width: 100%;
+    }
+
+    .text-container {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .text-container h2 {
+        color: #0b5394;
+        font-family: "Lato", sans-serif;
+        font-size: 3em;
+        margin-bottom: 10px;
+    }
+
+    .text-container p {
+        color: #FA6800;
+        font-family: "Play", sans-serif;
+        font-size: 1em;
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+
+    .texto-jovens {
+        height: 150px;
+    }
+
+
+    /* Fotos do Curso Section */
+    .fotos-curso-container {
+        padding: 20px;
+    }
+
+    .fotos-curso-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .foto-curso {
+        background-size: cover;
+        border-radius: 10px;
+        flex: 1 0 calc(50% - 20px);
+        height: 300px;
+    }
+
+    /* Atendimento Section */
+    .atendimento-container {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .atendimento-content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin: 0 auto;
+        max-width: 600px;
+    }
+
+    .atendimento-item {
+        align-items: center;
+        background-color: #fff;
+        border-radius: 10px;
+        display: flex;
+        padding: 10px;
+    }
+
+    .atendimento-item .icon {
+        height: 80px;
+        margin-right: 10px;
+        width: 80px;
+    }
+
+    .atendimento-item h4 {
+        font-size: 1em;
         margin: 0;
-        padding: 0;
     }
 
-
-    .header .desktop-nav ul li a i {
-        width: 20px; /* Ajuste conforme necessário */
-        margin-right: 5px; /* Espaçamento entre ícone e texto */
+    /* Antes e Depois Section */
+    .antes-depois {
+        padding: 2rem 1rem;
     }
 
-    .header a {
-        transition: transform 0.3s ease;
-        display: inline-block;
+    .carousel-button2 {
+        height: 35px;
+        width: 35px;
     }
 
-    .header a:hover {
-        color: rgb(255, 174, 0);
-        transition: 0.3s;
-        transform: scale(1.1);
+    .carousel-button2 svg {
+        height: 20px;
+        width: 20px;
     }
 }
 
-@media (max-width: 768px) {
-    .beneficios-container {
-        max-width: 90%;
+@media screen and (max-width: 480px) {
+
+    /* Antes e Depois Section - Smaller Buttons */
+    .carousel-button2 {
+        height: 30px;
+        width: 30px;
     }
 
-
-    .beneficios-container .divider span {
-        font-size: 1.5em;
-    }
-}
-
-@media (max-width: 700px) {
-    .header .logotipo {
-        margin-left: 10%;
-    }
-
-    .aulas h2 {
-        font-size: 3rem;
-    }
-
-    .texto-jovens p {
-            font-size: 1.3rem;
-        
-    }
-    
-}
-
-@media (max-width: 500px) {
-    .aulas h2 {
-        font-size: 2.7rem;
-    }
-    .header .logoname {
-        font-size: 1.6rem;
-        
-    }
-
-    .imagem-centro {
-        max-width: 50%;
-    }
-    
-    .carousel-button {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
+    .carousel-button2 svg {
+        height: 16px;
+        width: 16px;
     }
 }
