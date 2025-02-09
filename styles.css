@@ -51,13 +51,11 @@ html, body {
     align-items: center;
     z-index: 1000;
     border-bottom: 2px solid rgba(0, 123, 255, 0.3);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease-in-out; /* Changed from all to transform and added ease-in-out */
 }
 
-.header.scrolled {
-    padding: 0.5rem 5%;
-    background-color: rgba(0, 0, 0, 0.95);
-    border-bottom: 2px solid rgba(0, 123, 255, 0.5);
+.header--hidden {
+    transform: translateY(-100%); /* Class to hide header */
 }
 
 /* Logo Styles */
@@ -228,6 +226,7 @@ html, body {
 .mobile-nav.open {
     animation: slideDown 0.3s ease forwards;
 }
+
 /* Estilo da navegação desktop */
 .desktop-nav {
     display: flex; /* Exibe o menu para desktop */

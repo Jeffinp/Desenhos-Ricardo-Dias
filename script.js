@@ -44,8 +44,8 @@ const initInfiniteCarousel = () => {
         }
     };
 
-    carouselContents.addEventListener('touchstart', handleTouchStart);
-    carouselContents.addEventListener('touchend', handleTouchEnd);
+    carouselContents.addEventListener('touchstart', handleTouchStart, { passive: true }); // Listener passivo para touchstart
+    carouselContents.addEventListener('touchend', handleTouchEnd, { passive: true });   // Listener passivo para touchend
 
     // Duplica os cards para criar o efeito de loop infinito
     cards.forEach(card => carouselContents.appendChild(card.cloneNode(true)));
@@ -103,6 +103,28 @@ const initInfiniteCarousel = () => {
     window.addEventListener('resize', updateCardsPerView);
     updateCardsPerView();
 };
+    // configuração do header
+    const header = document.querySelector('.header');
+    let lastScrollY = window.scrollY; // Store the initial scroll position
+
+    window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > 100) { // Threshold to avoid hiding on very small scrolls
+            if (currentScrollY > lastScrollY && !header.classList.contains('header--hidden')) {
+                // Scrolling Down and header is visible - Hide it
+                header.classList.add('header--hidden');
+            } else if (currentScrollY < lastScrollY && header.classList.contains('header--hidden')) {
+                // Scrolling Up and header is hidden - Show it
+                header.classList.remove('header--hidden');
+            }
+        } else {
+            // If scrolled back to the top (or above threshold), ensure header is visible
+            header.classList.remove('header--hidden');
+        }
+
+        lastScrollY = currentScrollY; // Update last scroll position
+    });
 
 /**
  * Navegação Mobile
@@ -196,8 +218,8 @@ const initBeforeAfterSlider = () => {
 
     nextBtn.addEventListener('click', () => moveSlider(1));
     prevBtn.addEventListener('click', () => moveSlider(-1));
-    slider.addEventListener('touchstart', handleTouchStart);
-    slider.addEventListener('touchend', handleTouchEnd);
+    slider.addEventListener('touchstart', handleTouchStart, { passive: true }); // Listener passivo para touchstart
+    slider.addEventListener('touchend', handleTouchEnd, { passive: true });   // Listener passivo para touchend
 
     updateCarousel();
 };
