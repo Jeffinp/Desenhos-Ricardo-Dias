@@ -20,26 +20,6 @@ Hi everyone! I'm excited to share **Ricardo Dias Drawings (Desenhos Ricardo Dias
 - **Modern CSS3:**  For the visual aspect, I leveraged modern CSS3 to create a design that's not only visually engaging and attractive but also fully responsive.  It looks great on any device!
 - **Lightweight JavaScript:** To enhance user interaction and create a smooth, dynamic browsing experience without sacrificing speed, I used lightweight JavaScript.
 
-## Getting Started - For Developers
-
-If you're interested in checking out the code or running this project locally, here's how:
-
-### Prerequisites
-
-You'll just need a modern web browser like Chrome, Firefox, Safari, or Edge.
-
-### Installation Instructions
-
-1. **Clone the repository:**  Open your terminal and run:
-   ```bash
-   git clone [https://github.com/Jeffinp/Desenhos-Ricardo-Dias.git](https://github.com/Jeffinp/Desenhos-Ricardo-Dias.git)
-   ```
-2. **Navigate to the project directory:**
-   ```bash
-   cd Desenhos-Ricardo-Dias
-   ```
-3. **Open `index.html`:**  Simply open the `index.html` file in your preferred web browser. You're all set to explore the site!
-
 ## Contributions
 
 As this project was specifically commissioned for Ricardo Dias, I'm not accepting direct external contributions at this time. However, I'm always open to hearing your feedback and suggestions!  Your insights are valuable and help me improve my work.
