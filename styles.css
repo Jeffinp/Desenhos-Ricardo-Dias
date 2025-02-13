@@ -1,29 +1,92 @@
-@import url(https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Play:wght@400;700&display=swap);*,.desktop-nav ul {
+@import url(https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Play:wght@400;700&display=swap);
+
+*,
+.desktop-nav ul {
     margin: 0;
     padding: 0;
     list-style: none
 }
 
-#banner,#banner::before,.header,.mobile-nav,.nav-link:hover::after {
+:root {
+    --cor-laranja-scrollbar: #ffbb66;
+    --cor-laranja-scrollbar-hover: #ffa500;
+    --cor-fundo-track-scrollbar: #f0f0f0;
+    --cor-borda-thumb-scrollbar: #f0f0f0;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(to right, #f8f8f8, var(--cor-fundo-track-scrollbar));
+    /* Gradiente sutil no track */
+    border-radius: 8px;
+    /* Track com bordas arredondadas */
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, var(--cor-laranja-scrollbar), #ff9933);
+    /* Gradiente no thumb */
+    border-radius: 8px;
+    /* Thumb com bordas arredondadas */
+    border: none;
+    /* Thumb sem borda visual */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    /* Sombra leve */
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+    /* Transição suave */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, var(--cor-laranja-scrollbar-hover), #ff7700);
+    /* Gradiente hover */
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    /* Sombra hover mais forte */
+    transform: scale(1.05);
+    /* Levemente maior no hover */
+}
+
+/* Firefox - Coerência com as cores variáveis */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--cor-laranja-scrollbar) var(--cor-fundo-track-scrollbar);
+}
+
+#banner,
+#banner::before,
+.header,
+.mobile-nav,
+.nav-link:hover::after {
     width: 100%
 }
 
-#banner,.aulas,.image-wrapper {
+#banner,
+.aulas,
+.image-wrapper {
     text-align: center
 }
 
-*,.atendimento-item {
+*,
+.atendimento-item {
     box-sizing: border-box
 }
 
-*,.curso a,.footer-column a,.icon-info a,.icon-info a:hover,.nav-link,.social-link {
+*,
+.curso a,
+.footer-column a,
+.icon-info a,
+.icon-info a:hover,
+.nav-link,
+.social-link {
     text-decoration: none
 }
 
-body,html {
+body,
+html {
     overflow-x: hidden;
     background-color: #f4f4f4;
-    font-family: Lato,sans-serif;
+    font-family: Lato, sans-serif;
     color: #333
 }
 
@@ -32,7 +95,10 @@ body,html {
     padding: 8px
 }
 
-.card-banner:hover img,.carousel-button:hover,.image-wrapper:hover .image,.mobile-nav-toggle:hover svg {
+.card-banner:hover img,
+.carousel-button:hover,
+.image-wrapper:hover .image,
+.mobile-nav-toggle:hover svg {
     transform: scale(1.1)
 }
 
@@ -44,13 +110,14 @@ body,html {
     opacity: .7
 }
 
-.card-banner:hover::before,.carousel-button:hover svg {
+.card-banner:hover::before,
+.carousel-button:hover svg {
     opacity: 1
 }
 
 .header {
     position: fixed;
-    background-color: rgba(0,0,0,.85);
+    background-color: rgba(0, 0, 0, .85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     padding: 1rem 5%;
@@ -58,16 +125,19 @@ body,html {
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    border-bottom: 2px solid rgba(0,123,255,.3);
+    border-bottom: 2px solid rgba(0, 123, 255, .3);
     transition: transform .3s ease-in-out
 }
 
-.logo-container,.nav-link {
+.logo-container,
+.nav-link {
     align-items: center;
     display: flex
 }
 
-.logotipo img,.mobile-nav-toggle svg,.nav-icon {
+.logotipo img,
+.mobile-nav-toggle svg,
+.nav-icon {
     transition: transform .3s
 }
 
@@ -88,14 +158,14 @@ body,html {
     font-size: 1.5rem;
     font-weight: 600;
     color: #fff;
-    font-family: Play,sans-serif;
+    font-family: Play, sans-serif;
     letter-spacing: .5px
 }
 
 .logo-subtitle {
     font-size: .85rem;
-    color: rgba(255,255,255,.7);
-    font-family: Lato,sans-serif;
+    color: rgba(255, 255, 255, .7);
+    font-family: Lato, sans-serif;
     letter-spacing: 1px
 }
 
@@ -108,21 +178,24 @@ body,html {
     gap: 2rem
 }
 
-.banner-content h1,.footer-column ul li {
+.banner-content h1,
+.footer-column ul li {
     margin-bottom: 1rem
 }
 
 .nav-link {
     gap: 8px;
-    color: rgba(255,255,255,.85);
-    font-family: Play,sans-serif;
+    color: rgba(255, 255, 255, .85);
+    font-family: Play, sans-serif;
     font-size: 1rem;
     padding: .5rem 0;
     transition: .3s;
     position: relative
 }
 
-#banner::before,.mobile-nav,.nav-link::after {
+#banner::before,
+.mobile-nav,
+.nav-link::after {
     position: absolute;
     left: 0
 }
@@ -136,7 +209,8 @@ body,html {
     transition: width .3s
 }
 
-.footer-column a:hover,.nav-link:hover {
+.footer-column a:hover,
+.nav-link:hover {
     color: #fff
 }
 
@@ -152,7 +226,8 @@ body,html {
     padding: .5rem
 }
 
-#banner,.image {
+#banner,
+.image {
     background-size: cover;
     background-position: center
 }
@@ -164,7 +239,7 @@ body,html {
 .mobile-nav {
     display: none;
     top: 100%;
-    background-color: rgba(0,0,0,.95);
+    background-color: rgba(0, 0, 0, .95);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px)
 }
@@ -201,7 +276,7 @@ body,html {
     content: "";
     top: 0;
     height: 100%;
-    background: rgba(0,0,0,.3)
+    background: rgba(0, 0, 0, .3)
 }
 
 .banner-content {
@@ -211,7 +286,8 @@ body,html {
     padding: 0 20px
 }
 
-.carousel-button,.carousel-button2 {
+.carousel-button,
+.carousel-button2 {
     display: flex;
     z-index: 10;
     top: 50%;
@@ -220,14 +296,15 @@ body,html {
 
 .banner-content h1 {
     font-size: 4rem;
-    font-family: Play,sans-serif;
+    font-family: Play, sans-serif;
     font-weight: 700;
-    text-shadow: 3px 3px 6px rgba(0,0,0,.6)
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, .6)
 }
 
-.aulas h2,.objetivos-container h2 {
+.aulas h2,
+.objetivos-container h2 {
     margin-bottom: 2rem;
-    font-family: Play,sans-serif
+    font-family: Play, sans-serif
 }
 
 .aulas {
@@ -254,7 +331,7 @@ body,html {
 
 .cards-de-desenhos {
     background-color: #f0f2f5;
-    padding: clamp(2rem,5vw,5rem)
+    padding: clamp(2rem, 5vw, 5rem)
 }
 
 .carousel-container {
@@ -263,7 +340,7 @@ body,html {
     margin: 0 auto;
     overflow: hidden;
     border-radius: 20px;
-    box-shadow: 0 15px 30px rgba(0,0,0,.15)
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .15)
 }
 
 .cards-contents {
@@ -276,8 +353,8 @@ body,html {
     margin: 0 10px;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,.2);
-    transition: transform .5s ease-in-out,box-shadow .5s ease-in-out;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+    transition: transform .5s ease-in-out, box-shadow .5s ease-in-out;
     position: relative
 }
 
@@ -296,20 +373,20 @@ body,html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,.7) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .7) 100%);
     opacity: 0;
     transition: opacity .6s
 }
 
 .card-banner:hover {
     transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 20px 40px rgba(0,0,0,.25)
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .25)
 }
 
 .carousel-button {
     position: absolute;
     transform: translateY(-50%);
-    background-color: rgba(255,255,255,.3);
+    background-color: rgba(255, 255, 255, .3);
     backdrop-filter: blur(5px);
     border-radius: 50%;
     color: #fff;
@@ -323,9 +400,9 @@ body,html {
 }
 
 .carousel-button:hover {
-    background-color: rgba(255,255,255,.4);
+    background-color: rgba(255, 255, 255, .4);
     transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 0 20px rgba(255,255,255,.5)
+    box-shadow: 0 0 20px rgba(255, 255, 255, .5)
 }
 
 .carousel-button.prev {
@@ -401,12 +478,12 @@ body,html {
     border-radius: 15px;
     overflow: hidden;
     transition: .4s ease-in-out;
-    box-shadow: 0 5px 15px rgba(0,0,0,.1)
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1)
 }
 
 .image-wrapper:hover {
     transform: translateY(-15px) scale(1.05);
-    box-shadow: 0 20px 40px rgba(0,0,0,.2)
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .2)
 }
 
 .image {
@@ -435,7 +512,7 @@ body,html {
     font-size: 2rem;
     color: #333;
     margin-bottom: .5rem;
-    font-family: Play,sans-serif;
+    font-family: Play, sans-serif;
     text-transform: uppercase;
     transition: color .4s;
     letter-spacing: 1.5px
@@ -448,14 +525,15 @@ body,html {
 .text-container p {
     font-size: 1rem;
     color: #666;
-    font-family: Lato,sans-serif;
+    font-family: Lato, sans-serif;
     font-weight: 400;
     line-height: 1.6;
     transition: color .4s
 }
 
-.informacao-content h2,.texto-jovens {
-    font-family: Play,sans-serif;
+.informacao-content h2,
+.texto-jovens {
+    font-family: Play, sans-serif;
     position: relative;
     text-align: center
 }
@@ -480,7 +558,7 @@ body,html {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(to bottom right,rgba(255,255,255,.1) 0,rgba(255,255,255,.05) 50%,transparent 50%,transparent 100%);
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, .05) 50%, transparent 50%, transparent 100%);
     transform: rotate(-45deg);
     z-index: 1;
     pointer-events: none
@@ -489,14 +567,14 @@ body,html {
 .texto-jovens p {
     font-size: 1.8rem;
     color: #fff;
-    text-shadow: 1px 1px 2px rgba(0,0,0,.1);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, .1);
     position: relative;
     z-index: 2;
     margin: 0
 }
 
 .antes-depois {
-    background: linear-gradient(135deg,#007bff,#0056b3);
+    background: linear-gradient(135deg, #007bff, #0056b3);
     padding: 3rem 1rem;
     overflow: hidden;
     position: relative
@@ -509,11 +587,12 @@ body,html {
     margin: 0 auto;
     overflow: hidden;
     border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
     background: #fff
 }
 
-.foto-curso,.icon {
+.foto-curso,
+.icon {
     background-size: cover;
     background-position: center
 }
@@ -544,7 +623,7 @@ body,html {
 .carousel-button2 {
     position: absolute;
     transform: translateY(-50%);
-    background-color: rgba(0,123,255,.9);
+    background-color: rgba(0, 123, 255, .9);
     border: none;
     width: 40px;
     height: 40px;
@@ -554,7 +633,8 @@ body,html {
     transition: .3s
 }
 
-.slider-indicator,.social-container {
+.slider-indicator,
+.social-container {
     justify-content: center;
     display: flex
 }
@@ -591,7 +671,7 @@ body,html {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background-color: rgba(0,123,255,.3);
+    background-color: rgba(0, 123, 255, .3);
     cursor: pointer;
     transition: .3s
 }
@@ -605,16 +685,18 @@ body,html {
     background-color: #fff;
     padding: 5rem 2rem;
     border-radius: 0;
-    box-shadow: 0 -10px 20px rgba(0,0,0,.05);
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, .05);
     margin: 0
 }
 
-.depoimento,.icon {
+.depoimento,
+.icon {
     border-radius: 10px
 }
 
-.depoimento,.map-iframe {
-    box-shadow: 0 4px 8px rgba(0,0,0,.1)
+.depoimento,
+.map-iframe {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .1)
 }
 
 .informacao-content,
@@ -657,6 +739,7 @@ body,html {
     top: 50%;
     transform: translateY(-50%);
 }
+
 .divider {
     display: flex;
     align-items: center;
@@ -664,7 +747,8 @@ body,html {
     margin: 40px 0
 }
 
-.divider::after,.divider::before {
+.divider::after,
+.divider::before {
     content: '';
     flex: 1;
     border-bottom: 2px solid #ccc
@@ -693,7 +777,7 @@ body,html {
 .depoimentos-container h2 {
     font-size: 2em;
     color: #fff;
-    font-family: Play,sans-serif;
+    font-family: Play, sans-serif;
     margin-bottom: 20px
 }
 
@@ -725,14 +809,14 @@ body,html {
     font-size: 1.2em;
     color: #333;
     line-height: 1.6;
-    font-family: Play,sans-serif
+    font-family: Play, sans-serif
 }
 
 .depoimento h3 {
     font-size: 1.3em;
     color: #0b5394;
     margin-top: 10px;
-    font-family: Lato,sans-serif
+    font-family: Lato, sans-serif
 }
 
 .atendimento-container {
@@ -782,7 +866,7 @@ body,html {
     font-size: 1.2em;
     color: #0b5394;
     margin-top: 10px;
-    font-family: Play,sans-serif
+    font-family: Play, sans-serif
 }
 
 .local-container {
@@ -832,11 +916,13 @@ body,html {
     color: #333
 }
 
-#zap,.social-link.whatsapp {
+#zap,
+.social-link.whatsapp {
     color: #25d366
 }
 
-#insta,.social-link.instagram {
+#insta,
+.social-link.instagram {
     color: #e4405f
 }
 
@@ -864,7 +950,8 @@ body,html {
     border-radius: 5px
 }
 
-.beneficio,.curso {
+.beneficio,
+.curso {
     background-color: #fff
 }
 
@@ -915,10 +1002,10 @@ body,html {
 .reserva-lugar-container button {
     padding: 15px 30px;
     font-size: 1.2em;
-    font-family: Lato,sans-serif;
+    font-family: Lato, sans-serif;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color .3s,transform .3s;
+    transition: background-color .3s, transform .3s;
     background-color: #fa6800;
     color: #fff;
     border: none
@@ -931,9 +1018,9 @@ body,html {
 
 footer {
     background-color: #2a2a2a;
-    background-image: linear-gradient(180deg,#2a2a2a,#222);
+    background-image: linear-gradient(180deg, #2a2a2a, #222);
     color: #f4f4f4;
-    font-family: Lato,sans-serif;
+    font-family: Lato, sans-serif;
     padding: 50px 20px
 }
 
@@ -957,7 +1044,7 @@ footer {
 }
 
 .footer-column h4 {
-    font-family: Arvo,serif;
+    font-family: Arvo, serif;
     font-size: 1.5rem;
     color: #fff;
     margin-bottom: 1.8rem;
@@ -966,7 +1053,9 @@ footer {
     font-weight: 700
 }
 
-.footer-column li,.footer-column p,.footer-column ul {
+.footer-column li,
+.footer-column p,
+.footer-column ul {
     font-size: 1rem;
     line-height: 1.8;
     color: #ddd;
@@ -983,9 +1072,10 @@ footer {
     padding: .4rem 0
 }
 
-#foto-curso-3,.footer-reserva-container button {
+#foto-curso-3,
+.footer-reserva-container button {
     color: #fff;
-    font-family: Lato,sans-serif;
+    font-family: Lato, sans-serif;
     font-size: 1.2rem
 }
 
@@ -998,7 +1088,7 @@ footer {
     width: 40px;
     height: 40px;
     opacity: .7;
-    transition: opacity .3s,transform .3s
+    transition: opacity .3s, transform .3s
 }
 
 .footer-column .icon-info a:hover .social-icon {
@@ -1017,19 +1107,20 @@ footer {
     border-radius: 8px;
     padding: 18px 35px;
     cursor: pointer;
-    transition: background-color .3s,transform .3s,box-shadow .3s;
-    box-shadow: 0 2px 5px rgba(0,0,0,.2)
+    transition: background-color .3s, transform .3s, box-shadow .3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2)
 }
 
-.curso h2,.cursos-container h2 {
+.curso h2,
+.cursos-container h2 {
     color: #333;
-    font-family: Arvo,serif
+    font-family: Arvo, serif
 }
 
 .footer-reserva-container button:hover {
     background-color: #e65c00;
     transform: scale(1.03);
-    box-shadow: 0 4px 8px rgba(0,0,0,.25)
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .25)
 }
 
 .footer-copyright {
@@ -1043,8 +1134,11 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .footer-column,.footer-column h4,.footer-container {
-        text-align:center
+
+    .footer-column,
+    .footer-column h4,
+    .footer-container {
+        text-align: center
     }
 
     .footer-container {
@@ -1069,7 +1163,7 @@ footer {
     padding: 20px;
     max-width: 70%;
     margin: 20px auto;
-    font-family: Lato,sans-serif;
+    font-family: Lato, sans-serif;
     text-align: center
 }
 
@@ -1078,7 +1172,8 @@ footer {
     font-size: 2em
 }
 
-.beneficios-container .divider span,.curso h2 {
+.beneficios-container .divider span,
+.curso h2 {
     font-size: 1.5em
 }
 
@@ -1086,7 +1181,7 @@ footer {
     margin-bottom: 30px;
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     text-align: left
 }
 
@@ -1094,7 +1189,8 @@ footer {
     margin-bottom: 10px
 }
 
-.curso p,.curso ul li {
+.curso p,
+.curso ul li {
     margin-bottom: 8px;
     line-height: 1.6
 }
@@ -1127,11 +1223,12 @@ footer {
     padding: 20px;
     max-width: 70%;
     margin: 150px auto 20px;
-    font-family: Lato,sans-serif;
+    font-family: Lato, sans-serif;
     text-align: center
 }
 
-.beneficio,.beneficios-container p {
+.beneficio,
+.beneficios-container p {
     margin-bottom: 20px
 }
 
@@ -1139,7 +1236,7 @@ footer {
     color: #333;
     margin-bottom: 20px;
     font-size: 1.8em;
-    font-family: Arvo,serif
+    font-family: Arvo, serif
 }
 
 .beneficios-container .divider {
@@ -1148,7 +1245,7 @@ footer {
 
 .beneficio {
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
     padding: 20px;
     text-align: left
 }
@@ -1157,16 +1254,19 @@ footer {
     color: #333;
     font-size: 1.4em;
     margin-bottom: 10px;
-    font-family: Arvo,serif
+    font-family: Arvo, serif
 }
 
-.beneficio ol,.beneficio ul {
+.beneficio ol,
+.beneficio ul {
     list-style-type: none;
     padding-left: 0;
     text-align: left
 }
 
-.beneficio ol li,.beneficio p,.beneficio ul li {
+.beneficio ol li,
+.beneficio p,
+.beneficio ul li {
     margin-bottom: 10px;
     line-height: 1.6
 }
@@ -1201,20 +1301,26 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-    #banner,.image {
-        width:100%;
+
+    #banner,
+    .image {
+        width: 100%;
         background-size: cover
     }
 
-    #banner,.foto-curso,.image {
+    #banner,
+    .foto-curso,
+    .image {
         background-size: cover
     }
 
-    .desktop-nav,.logo-subtitle {
+    .desktop-nav,
+    .logo-subtitle {
         display: none
     }
 
-    .mobile-nav-toggle,.mobile-nav.open {
+    .mobile-nav-toggle,
+    .mobile-nav.open {
         display: block
     }
 
@@ -1223,13 +1329,13 @@ footer {
         padding: 1rem 5%;
         color: #fff;
         text-decoration: none;
-        font-family: Play,sans-serif;
-        border-bottom: 1px solid rgba(255,255,255,.1);
+        font-family: Play, sans-serif;
+        border-bottom: 1px solid rgba(255, 255, 255, .1);
         transition: background-color .3s
     }
 
     .mobile-nav ul li a:hover {
-        background-color: rgba(255,255,255,.05)
+        background-color: rgba(255, 255, 255, .05)
     }
 
     #banner {
@@ -1237,7 +1343,8 @@ footer {
         height: 80vh
     }
 
-    .fotos-curso-container,.informacao-container {
+    .fotos-curso-container,
+    .informacao-container {
         padding: 20px
     }
 
@@ -1280,7 +1387,8 @@ footer {
         height: 150px
     }
 
-    .atendimento-container,.text-container {
+    .atendimento-container,
+    .text-container {
         padding: 20px;
         text-align: center
     }
@@ -1289,13 +1397,13 @@ footer {
         font-size: 3em;
         color: #0b5394;
         margin-bottom: 10px;
-        font-family: Lato,sans-serif
+        font-family: Lato, sans-serif
     }
 
     .text-container p {
         font-size: 1em;
         color: #fa6800;
-        font-family: Play,sans-serif;
+        font-family: Play, sans-serif;
         font-weight: 700;
         margin-bottom: 0
     }
@@ -1356,47 +1464,53 @@ footer {
 
 @media screen and (max-width: 1600px) {
     .aulas {
-        padding:3rem 1rem
+        padding: 3rem 1rem
     }
 }
 
 @media screen and (max-width: 1024px) {
     .card-banner {
-        flex:0 0 calc(50% - 20px);
+        flex: 0 0 calc(50% - 20px);
         height: 400px
     }
 }
 
 @media screen and (max-width: 768px) {
-    #banner,.image {
-        width:100%;
+
+    #banner,
+    .image {
+        width: 100%;
         background-size: cover
     }
 
-    #banner,.foto-curso,.image {
+    #banner,
+    .foto-curso,
+    .image {
         background-size: cover
     }
 
-    .desktop-nav,.logo-subtitle {
+    .desktop-nav,
+    .logo-subtitle {
         display: none
     }
 
-    .mobile-nav-toggle,.mobile-nav.open {
+    .mobile-nav-toggle,
+    .mobile-nav.open {
         display: block
     }
 
     .mobile-nav ul li a {
-        border-bottom: 1px solid rgba(255,255,255,.1);
+        border-bottom: 1px solid rgba(255, 255, 255, .1);
         color: #fff;
         display: block;
-        font-family: Play,sans-serif;
+        font-family: Play, sans-serif;
         padding: 1rem 5%;
         text-decoration: none;
         transition: background-color .3s
     }
 
     .mobile-nav ul li a:hover {
-        background-color: rgba(255,255,255,.05)
+        background-color: rgba(255, 255, 255, .05)
     }
 
     #banner {
@@ -1404,7 +1518,8 @@ footer {
         height: 80vh
     }
 
-    .fotos-curso-container,.informacao-container {
+    .fotos-curso-container,
+    .informacao-container {
         padding: 20px
     }
 
@@ -1443,21 +1558,22 @@ footer {
         height: 400px
     }
 
-    .atendimento-container,.text-container {
+    .atendimento-container,
+    .text-container {
         padding: 20px;
         text-align: center
     }
 
     .text-container h2 {
         color: #0b5394;
-        font-family: Lato,sans-serif;
+        font-family: Lato, sans-serif;
         font-size: 3em;
         margin-bottom: 10px
     }
 
     .text-container p {
         color: #fa6800;
-        font-family: Play,sans-serif;
+        font-family: Play, sans-serif;
         font-size: 1em;
         font-weight: 700;
         margin-bottom: 0
@@ -1523,7 +1639,7 @@ footer {
 
 @media screen and (max-width: 480px) {
     .carousel-button2 {
-        height:30px;
+        height: 30px;
         width: 30px
     }
 
@@ -1536,7 +1652,7 @@ footer {
         padding: 20px;
         max-width: 85%;
         margin: 150px auto 20px;
-        font-family: Lato,sans-serif;
+        font-family: Lato, sans-serif;
         text-align: center
     }
 }
